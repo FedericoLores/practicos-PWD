@@ -29,10 +29,4 @@ Lores Federico
 
 el trabajo se debe ubicar en la carpeta que utilizen como localhost (htdocs por defecto si usan xamp)
 estructura de carpetas de ejemplo: localhost/trabajos-practicos-1-3/landing.php
-![imagen mostrando estructura de carpetas](blob:https://mega.nz/e87536b6-8a3f-4e88-9c18-010b1496d81d)
-
-[imagen-url]
-
-
-
-[imagen-url]: blob:https://mega.nz/e87536b6-8a3f-4e88-9c18-010b1496d81d
+![imagen mostrando estructura de carpetas](https://mega.nz/file/ydcAlR4B#hNG89kRM_O9e3VxEtTgi_WOlz4qDfvezmsYOtpNBXWk)
