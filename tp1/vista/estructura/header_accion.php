@@ -39,7 +39,7 @@
 </head>
 <body>
     <header class="header-container">
-        <a href="../../../landing.php">
+        <a href="../../../index.php">
         <h1>Trabajo Practico 1</h1>
         <h2>Ejercicio <?php echo htmlspecialchars($numeroEjercicio); ?></h2></a>
     </header>

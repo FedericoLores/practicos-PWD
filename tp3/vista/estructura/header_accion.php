@@ -13,7 +13,7 @@
         <div class="container">
             <div class="d-flex justify-content-center w-100">
                 <span class="navbar-text mx-5 display-6">
-                    <a href="../../../landing.php" class="text-decoration-none">
+                    <a href="../../../index.php" class="text-decoration-none">
                         <p>Trabajo Pr&aacute;ctico 3</p>
                     </a>
                 </span>
