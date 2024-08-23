@@ -7,15 +7,14 @@ include_once '../estructura/header_accion.php';
 $cargaHoraria = new ControlEj2();
 $datos = datosRecibidos();
 $horas = $cargaHoraria->calcularCargaHoraria($datos);
-?>
-<div align="center">
-<?php
 if($horas != 0){
-    echo "La carga horaria total de la semana es: ".$horas;
+    $texto = "La carga horaria total de la semana es: ".$horas;
 }else{
-    echo "No ingreso ninguna hora en la semana";
+    $texto = "No ingreso ninguna hora en la semana";
 }
 ?>
+<div align="center">
+    <p><?php echo $texto ?></p>
 </div>
 <?php
 include_once '../estructura/footer.php';
