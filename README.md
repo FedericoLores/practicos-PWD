@@ -1,9 +1,10 @@
 <div align="center">
-# trabajos-practicos-1-3-PWD
+# Trabajos-Practicos-1-3-PWD
 
 
 
-##Integrantes
+
+## Integrantes
 </div>
 
 Rossi Julia
@@ -19,7 +20,7 @@ Lores Federico
 
 
 <div align="center">
-##Instalación
+## Instalación
 </div>
 
 el trabajo se debe ubicar en la carpeta que utilizen como localhost (htdocs por defecto si usan xamp)
