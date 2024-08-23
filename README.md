@@ -2,24 +2,7 @@
 
 # Trabajos-Practicos-1-3-PWD
 
-
-
-
-## Integrantes
 </div>
-
-Rossi Julia
-    - FAI-2378
-    - mail: julia.rossi@est.fi.uncoma.edu.ar
-    - https://github.com/JuliaRossiFAI-2378
-
-
-Lores Federico
-    - FAI-2948
-    - mail: federico.lores@est.fi.uncoma.edu.ar
-    - https://github.com/FedericoLores
-
-
 
 <div align="center">
 
@@ -39,3 +22,20 @@ estructura de carpetas de ejemplo: localhost/trabajos-practicos-1-3/landing.php
 </div>
 
 Si desean volver a la pagina principal, basta con clickear el titulo del header en cualquier ubicación.
+
+<div align="center">
+
+## Integrantes
+</div>
+
+Rossi Julia
+    - FAI-2378
+    - mail: julia.rossi@est.fi.uncoma.edu.ar
+    - https://github.com/JuliaRossiFAI-2378
+
+
+Lores Federico
+    - FAI-2948
+    - mail: federico.lores@est.fi.uncoma.edu.ar
+    - https://github.com/FedericoLores
+
