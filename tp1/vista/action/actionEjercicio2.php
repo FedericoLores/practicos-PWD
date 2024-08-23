@@ -14,7 +14,7 @@ if($horas != 0){
 }
 ?>
 <div align="center">
-    <p><?php echo $texto ?></p>
+    <p><?php echo $texto; ?></p>
 </div>
 <?php
 include_once '../estructura/footer.php';
