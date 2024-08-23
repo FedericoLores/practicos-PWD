@@ -11,9 +11,9 @@
 </div>
 
 el trabajo se debe ubicar en la carpeta que utilizen como localhost (htdocs por defecto si usan xamp)
-estructura de carpetas de ejemplo: localhost/trabajos-practicos-1-3/landing.php
+estructura de carpetas de ejemplo: localhost/practicos-PWD
 
-![imagen mostrando estructura de carpetas](https://lh3.googleusercontent.com/pw/AP1GczNJD-L3N9FpJ-DiX6MQ2qhrYEBoLc6qMTV4u-0O--WaJwL5MYJH9dloolzEUGnk8CiGsFEO7GwKq5BuJU66lMhsbNl_C8Yq8N4yDaYMtydv8GgIRg=w2400)
+![imagen mostrando estructura de carpetas](https://cdn.discordapp.com/attachments/573546362550091788/1276578840637997187/image.png?ex=66ca0a31&is=66c8b8b1&hm=f7cee652fd43d4a310787108e9931b1c296608ce1c704afefe08f042241ae6e4&)
 
 <div align="center">
 
