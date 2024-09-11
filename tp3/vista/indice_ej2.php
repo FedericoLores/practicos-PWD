@@ -1,10 +1,10 @@
 <?php include_once("./estructura/header.php");?>
     <div class="container">
         <form class="needs-validation p-5" novalidate id="formArchivo" name="formArchivo" method="post" action="./accion/subir_ej2.php" enctype="multipart/form-data">
-        <div class="text-center">
+            <div class="text-center">
                 <p>ingrese un archivo de texto</p>
             </div>    
-        <div class="input-group">
+            <div class="input-group">
                 <input type="hidden" name="MAX_FILE_SIZE" value="5000000">
                 <input type="file" class="form-control" name="archivo" id="archivo" accept=".txt" required>
                 <div class="invalid-feedback" id="errorSubida">por favor ingrese un archivo .txt.</div>
