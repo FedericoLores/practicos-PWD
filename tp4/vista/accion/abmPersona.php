@@ -1,11 +1,11 @@
 <?php
 include_once (__DIR__.'/../estructura/header_accion.php');
-include_once (__DIR__.'/../../control/AbmAuto.php');
+include_once (__DIR__.'/../../control/AbmPersona.php');
 include_once (__DIR__.'/../../utils/scripts.php');
-include_once (__DIR__.'/../../modelo/Auto.php');
+include_once (__DIR__.'/../../modelo/Persona.php');
 include_once (__DIR__.'/../../modelo/conector/BaseDatos.php');
 $datos = datosRecibidos();
-$obj = new AbmAuto();
+$obj = new AbmPersona();
 
 if(isset($datos['accion'])){
     $resp = false;
@@ -31,8 +31,8 @@ if(isset($datos['accion'])){
     }
 }
 ?>
-<h3>Auto</h3>
-<a href="../indexAuto.php">Volver</a>
+<h3>Persona</h3>
+<a href="../indexPersona.php">Volver</a>
 
 <?php	
 echo $mensaje;
