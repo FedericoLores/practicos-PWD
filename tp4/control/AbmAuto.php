@@ -1,9 +1,7 @@
 <?php
-//include_once '../modelo/Auto.php';
+include_once (__DIR__.'/../modelo/Auto.php');
 class AbmAuto{
     //Espera como parametro un arreglo asociativo donde las claves coinciden con los nombres de las variables instancias del objeto
-
-    
     /**
      * Espera como parametro un arreglo asociativo donde las claves coinciden con los nombres de las variables instancias del objeto
      * @param array $param
@@ -95,14 +93,14 @@ class AbmAuto{
     /**
      * permite buscar un objeto
      * @param array $param
-     * @return boolean
+     * @return array
      */
     public function buscar($param){
         //$where = " true "; no se que es esto????
         $where = "";
         if ($param != NULL){
             if(isset($param['Patente'])){
-                $where.=" and Patente =".$param['Patente'];
+                $where .= "Patente='".$param['Patente']."'";
             }
         }
         $auto = new Auto();

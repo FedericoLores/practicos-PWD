@@ -1,4 +1,5 @@
 <?php
+
 class Auto{
     private $patente;
     private $marca;

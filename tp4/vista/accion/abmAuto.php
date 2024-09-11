@@ -1,14 +1,15 @@
 <?php
-include_once '../estructura/header_accion.php';
-include_once '../../control/AbmAuto.php';
-include_once '../../utils/scripts.php';
-include_once '../../modelo/Auto.php';
-include_once '../../modelo/conector/BaseDatos.php';
+include_once (__DIR__.'/../estructura/header_accion.php');
+include_once (__DIR__.'/../../control/AbmAuto.php');
+include_once (__DIR__.'/../../utils/scripts.php');
+include_once (__DIR__.'/../../modelo/Auto.php');
+include_once (__DIR__.'/../../modelo/conector/BaseDatos.php');
 $datos = datosRecibidos();
 $obj = new AbmAuto();
-foreach($datos as $key => $d){
+
+/*foreach($datos as $key => $d){
     echo "\n".$key." : ".$d."\n";
-} 
+} */
 if(isset($datos['accion'])){
     $resp = false;
     if($datos['accion']=='editar'){

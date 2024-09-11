@@ -1,9 +1,7 @@
 <?php
-include_once './estructura/header.php';
-include_once '../control/AbmAuto.php';
-include_once '../modelo/Auto.php';
-include_once '../modelo/conector/BaseDatos.php'; 
-
+include_once (__DIR__.'/estructura/header.php');
+include_once (__DIR__.'/../control/AbmAuto.php');
+include_once (__DIR__.'/../modelo/conector/BaseDatos.php');
 ?>
 <div class="container d-flex justify-content-center">
 <h3>Nuevo Auto</h3>
