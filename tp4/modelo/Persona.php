@@ -106,7 +106,7 @@ class Persona{
         $resp = false;
         $base = new BaseDatos();
         $sql = "UPDATE persona SET Apellido='".$this->getApellido()."', Nombre='".$this->getNombre()."', fechaNac=".
-            $this->getFechaNac().", Telefono=".$this->getTelefono().", Domicilio='".$this->getDomicilio()." WHERE NroDni=".$this->getDni();
+            $this->getFechaNac().", Telefono=".$this->getTelefono().", Domicilio='".$this->getDomicilio()."' WHERE NroDni=".$this->getDni();
         echo $sql;
         if ($base->getConnection()) {
             if ($base->Ejecutar($sql)) {
