@@ -89,7 +89,7 @@ class Persona{
         $resp = false;
         $base = new BaseDatos();
         $sql = "INSERT INTO persona (NroDni, Apellido, Nombre, fechaNac, Telefono, Domicilio) VALUES (".$this->getDni().", '".$this->getApellido().
-            "', '".$this->getNombre()."', ".$this->getFechaNac().", ".$this->getTelefono().", '".$this->getDomicilio()."');";
+            "', '".$this->getNombre()."', '".$this->getFechaNac()."', '".$this->getTelefono()."', '".$this->getDomicilio()."');";
         if($base->getConnection()){
             if ($base->Ejecutar($sql)){
                 $resp = true;
@@ -105,9 +105,8 @@ class Persona{
     public function modificar(){
         $resp = false;
         $base = new BaseDatos();
-        $sql = "UPDATE persona SET Apellido='".$this->getApellido()."', Nombre='".$this->getNombre()."', fechaNac=".
-            $this->getFechaNac().", Telefono=".$this->getTelefono().", Domicilio='".$this->getDomicilio()."' WHERE NroDni=".$this->getDni();
-        echo $sql;
+        $sql = "UPDATE persona SET Apellido='".$this->getApellido()."', Nombre='".$this->getNombre()."', fechaNac='".
+            $this->getFechaNac()."', Telefono='".$this->getTelefono()."', Domicilio='".$this->getDomicilio()."' WHERE NroDni=".$this->getDni();
         if ($base->getConnection()) {
             if ($base->Ejecutar($sql)) {
                 $resp = true;
