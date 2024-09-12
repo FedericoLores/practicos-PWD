@@ -8,7 +8,7 @@ include_once (__DIR__.'/../modelo/conector/BaseDatos.php');
 <h4>Nuevo Auto</h4>
 </div>
 <div class="card-body">
-<form method="post" action="accion/abmAuto.php" id="formulario" class="needs-validation" novalidate>
+<form method="post" action="accion/accionNuevoAUto.php" id="formulario" class="needs-validation" novalidate>
 	<div class="container">
         <label for="Patente" class="form-label">Patente</label>
         <input id="Patente" name ="Patente" type="text" class="form-control" required/>
