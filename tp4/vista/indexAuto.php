@@ -7,11 +7,12 @@ $objAbmAuto = new AbmAuto();
 
 $listaAuto = $objAbmAuto->buscar(null);
 ?>
-<div class="card p-3">
+<div class="card m-3">
+<div class="card-header text-center">
 	<h3>ABM - Auto</h3>
-	<a class="btn btn-primary" href="autoNuevo.php">Ingresar un auto</a>
+	<a class="btn btn-primary p-2" href="autoNuevo.php">Ingresar un auto</a>
 </div>
-<div class="container">
+<div class="card-body">
 	<table class="table table-sm">
 	<tr>
 		<th scope="col">Patente</th>
@@ -35,4 +36,5 @@ if(count($listaAuto)>0){
 }
 ?>
 </table></div>
+</div>
 <?php include_once './estructura/footer.php';?>
