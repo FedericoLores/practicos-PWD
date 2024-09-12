@@ -1,13 +1,12 @@
 <?php
 include_once (__DIR__.'/../estructura/header_accion.php');
 include_once (__DIR__.'/../../control/AbmAuto.php');
+include_once (__DIR__.'/../../control/AbmPersona.php');
 include_once (__DIR__.'/../../utils/scripts.php');
-include_once (__DIR__.'/../../modelo/Auto.php');
-include_once (__DIR__.'/../../modelo/Persona.php');
 include_once (__DIR__.'/../../modelo/conector/BaseDatos.php');
 $datos = datosRecibidos();
 $obj = new AbmAuto();
-
+$persona = new AbmPersona();
 ?>
 <div class="card m-3">
     <div class="card-header text-center">
@@ -23,8 +22,7 @@ if(isset($datos['accion'])){
     $crearPersona = false;
     $mensaje = "";
     if($datos['accion']=='nuevo'){
-        $persona = new Persona();
-        if(count($persona->listar("NroDni=".$datos['DniDuenio'])) != null){
+        if(count($persona->buscar($datos)) != null){
             if($obj->alta($datos)){
                 $resp =true;
             }
@@ -36,6 +34,7 @@ if(isset($datos['accion'])){
     if($resp){
         $mensaje .= " La accion ".$datos['accion']." se realizo correctamente.";
     }else {
+        //print_r($datos);
         $mensaje .= " La accion ".$datos['accion']." no pudo concretarse.";
     }
 }else{

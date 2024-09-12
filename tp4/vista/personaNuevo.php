@@ -1,7 +1,6 @@
 <?php
 include_once (__DIR__.'/estructura/header.php');
 include_once (__DIR__.'/../control/AbmPersona.php');
-include_once (__DIR__.'/../modelo/conector/BaseDatos.php');
 ?>
 <div class="card m-3">
 <div class="card-title text-center mt-3">

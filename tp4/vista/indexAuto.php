@@ -1,8 +1,6 @@
 <?php
 include_once (__DIR__.'/estructura/header.php');
 include_once (__DIR__.'/../control/AbmAuto.php');
-include_once (__DIR__.'/../modelo/conector/BaseDatos.php');
-include_once (__DIR__.'/../modelo/Auto.php');
 $objAbmAuto = new AbmAuto();
 
 $listaAuto = $objAbmAuto->buscar(null);

@@ -107,6 +107,8 @@ class AbmPersona{
         if ($param != NULL){
             if(isset($param['NroDni'])){
                 $where .= "NroDni=".$param['NroDni'];
+            }else if(isset($param['DniDuenio'])){
+                $where .= "NroDni=".$param['DniDuenio'];
             }
         }
         $persona = new Persona();

@@ -1,8 +1,6 @@
 <?php
 include_once (__DIR__.'/estructura/header.php');
 include_once (__DIR__.'/../control/AbmPersona.php');
-include_once (__DIR__.'/../modelo/conector/BaseDatos.php');
-include_once (__DIR__.'/../modelo/Persona.php');
 $objAbmPersona = new AbmPersona();
 
 $listaPersona = $objAbmPersona->buscar(null);

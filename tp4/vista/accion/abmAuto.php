@@ -2,9 +2,6 @@
 include_once (__DIR__.'/../estructura/header_accion.php');
 include_once (__DIR__.'/../../control/AbmAuto.php');
 include_once (__DIR__.'/../../utils/scripts.php');
-include_once (__DIR__.'/../../modelo/Auto.php');
-include_once (__DIR__.'/../../modelo/Persona.php');
-include_once (__DIR__.'/../../modelo/conector/BaseDatos.php');
 $datos = datosRecibidos();
 $obj = new AbmAuto();
 
@@ -33,8 +30,8 @@ if(isset($datos['accion'])){
         }
     }
     if($datos['accion']=='nuevo'){
-        $persona = new Persona();
-        if(count($persona->listar("NroDni=".$datos['DniDuenio'])) != null){
+        $persona = new AbmPersona();
+        if(count($persona->buscar($datos['DniDuenio'])) != null){
             if($obj->alta($datos)){
                 $resp =true;
             }
