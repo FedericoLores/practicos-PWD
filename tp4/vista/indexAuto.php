@@ -36,6 +36,8 @@ if(count($listaAuto)>0){
         echo '<td><a id="eliminar" class="btn btn-danger" href="accion/abmAuto.php?accion=borrar&Patente='.$objAuto->getPatente().'">borrar</a></td></tr>'; 
 	}
 	echo "</tbody>";
+}else{
+	echo '<tr><td class="container text-center">No hay autos cargados</td></tr>';
 }
 ?>
 </table></div>

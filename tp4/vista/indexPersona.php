@@ -41,6 +41,8 @@ if(count($listaPersona)>0){
 		echo '<td><button type="button" class="btn btn-danger" onclick="confirmarBorrar(\''.$objPersona->getDni().'\')">borrar</button></td></tr>';
 	}
 	echo "</tbody>";
+}else{
+	echo '<tr><td class="container text-center">No hay personas cargadas</td></tr>';
 }
 
 ?>
