@@ -7,9 +7,13 @@ $objAbmPersona = new AbmPersona();
 
 $listaPersona = $objAbmPersona->buscar(null);
 ?>
-<div class="container"><h3>ABM - Persona</h3>
-<a href="personaNuevo.php">Ingresar una persona</a></div>
-<div class="container"><table class="table table-sm">
+<div class="card m-3">
+	<div class="card-header text-center">
+		<h3>ABM - Persona</h3>
+	</div>
+<div class="card-body">
+	<table class="table table-striped">
+	<thead class="table-primary">
 	<tr>
 		<th scope="col">Numero de DNI</th>
 		<th scope="col">Apellido</th>
@@ -20,21 +24,29 @@ $listaPersona = $objAbmPersona->buscar(null);
 		<th scope="col">Editar</th>
 		<th scope="col">Eliminar</th>
 	</tr>
+	</thead>
 <?php	
 
 if(count($listaPersona)>0){
+	echo '<tbody class="table-group-divider">';
     foreach($listaPersona as $objPersona){ 
-        echo '<div class="row"><div class="col"><tr><td>'.$objPersona->getDni().'</td></div>';
-		echo '<div class="col"><td>'.$objPersona->getApellido().'</td></div>';
-		echo '<div class="col"><td>'.$objPersona->getNombre().'</td></div>';
-		echo '<div class="col"><td>'.$objPersona->getFechaNac().'</td></div>';
-        echo '<div class="col"><td>'.$objPersona->getTelefono().'</td></div>';
-		echo '<div class="col"><td>'.$objPersona->getDomicilio().'</td></div>';
-        echo '<div class="col"><td><a href="personaEditar.php?NroDni='.$objPersona->getDni().'">editar</a></td></div>';
-        echo '<div class="col"><td><a href="accion/abmPersona.php?accion=borrar&NroDni='.$objPersona->getDni().'">borrar</a></td></tr></div></div>'; 
+        echo '<tr><td>'.$objPersona->getDni().'</td>';
+		echo '<td>'.$objPersona->getApellido().'</td>';
+		echo '<td>'.$objPersona->getNombre().'</td>';
+		echo '<td>'.$objPersona->getFechaNac().'</td>';
+        echo '<td>'.$objPersona->getTelefono().'</td>';
+		echo '<td>'.$objPersona->getDomicilio().'</td>';
+        echo '<td><a class="btn btn-success" href="personaEditar.php?NroDni='.$objPersona->getDni().'">editar</a></td>';
+        echo '<td><a class="btn btn-danger" href="accion/abmPersona.php?accion=borrar&NroDni='.$objPersona->getDni().'">borrar</a></td></tr>'; 
 	}
+	echo "</tbody>";
 }
 
 ?>
-</table></div>
+</table>
+<div class="container text-center mb-3">
+	<a class="btn btn-primary p-2" href="personaNuevo.php">Ingresar una persona</a>
+</div>
+</div>
+</div>
 <?php include_once './estructura/footer.php';?>

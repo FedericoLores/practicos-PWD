@@ -7,6 +7,16 @@ include_once (__DIR__.'/../../modelo/conector/BaseDatos.php');
 $datos = datosRecibidos();
 $obj = new AbmAuto();
 
+?>
+<div class="card m-3">
+    <div class="card-header text-center">
+        <h3><?php echo $datos['accion'];?></h3>
+    </div>
+    <div class="card-body">
+    <div class="row">
+    <div class="col offset-md-1 bg-danger">
+    <!-- espacio para mensaje de debug recibido-->
+<?php
 if(isset($datos['accion'])){
     $resp = false;
     if($datos['accion']=='editar'){
@@ -30,10 +40,21 @@ if(isset($datos['accion'])){
         $mensaje = "La accion ".$datos['accion']." no pudo concretarse.";
     }
 }
-?>
-<h3>Auto</h3>
-<a href="../indexAuto.php">Volver</a>
-
-<?php	
-echo $mensaje;
-?>
+?>  
+    </div>
+    </div>
+    <div class="row">
+        <div class="col offset-md-1">
+            <?php	
+            echo $mensaje;
+            ?>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-center">
+            <a class="btn btn-secondary" href="../indexAuto.php">Volver</a>
+        </div>
+    </div>
+</div>
+</div>
+<?php include_once '../../vista/estructura/footer.php';?>

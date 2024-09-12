@@ -90,7 +90,6 @@ class Auto{
         $base = new BaseDatos();
         $sql = "UPDATE auto SET Marca='".$this->getMarca()."', Modelo=".$this->getModelo().", DniDuenio=".
             $this->getDniDuenio()." WHERE Patente='".$this->getPatente()."'";
-        echo $sql;
         if ($base->getConnection()) {
             if ($base->Ejecutar($sql)) {
                 $resp = true;

@@ -3,8 +3,9 @@ include_once (__DIR__.'/estructura/header.php');
 include_once (__DIR__.'/../control/AbmPersona.php');
 include_once (__DIR__.'/../modelo/conector/BaseDatos.php');
 ?>
-<div class="container d-flex justify-content-center">
-    <h3>Nueva Persona</h3>
+<div class="card m-3">
+<div class="card-title text-center mt-3">
+    <h4>Nueva Persona</h4>
 </div>
 
 <form method="post" action="accion/abmPersona.php" id="formulario" class="needs-validation" novalidate>
@@ -22,14 +23,16 @@ include_once (__DIR__.'/../modelo/conector/BaseDatos.php');
         <label for="Domicilio" class="form-label">Domicilio</label>
         <input id="Domicilio" name ="Domicilio" type="text" class="form-control" required/>
         <input id="accion" name ="accion" value="nuevo" type="hidden">
-        <div class="container d-flex justify-content-center">
-            <input type="submit" name="submit" class="btn btn-success m-2" value="Enviar">
+        <div class="row my-2">
+            <div class="col mx-2">
+                <a  class="btn btn-primary" href="indexPersona.php">Volver</a>
+                <input type="submit" name="submit" class="btn btn-success mx-2" value="Enviar">
+            </div>
         </div>
     </div>
 	
 </form>
-<div class="container d-flex justify-content-center">
-    <a href="indexPersona.php"><input type="button" name="Volver" class="btn btn-primary m-2" value="Volver"></a>
+
 </div>
 <script>
     //seleccionamos el formulario

@@ -21,8 +21,8 @@ include_once (__DIR__.'/../modelo/conector/BaseDatos.php');
         <input id="accion" name ="accion" value="nuevo" type="hidden">
         <div class="row mt-2">
             <div class="col mx-2">
-                <a class="btn btn-secondary mx-2" href="indexAuto.php">Volver</a>
-                <input type="submit" name="submit" class="btn btn-primary" value="Enviar">
+                <a class="btn btn-secondary" href="indexAuto.php">Volver</a>
+                <input type="submit" name="submit" class="btn btn-primary mx-2" value="Enviar">
             </div>
         </div>
         
