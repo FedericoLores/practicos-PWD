@@ -11,12 +11,12 @@ class AbmAuto{
     private function cargarObjeto($param){
         $obj = null;
         if(array_key_exists('Patente', $param) && array_key_exists('Marca', $param) &&
-            array_key_exists('Modelo', $param) && array_key_exists('DniDuenio', $param)){
+            array_key_exists('Modelo', $param) && array_key_exists('NroDni', $param)){
             $persona = new Persona();
-            $duenio = $persona->listar("NroDni=".$param['DniDuenio']);
+            $duenio = $persona->listar("NroDni=".$param['NroDni']);
             if(count($duenio) == 1){
                 $obj = new Auto();
-                $obj->setear($param['Patente'], $param['Marca'], $param['Modelo'], $param['DniDuenio']);
+                $obj->setear($param['Patente'], $param['Marca'], $param['Modelo'], $param['NroDni']);
             }else if(count($duenio) == 0){
                 
             }

@@ -19,7 +19,7 @@ $listaAuto = $objAbmAuto->buscar(null);
 			<th scope="col" colspan="3">Marca</th>
 			<th scope="col">Modelo</th>
 			<th scope="col" colspan="2">DNI del propietario</th>
-			<th scope="col">Editar</th>
+			<th scope="col">Editar datos</th>
 			<th scope="col">Eliminar</th>
 		</tr>
 		</thead>
@@ -32,7 +32,7 @@ if(count($listaAuto)>0){
 		echo '<td colspan="3">'.$objAuto->getMarca().'</td>';
 		echo '<td>'.$objAuto->getModelo().'</td>';
 		echo '<td colspan="2">'.$objAuto->getDniDuenio().'</td>';
-        echo '<td><a id="editar" class="btn btn-success" href="autoEditar.php?Patente='.$objAuto->getPatente().'">editar</a></td>';
+        echo '<td><a id="editar" class="btn btn-success" href="autoEditar.php?Patente='.$objAuto->getPatente().'">cambiar dueño</a></td>';
         echo '<td><a id="eliminar" class="btn btn-danger" href="accion/abmAuto.php?accion=borrar&Patente='.$objAuto->getPatente().'">borrar</a></td></tr>'; 
 	}
 	echo "</tbody>";
