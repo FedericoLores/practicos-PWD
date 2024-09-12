@@ -12,7 +12,6 @@ include_once './estructura/header.php';
         <input type="submit" value="Enviar" name="submit"/>
     </form>
 </div>
-</body>
 <?php
 include_once './estructura/footer.php';
 ?>

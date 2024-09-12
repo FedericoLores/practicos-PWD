@@ -1,10 +1,9 @@
+<div class="relleno"></div>
+    <footer class="footer">
+        <span class="large-text">Programación Web Dinámica</span>
+        <span>Tecnicatura en Desarrollo Web</span>
+    </footer>
 <style>
-        body {
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
         .relleno {
             flex: 1; /* te prometo que no funciona sin esto */
         }
@@ -23,13 +22,6 @@
         .footer .large-text {
             font-size: 1.5rem; /* Tamaño más grande para el primer span */
         }
-    </style>
-</head>
-<body>
-    <div class="relleno"></div>
-    <footer class="footer">
-        <span class="large-text">Programación Web Dinámica</span>
-        <span>Tecnicatura en Desarrollo Web</span>
-    </footer>
+</style>
 </body>
 </html>

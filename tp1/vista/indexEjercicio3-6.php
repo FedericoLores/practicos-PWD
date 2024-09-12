@@ -34,8 +34,6 @@ include_once './estructura/header.php';
         <input type="submit" name="submit" value="Enviar">
     </form>
 </div>
-</body>
-</html>
 
 <?php
 include_once './estructura/footer.php';

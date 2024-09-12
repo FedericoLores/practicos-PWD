@@ -9,6 +9,9 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         .header-container {
@@ -43,5 +46,3 @@
         <h1>Trabajo Practico 1</h1>
         <h2>Ejercicio <?php echo htmlspecialchars($numeroEjercicio); ?></h2></a>
     </header>
-</body>
-</html>
