@@ -8,33 +8,39 @@ $objAbmAuto = new AbmAuto();
 $listaAuto = $objAbmAuto->buscar(null);
 ?>
 <div class="card m-3">
-<div class="card-header text-center">
-	<h3>ABM - Auto</h3>
-	<a class="btn btn-primary p-2" href="autoNuevo.php">Ingresar un auto</a>
-</div>
-<div class="card-body">
-	<table class="table table-sm">
-	<tr>
-		<th scope="col">Patente</th>
-		<th scope="col">Marca</th>
-		<th scope="col">Modelo</th>
-		<th scope="col">DNI del propietario</th>
-		<th scope="col">Editar</th>
-		<th scope="col">Eliminar</th>
-	</tr>
+	<div class="card-header text-center">
+		<h3>ABM - Auto</h3>
+	</div>
+	<div class="card-body">
+		<table class="table table-striped">
+		<thead class="table-primary">
+		<tr>
+			<th scope="col">Patente</th>
+			<th scope="col" colspan="3">Marca</th>
+			<th scope="col">Modelo</th>
+			<th scope="col" colspan="2">DNI del propietario</th>
+			<th scope="col">Editar</th>
+			<th scope="col">Eliminar</th>
+		</tr>
+		</thead>
 <?php	
 
 if(count($listaAuto)>0){
+	echo '<tbody class="table-group-divider">';
     foreach($listaAuto as $objAuto){ 
-        echo '<div class="row"><div class="col"><tr><td>'.$objAuto->getPatente().'</td></div>';
-		echo '<div class="col"><td>'.$objAuto->getMarca().'</td></div>';
-		echo '<div class="col"><td>'.$objAuto->getModelo().'</td></div>';
-		echo '<div class="col"><td>'.$objAuto->getDniDuenio().'</td></div>';
-        echo '<div class="col"><td><a class="btn btn-success" href="autoEditar.php?Patente='.$objAuto->getPatente().'">editar</a></td></div>';
-        echo '<div class="col"><td><a class="btn btn-danger" href="accion/abmAuto.php?accion=borrar&Patente='.$objAuto->getPatente().'">borrar</a></td></tr></div></div>'; 
+        echo '<tr><td>'.$objAuto->getPatente().'</td>';
+		echo '<td colspan="3">'.$objAuto->getMarca().'</td>';
+		echo '<td>'.$objAuto->getModelo().'</td>';
+		echo '<td colspan="2">'.$objAuto->getDniDuenio().'</td>';
+        echo '<td><a class="btn btn-success" href="autoEditar.php?Patente='.$objAuto->getPatente().'">editar</a></td>';
+        echo '<td><a class="btn btn-danger" href="accion/abmAuto.php?accion=borrar&Patente='.$objAuto->getPatente().'">borrar</a></td></tr>'; 
 	}
+	echo "</tbody>";
 }
 ?>
 </table></div>
+<div class="container text-center mb-3">
+<a class="btn btn-primary p-2" href="autoNuevo.php">Ingresar un auto</a>
+</div>
 </div>
 <?php include_once './estructura/footer.php';?>
