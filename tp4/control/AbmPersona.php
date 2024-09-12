@@ -1,5 +1,6 @@
 <?php
 include_once (__DIR__.'/../modelo/Persona.php');
+include_once (__DIR__.'/../modelo/Auto.php');
 class AbmPersona{
     //Espera como parametro un arreglo asociativo donde las claves coinciden con los nombres de las variables instancias del objeto
     /**
@@ -67,10 +68,14 @@ class AbmPersona{
     public function baja($param){
         $resp = false;
         if ($this->seteadosCamposClaves($param)){
+            $autos = new Auto();
+            $listaAutos = $autos->listar("DniDuenio=".$param['NroDni']);
             $elObjtTabla = $this->cargarObjetoConClave($param);
-            if ($elObjtTabla != null && $elObjtTabla->eliminar()){
-                $resp = true;
-            }
+            if(count($listaAutos)<=0){
+                if ($elObjtTabla != null && $elObjtTabla->eliminar()){
+                    $resp = true;
+                }
+            }            
         }
         return $resp;
     }
