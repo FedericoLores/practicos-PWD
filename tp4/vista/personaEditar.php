@@ -41,7 +41,7 @@ Numero de DNI: <a class="text-body bg-warning text-decoration-none px-1"><?php e
         <div class="row my-2">
             <div class="col mx-2">
                 <a href="indexPersona.php"><input type="button" class="btn btn-secondary mx-2" value="Volver"/></a>
-                <input type="submit" class="btn btn-primary">
+                <input type="submit" class="btn btn-primary" onclick="validar()">
             </div>
         </div>
         
