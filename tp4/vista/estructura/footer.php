@@ -4,7 +4,5 @@
                     <p class="display-8">Tecnicatura en Desarrollo Web</p>
                 </div>
             </footer>
-        </div>
-        
     </body>
 </html>

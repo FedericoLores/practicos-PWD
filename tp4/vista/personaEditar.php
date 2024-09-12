@@ -49,7 +49,8 @@ Numero de DNI: <a class="text-body bg-warning text-decoration-none px-1"><?php e
 </form>
 <?php 
 }else{
-    echo "<p>No se encontro la clave que desea modificar";
+    echo '<p class="container">No se encontro la clave que desea modificar<p>';
+    echo '<div class="container text-center mb-2"><a href="indexPersona.php" class="btn btn-secondary mx-2">Volver</a></div>';
 }?>
 </div>
 
