@@ -37,13 +37,31 @@ if(count($listaPersona)>0){
         echo '<td>'.$objPersona->getTelefono().'</td>';
 		echo '<td>'.$objPersona->getDomicilio().'</td>';
         echo '<td><a class="btn btn-success" href="personaEditar.php?NroDni='.$objPersona->getDni().'">editar</a></td>';
-        echo '<td><a class="btn btn-danger" href="accion/abmPersona.php?accion=borrar&NroDni='.$objPersona->getDni().'">borrar</a></td></tr>'; 
+        //echo '<td><a id="eliminar" class="btn btn-danger" href="accion/abmPersona.php?accion=borrar&NroDni='.$objPersona->getDni().'">borrar</a></td></tr>'; 
+		echo '<td><button type="button" class="btn btn-danger" onclick="confirmarBorrar(\''.$objPersona->getDni().'\')">borrar</button></td></tr>';
 	}
 	echo "</tbody>";
 }
 
 ?>
 </table>
+<div class="modal fade" tabindex="-1" id="confirmarEliminar">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar de la base de datos</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<span>Esta seguro que desea eliminar de la base de datos a la persona con DNI: <span class="text-body bg-warning text-decoration-none px-1" id="insertDni"></span></span>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+				<a id="eliminarPersona" class="btn btn-success">Confirmar eliminacion</a>
+			</div>
+		</div>
+  </div>
+</div>
 <div class="container text-center mb-3">
 	<a class="btn btn-primary p-2" href="personaNuevo.php">Ingresar una persona</a>
 </div>
