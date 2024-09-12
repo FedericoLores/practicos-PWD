@@ -1,5 +1,6 @@
 <?php
 include_once (__DIR__.'/../modelo/Auto.php');
+include_once (__DIR__.'/../modelo/Persona.php');
 class AbmAuto{
     //Espera como parametro un arreglo asociativo donde las claves coinciden con los nombres de las variables instancias del objeto
     /**
@@ -11,8 +12,14 @@ class AbmAuto{
         $obj = null;
         if(array_key_exists('Patente', $param) && array_key_exists('Marca', $param) &&
             array_key_exists('Modelo', $param) && array_key_exists('DniDuenio', $param)){
-            $obj = new Auto();
-            $obj->setear($param['Patente'], $param['Marca'], $param['Modelo'], $param['DniDuenio']);
+            $persona = new Persona();
+            $duenio = $persona->listar("NroDni=".$param['DniDuenio']);
+            if(count($duenio) == 1){
+                $obj = new Auto();
+                $obj->setear($param['Patente'], $param['Marca'], $param['Modelo'], $param['DniDuenio']);
+            }else if(count($duenio) == 0){
+                
+            }
         }
         return $obj;
     }
