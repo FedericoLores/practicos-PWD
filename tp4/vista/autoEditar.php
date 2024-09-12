@@ -24,21 +24,21 @@ if (isset($datos['Patente'])){
 <div class="container">
 Patente: <a class="text-body bg-warning text-decoration-none px-1"><?php echo $obj->getPatente()?></a>
 </div>
-<form method="post" action="accion/abmAuto.php" class="needs-validation" novalidate>
+<form method="post" action="accion/abmAuto.php" id="formulario" class="needs-validation" novalidate>
 	<div class="container">
         <label for="Patente" class="form-label d-none">Patente</label>
         <input id="Patente" class="form-control d-none" readonly name ="Patente" type="text" value="<?php echo $obj->getPatente()?>"/>
         <label for="Marca" class="form-label mt-2">Marca</label>
-        <input type="text" class="form-control" id="Marca" name="Marca" value="<?php echo $obj->getMarca()?>"/>
+        <input type="text" class="form-control" id="Marca" name="Marca" required value="<?php echo $obj->getMarca()?>"/>
         <label for="Modelo" class="form-label mt-2">Modelo</label>
-        <input type="number" class="form-control" id="Modelo" name="Modelo" value="<?php echo $obj->getModelo()?>"/>
+        <input type="number" class="form-control" id="Modelo" name="Modelo" required value="<?php echo $obj->getModelo()?>"/>
         <label for="DniDuenio" class="form-label mt-2">DNI del propietario</label>
-        <input type="number" class="form-control" id="DniDuenio" name="DniDuenio" value="<?php echo $obj->getDniDuenio()?>"/>
+        <input type="number" class="form-control" id="DniDuenio" name="DniDuenio" required value="<?php echo $obj->getDniDuenio()?>"/>
         <input id="accion" name ="accion" value="editar" type="hidden">
         <div class="row mt-2">
             <div class="col mx-2">
                 <a href="indexAuto.php"><input type="button" class="btn btn-secondary mx-2" value="Volver"/></a>
-                <input type="submit" class="btn btn-primary">
+                <input type="submit" onclick="validar()" class="btn btn-primary">
             </div>
         </div>
     </div>

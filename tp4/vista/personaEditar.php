@@ -23,20 +23,20 @@ if (isset($datos['NroDni'])){
 <div class="container">
 Numero de DNI: <a class="text-body bg-warning text-decoration-none px-1"><?php echo $obj->getDni()?></a>
 </div>
-<form method="post" action="accion/abmPersona.php">
+<form method="post" action="accion/abmPersona.php" id="formulario" class="needs-validation" novalidate>
 	<div class="container">
         <label for="NroDni" class="form-label d-none">Numero de DNI</label>
-        <input id="NroDni" class="form-control d-none" readonly name ="NroDni" type="text" value="<?php echo $obj->getDni()?>"/>
+        <input id="NroDni" class="form-control d-none" readonly name ="NroDni" required type="text" value="<?php echo $obj->getDni()?>"/>
         <label for="Apellido" class="form-label mt-2">Apellido</label>
-        <input type="text" class="form-control" id="Apellido" name="Apellido" value="<?php echo $obj->getApellido()?>"/>
+        <input type="text" class="form-control" id="Apellido" name="Apellido" required value="<?php echo $obj->getApellido()?>"/>
         <label for="Nombre" class="form-label">Nombre</label>
-        <input type="text" class="form-control mt-2" id="Nombre" name="Nombre" value="<?php echo $obj->getNombre()?>"/>
+        <input type="text" class="form-control mt-2" id="Nombre" name="Nombre" required value="<?php echo $obj->getNombre()?>"/>
         <label for="fechaNac" class="form-label">Fecha de nacimiento</label>
-        <input type="date" class="form-control mt-2" id="fechaNac" name="fechaNac" value="<?php echo $obj->getFechaNac()?>"/>
+        <input type="date" class="form-control mt-2" id="fechaNac" name="fechaNac" required value="<?php echo $obj->getFechaNac()?>"/>
         <label for="Telefono" class="form-label">Telefono</label>
-        <input type="tel" class="form-control mt-2" id="Telefono" name="Telefono" value="<?php echo $obj->getTelefono()?>"/>
+        <input type="tel" class="form-control mt-2" id="Telefono" name="Telefono" required value="<?php echo $obj->getTelefono()?>"/>
         <label for="Domicilio" class="form-label">Domicilio</label>
-        <input type="text" class="form-control mt-2" id="Domicilio" name="Domicilio" value="<?php echo $obj->getDomicilio()?>"/>
+        <input type="text" class="form-control mt-2" id="Domicilio" name="Domicilio" required value="<?php echo $obj->getDomicilio()?>"/>
         <input id="accion" name ="accion" value="editar" type="hidden">
         <div class="row my-2">
             <div class="col mx-2">

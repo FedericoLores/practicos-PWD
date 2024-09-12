@@ -26,7 +26,7 @@ include_once (__DIR__.'/../modelo/conector/BaseDatos.php');
         <div class="row my-2">
             <div class="col mx-2">
                 <a  class="btn btn-primary" href="indexPersona.php">Volver</a>
-                <input type="submit" name="submit" class="btn btn-success mx-2" value="Enviar">
+                <input type="submit" name="submit" class="btn btn-success mx-2" onclick="validar()" value="Enviar">
             </div>
         </div>
     </div>
@@ -34,27 +34,5 @@ include_once (__DIR__.'/../modelo/conector/BaseDatos.php');
 </form>
 
 </div>
-<script>
-    //seleccionamos el formulario
-    var formulario = document.getElementById("formulario")
-    //definimos un evento para validar
-    formulario.addEventListener('submit', evento => {
-        if (!formulario.checkValidity()) {//revisamos si algun campo es invalido
-            event.preventDefault()
-            event.stopPropagation()
-            }
-        formulario.classList.add('was-validated')
-    })
-
-    var loginModal = new bootstrap.Modal("#login")
-
-    //mostramos el modal apenas carga la pagina
-    window.addEventListener("DOMContentLoaded", () => {
-        loginModal.show()
-    })
-
-
-
-</script>
 <!--<input id="accion" name ="accion" value="nuevo" type="hidden">-->
 <?php include_once '../vista/estructura/footer.php';?>

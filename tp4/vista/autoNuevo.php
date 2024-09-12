@@ -22,7 +22,7 @@ include_once (__DIR__.'/../modelo/conector/BaseDatos.php');
         <div class="row mt-2">
             <div class="col mx-2">
                 <a class="btn btn-secondary" href="indexAuto.php">Volver</a>
-                <input type="submit" name="submit" class="btn btn-primary mx-2" value="Enviar">
+                <input type="submit" name="submit" class="btn btn-primary mx-2" onclick="validar()" value="Enviar">
             </div>
         </div>
         
@@ -30,21 +30,6 @@ include_once (__DIR__.'/../modelo/conector/BaseDatos.php');
 </form>
 </div>
 </div>
-<script>
-    //seleccionamos el formulario
-    var formulario = document.getElementById("formulario")
-    //definimos un evento para validar
-    formulario.addEventListener('submit', evento => {
-        if (!formulario.checkValidity()) {//revisamos si algun campo es invalido
-            event.preventDefault()
-            event.stopPropagation()
-            }
-        formulario.classList.add('was-validated')
-    })
 
-
-
-
-</script>
 <!--<input id="accion" name ="accion" value="nuevo" type="hidden">-->
 <?php include_once '../vista/estructura/footer.php';?>
