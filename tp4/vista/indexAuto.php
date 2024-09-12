@@ -41,6 +41,7 @@ if(count($listaAuto)>0){
 </table></div>
 <div class="container text-center mb-3">
 <a class="btn btn-primary p-2" href="autoNuevo.php">Ingresar un auto</a>
+<a class="btn btn-primary p-2" href="buscarAuto.php">Buscar un auto</a>
 </div>
 </div>
 <?php include_once './estructura/footer.php';?>
