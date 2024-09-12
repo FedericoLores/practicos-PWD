@@ -42,12 +42,6 @@ include_once (__DIR__.'/../modelo/conector/BaseDatos.php');
         formulario.classList.add('was-validated')
     })
 
-    var loginModal = new bootstrap.Modal("#login")
-
-    //mostramos el modal apenas carga la pagina
-    window.addEventListener("DOMContentLoaded", () => {
-        loginModal.show()
-    })
 
 
 
