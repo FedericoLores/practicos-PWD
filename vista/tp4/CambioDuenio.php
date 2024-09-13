@@ -19,7 +19,7 @@ if ($auto->seteadosCamposClaves($datos)){
     <h4>Editar Auto</h4>
 </div>
 <div class="card-body">
-<form method="post" action="../accion/tp4/accionCambioDuenio.php" id="formulario" class="needs-validation" novalidate>
+<form method="post" action="../accion/tp4/accionCambioDuenio.php" id="cambioDuenio" class="needs-validation" novalidate>
 	<div class="container">
         <label for="Patente" class="form-label">Patente</label>
         <input id="Patente" class="form-control" name ="Patente" type="text" value="<?php echo $patente;?>"/>

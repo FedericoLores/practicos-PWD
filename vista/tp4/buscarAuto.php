@@ -8,7 +8,7 @@ include_once('../../configuracion.php');
     <h4>Buscar Auto</h4>
 </div>
 <div class="card-body">
-<form method="post" action="../accion/tp4/accionBuscarAuto.php" class="needs-validation" novalidate>
+<form id="buscarAuto" method="post" action="../accion/tp4/accionBuscarAuto.php" class="needs-validation" novalidate>
 	<div class="container">
         <label for="Patente" class="form-label">Patente</label>
         <input id="Patente" class="form-control" name ="Patente" type="text"/>

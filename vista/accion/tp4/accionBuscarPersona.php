@@ -29,7 +29,7 @@ if($titulo != "Error" && $datos['NroDni'] != ""){
         $mensaje = "La busqueda se realizo correctamente.";
         $mensaje .= "<br>nombre: " . $busqueda[0]->getNombre() . "<br>apellido: " . $busqueda[0]->getApellido() . "<br>fecha de nacimiento: " . $busqueda[0]->getFechaNac() . "<br>Telefono: " . $busqueda[0]->getTelefono() . "<br>Domicilio: " . $busqueda[0]->getDomicilio();
         $mensaje = '
-        <form method="post" action="actualizarDatosPersona.php" id="formulario" class="needs-validation" novalidate>
+        <form method="post" action="actualizarDatosPersona.php" id="actualizarDatosPersona" class="needs-validation" novalidate>
             <div class="container">
                 <label for="NroDni" class="form-label d-none">Numero de DNI</label>
                 <input id="NroDni" class="form-control d-none" readonly name ="NroDni" required type="text" value="'. $busqueda[0]->getDni().'"/>

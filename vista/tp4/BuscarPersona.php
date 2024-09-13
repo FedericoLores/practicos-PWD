@@ -8,7 +8,7 @@ include_once('../../configuracion.php');
     <h4>Buscar Persona</h4>
 </div>
 <div class="card-body">
-<form method="post" action="../accion/tp4/accionBuscarPersona.php" class="needs-validation" novalidate>
+<form id="buscarPersona" method="post" action="../accion/tp4/accionBuscarPersona.php" class="needs-validation" novalidate>
 	<div class="container">
         <label for="NroDni" class="form-label">DNI</label>
         <input id="NroDni" class="form-control" name ="NroDni" type="text"/>
