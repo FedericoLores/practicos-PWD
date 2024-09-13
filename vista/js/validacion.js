@@ -17,7 +17,7 @@ function validar(){
 
 function confirmarBorrar(hrefBorrar){
     console.log(hrefBorrar)
-    var modal = new bootstrap.Modal("#confirmarEliminar")
+    var modal = new bootstrap.Modal("#confirmarEliminarPersona")
     modal.show()
     var botonBorrar = document.getElementById("eliminarPersona")
     botonBorrar.setAttribute("href","../accion/tp4/accionPersona.php?accion=borrar&NroDni="+hrefBorrar)
