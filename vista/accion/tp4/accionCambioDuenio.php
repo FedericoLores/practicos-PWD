@@ -66,7 +66,7 @@ if(isset($datos['accion'])){
         <div class="col text-center">
             <a class="btn btn-secondary" href="../../tp4/verAutos.php">Volver</a>
             <?php if($crearPersona){ ?>
-                <a class="btn btn-success" href="../../tp4/personaNuevo.php">Ingresar persona en la base de datos</a>    
+                <a class="btn btn-success" href="../../tp4/NuevaPersona.php">Ingresar persona en la base de datos</a>    
             <?php }?> 
         </div>
     </div>

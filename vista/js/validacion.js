@@ -20,7 +20,7 @@ function confirmarBorrar(hrefBorrar){
     var modal = new bootstrap.Modal("#confirmarEliminar")
     modal.show()
     var botonBorrar = document.getElementById("eliminarPersona")
-    botonBorrar.setAttribute("href","accion/abmPersona.php?accion=borrar&NroDni="+hrefBorrar)
+    botonBorrar.setAttribute("href","accion/accionPersona.php?accion=borrar&NroDni="+hrefBorrar)
     var mostrarDni = document.getElementById("insertDni")
     mostrarDni.innerHTML = hrefBorrar
 }

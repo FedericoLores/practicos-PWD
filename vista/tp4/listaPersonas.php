@@ -36,7 +36,7 @@ if(count($listaPersona)>0){
         echo '<td>'.$objPersona->getTelefono().'</td>';
 		echo '<td>'.$objPersona->getDomicilio().'</td>';
 		echo '<td><a class="btn btn-warning" href="autosPersona.php?NroDni='.$objPersona->getDni().'">Autos</a></td>';
-        echo '<td><a class="btn btn-success" href="personaEditar.php?NroDni='.$objPersona->getDni().'">editar</a></td>';
+        echo '<td><a class="btn btn-success" href="../accion/tp4/accionBuscarPersona.php?NroDni='.$objPersona->getDni().'&accion=buscar">editar</a></td>';
         //echo '<td><a id="eliminar" class="btn btn-danger" href="../accion/tp4/abmPersona.php?accion=borrar&NroDni='.$objPersona->getDni().'">borrar</a></td></tr>'; 
 		echo '<td><button type="button" class="btn btn-danger" onclick="confirmarBorrar(\''.$objPersona->getDni().'\')">borrar</button></td></tr>';
 	}
@@ -65,7 +65,7 @@ if(count($listaPersona)>0){
   </div>
 </div>
 <div class="container text-center mb-3">
-	<a class="btn btn-primary p-2" href="personaNuevo.php">Ingresar una persona</a>
+	<a class="btn btn-primary p-2" href="NuevaPersona.php">Ingresar una persona</a>
 	<a class="btn btn-primary p-2 mx-2" href="BuscarPersona.php">Buscar una persona</a>
 </div>
 </div>
