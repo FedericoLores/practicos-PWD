@@ -64,9 +64,9 @@ if(isset($datos['accion'])){
     <?php } ?>
     <div class="row mt-2">
         <div class="col text-center">
-            <a class="btn btn-secondary" href="../../tp4/autoNuevo.php">Volver</a>
+            <a class="btn btn-secondary" href="../../tp4/nuevoAuto.php">Volver</a>
             <?php if($crearPersona){ ?>
-                <a class="btn btn-success" href="../../tp4/NuevaPersona.php">Ingresar persona en la base de datos</a>    
+                <a class="btn btn-success" href="../../tp4/nuevaPersona.php">Ingresar persona en la base de datos</a>    
             <?php }?> 
         </div>
     </div>

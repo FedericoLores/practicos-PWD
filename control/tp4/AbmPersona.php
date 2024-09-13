@@ -1,74 +1,64 @@
 <?php
 class AbmPersona{
-    //Espera como parametro un arreglo asociativo donde las claves coinciden con los nombres de las variables instancias del objeto
-    /**
-     * Espera como parametro un arreglo asociativo donde las claves coinciden con los nombres de las variables instancias del objeto
-     * @param array $param
+    /** Espera como parametro un arreglo asociativo donde las claves coinciden con los nombres de las variables instancias del objeto
+     * @param array $datos
      * @return Persona
      */
-    private function cargarObjeto($param){
-        $obj = null;
-        if(array_key_exists('NroDni', $param) && array_key_exists('Apellido', $param) &&
-            array_key_exists('Nombre', $param) && array_key_exists('fechaNac', $param)&&
-            array_key_exists('Telefono', $param) && array_key_exists('Domicilio', $param)){
-            $obj = new Persona();
-            $obj->setear($param['NroDni'], $param['Apellido'], $param['Nombre'], $param['fechaNac'], $param['Telefono'], $param['Domicilio']);
+    private function cargarObjeto($datos){
+        $persona = null;
+        if(array_key_exists('NroDni', $datos) && array_key_exists('Apellido', $datos) &&
+            array_key_exists('Nombre', $datos) && array_key_exists('fechaNac', $datos)&&
+            array_key_exists('Telefono', $datos) && array_key_exists('Domicilio', $datos)){
+            $persona = new Persona();
+            $persona->setear($datos['NroDni'], $datos['Apellido'], $datos['Nombre'], $datos['fechaNac'], $datos['Telefono'], $datos['Domicilio']);
         }
-        return $obj;
+        return $persona;
     }
     
-    /**
-     * Espera como parametro un arreglo asociativo donde las claves coinciden con los nombres de las variables instancias del objeto que son claves
-     * @param array $param
+    /** Espera como parametro un arreglo asociativo donde las claves coinciden con los nombres de las variables instancias del objeto que son claves
+     * @param array $datos
      * @return Persona
      */
-    private function cargarObjetoConClave($param){
-        $obj = null;
-        if(isset($param['NroDni']) ){
-            $obj = new Persona();
-            $obj->setear($param['NroDni'], null, null, null,null,null);
+    private function cargarObjetoConClave($datos){
+        $persona = null;
+        if(isset($datos['NroDni']) ){
+            $persona = new Persona();
+            $persona->setear($datos['NroDni'], null, null, null, null, null);
         }
-        return $obj;
+        return $persona;
     }
     
     
-    /**
-     * Corrobora que dentro del arreglo asociativo estan seteados los campos claves
-     * @param array $param
+    /** Corrobora que dentro del arreglo asociativo estan seteados los campos claves
+     * @param array $datos
      * @return boolean
      */
-    
-    private function seteadosCamposClaves($param){
+    private function seteadosCamposClaves($datos){
         $resp = false;
-        if (isset($param['NroDni']))
+        if (isset($datos['NroDni']))
             $resp = true;
         return $resp;
     }
     
-    /**
-     * 
-     * @param array $param
-     */
-    public function alta($param){
+    public function alta($datos){
         $resp = false;
-        //$param['Patente'] =null;
-        $elObjtTabla = $this->cargarObjeto($param);
+        $elObjtTabla = $this->cargarObjeto($datos);
         if($elObjtTabla != null && $elObjtTabla->ingresar()){
             $resp = true;
         }
         return $resp;
     }
-    /**
-     * permite eliminar un objeto 
-     * @param array $param
+
+    /** permite eliminar un objeto 
+     * @param array $datos
      * @return boolean
      */
-    public function baja($param){
+    public function baja($datos){
         $resp = false;
-        if ($this->seteadosCamposClaves($param)){
+        if ($this->seteadosCamposClaves($datos)){
             $autos = new Auto();
-            $listaAutos = $autos->listar("DniDuenio=".$param['NroDni']);
-            $elObjtTabla = $this->cargarObjetoConClave($param);
+            $listaAutos = $autos->listar("DniDuenio=".$datos['NroDni']);
+            $elObjtTabla = $this->cargarObjetoConClave($datos);
             if(count($listaAutos)<=0){
                 if ($elObjtTabla != null && $elObjtTabla->eliminar()){
                     $resp = true;
@@ -78,15 +68,14 @@ class AbmPersona{
         return $resp;
     }
     
-    /**
-     * permite modificar un objeto
-     * @param array $param
+    /** permite modificar un objeto
+     * @param array $datos
      * @return boolean
      */
-    public function modificacion($param){
+    public function modificacion($datos){
         $resp = false;
-        if ($this->seteadosCamposClaves($param)){
-            $elObjtTabla = $this->cargarObjeto($param);
+        if ($this->seteadosCamposClaves($datos)){
+            $elObjtTabla = $this->cargarObjeto($datos);
             if($elObjtTabla!=null and $elObjtTabla->modificar()){
                 $resp = true;
             }
@@ -94,19 +83,17 @@ class AbmPersona{
         return $resp;
     }
     
-    /**
-     * permite buscar un objeto
-     * @param array $param
+    /** permite buscar un objeto
+     * @param array $datos
      * @return array
      */
-    public function buscar($param){
-        //$where = " true "; no se que es esto????
+    public function buscar($datos){
         $where = "";
-        if ($param != NULL){
-            if(isset($param['NroDni'])){
-                $where .= "NroDni=".$param['NroDni'];
-            }else if(isset($param['DniDuenio'])){
-                $where .= "NroDni=".$param['DniDuenio'];
+        if ($datos != NULL){
+            if(isset($datos['NroDni'])){
+                $where .= "NroDni=".$datos['NroDni'];
+            }else if(isset($datos['DniDuenio'])){
+                $where .= "NroDni=".$datos['DniDuenio'];
             }
         }
         $persona = new Persona();

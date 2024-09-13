@@ -16,6 +16,7 @@ class Persona{
         $this->telefono = 0;
         $this->domicilio = "";
     }
+
     public function setear($dni, $apellido, $nombre, $fechaNac, $telefono, $domicilio){
         $this->dni = $dni;
         $this->apellido = $apellido;
@@ -24,6 +25,7 @@ class Persona{
         $this->telefono = $telefono;
         $this->domicilio = $domicilio;
     }
+    
     public function getDni(){
         return $this->dni;
     }

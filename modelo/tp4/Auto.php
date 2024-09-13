@@ -12,12 +12,14 @@ class Auto{
         $this->modelo = "";
         $this->dniDuenio = "";
     }
+
     public function setear($patente,$marca,$modelo,$dniDuenio){
         $this->setPatente($patente);
         $this->setMarca($marca);
         $this->setModelo($modelo);
         $this->setDniDuenio($dniDuenio);
     }
+    
     public function getPatente(){
         return $this->patente;
     }

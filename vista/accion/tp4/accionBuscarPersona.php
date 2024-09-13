@@ -57,7 +57,7 @@ if(isset($datos['accion']) && $datos['NroDni'] != ""){
     </div>
     <div class="row">
         <div class="col text-center">
-            <a class="btn btn-secondary" href="../../tp4/BuscarPersona.php">Volver</a>';
+            <a class="btn btn-secondary" href="../../tp4/buscarPersona.php">Volver</a>';
     }
 }else{
     $mensaje = "Accion Invalida.";

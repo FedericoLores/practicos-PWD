@@ -27,7 +27,6 @@ function datosRecibidos() {
         $datos = $_GET;
 	}
 	return $datos;
-
 }
 
 ?>

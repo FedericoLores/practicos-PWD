@@ -17,8 +17,8 @@ class BaseDatos extends PDO{
         $this->host = 'localhost';
         $this->database = 'infoautos';
         $this->user = 'root';
-        /**$this->pass = ''; 
-        $this->debug = true;*/
+        $this->pass = null; 
+        $this->debug = false;
         $this->error ="";
         $this->sql ="";
         $this->indice =0;
@@ -33,6 +33,7 @@ class BaseDatos extends PDO{
             $this->connection = false;
         }
     }
+
     public function getConnection(){
         return $this->connection;
     }
@@ -84,15 +85,15 @@ class BaseDatos extends PDO{
     }
 
     private function analizarDebug(){
-        $e = $this->errorInfo();
-        $this->setError($e);
-        //es necesario? debug nunca se modifica???
+        $errorDebug = $this->errorInfo();
+        $this->setError($errorDebug);
         if($this->getDebug()){
             echo "<pre>";
-            print_r($e);
+            print_r($errorDebug);
             echo "</pre>";
         }
     }
+
     private function EjecutarInsert($sql){
         $resultado=parent::query($sql);
         if(!$resultado){
@@ -106,6 +107,7 @@ class BaseDatos extends PDO{
         }
         return $id;
     }
+
     private function EjecutarDeleteUpdate($sql){
         $cantFilas =-1;
         $resultado = parent::query($sql);
@@ -116,6 +118,7 @@ class BaseDatos extends PDO{
         }
         return $cantFilas;
     }
+
     private function EjecutarSelect($sql){
         $cant = -1;
         $resultado = parent::query($sql);
@@ -129,17 +132,16 @@ class BaseDatos extends PDO{
         }
         return $cant;  
     }
+
     public function Ejecutar($sql){
         $this->setError("");
         $this->setSQL($sql);
-        if(stristr($sql,"insert")){ // se desea NSERT ? 
+        if(stristr($sql,"insert")){
             $resp =  $this->EjecutarInsert($sql);
         }
-        // se desea UPDATE o DELETE ? 
         if(stristr($sql,"update") OR stristr($sql,"delete")){
             $resp =  $this->EjecutarDeleteUpdate($sql);
         }
-        // se desea ejecutar un select
         if(stristr($sql,"select")){
             $resp =  $this->EjecutarSelect($sql);
         }

@@ -3,7 +3,7 @@ include_once ('../estructura/tp4/header.php');
 include_once('../../configuracion.php');
 ?>
 <div class="card m-3">
-<div class="card-title text-center mt-3">
+<div class="card-header text-center mt-3">
 <h4>Nuevo Auto</h4>
 </div>
 <div class="card-body">
@@ -29,6 +29,4 @@ include_once('../../configuracion.php');
 </form>
 </div>
 </div>
-
-<!--<input id="accion" name ="accion" value="nuevo" type="hidden">-->
 <?php include_once '../estructura/footer.php';?>
