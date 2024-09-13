@@ -1,7 +1,7 @@
 <?php
-    include_once("../estructura/header_accion.php");
-    include_once("../utils/scripts.php");
-    include_once("../../control/control_ej4.php");
+    include_once("../../estructura/tp2/header_accion.php");
+    include_once("../../../control/tp2/control_ej4.php");
+    include_once '../../../configuracion.php';
     $control = new Control_ej4();
     $datos = datosRecibidos();
 ?>

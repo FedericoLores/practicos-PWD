@@ -1,8 +1,8 @@
 <?php
-include_once '../../control/controlEjercicio2.php';
-include_once '../utils/scripts.php';
+include_once '../../../control/tp1/controlEjercicio2.php';
+include_once '../../../configuracion.php';
 $numeroEjercicio = 2;
-include_once '../estructura/header_accion.php';
+include_once '../../estructura/tp1/header_accion.php';
 
 $cargaHoraria = new ControlEj2();
 $datos = datosRecibidos();
@@ -17,5 +17,5 @@ if($horas != 0){
     <p><?php echo $texto; ?></p>
 </div>
 <?php
-include_once '../estructura/footer.php';
+include_once '../../estructura/tp1/footer.php';
 ?>

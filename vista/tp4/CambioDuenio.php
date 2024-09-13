@@ -29,7 +29,7 @@ if ($auto->seteadosCamposClaves($datos)){
         <div class="row mt-2">
             <div class="col mx-2">
                 <a href="../tp4/verAutos.php"><input type="button" class="btn btn-secondary mx-2" value="Volver"/></a>
-                <input type="submit" onclick="validar()" class="btn btn-primary">
+                <input type="submit" onclick="validar('cambioDuenio')" class="btn btn-primary">
             </div>
         </div>
     </div>

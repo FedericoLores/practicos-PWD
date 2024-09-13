@@ -1,8 +1,8 @@
 <?php
-include_once '../estructura/headerEj2.php';
+include_once '../../estructura/tp2/headerEj2.php';
 ?>
 <div class="container mt-3">
-    <form name="form" method="get" class="needs-validation" novalidate action="./action/actionEjercicio3-6.php">
+    <form name="saludo" id="saludo" method="get" class="needs-validation" novalidate action="../../accion/tp2/ej2/actionEjercicio3-6.php">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="mb-3">
@@ -71,43 +71,13 @@ include_once '../estructura/headerEj2.php';
                     </div>
                 </fieldset>
                 <div class="mb-3">
-                    <button type="submit" name="submit" class="btn btn-primary">Enviar</button>
+                    <button type="submit" name="submit" onclick="validar('saludo')" class="btn btn-primary">Enviar</button>
                 </div>
             </div>
         </div>
     </form>
 </div>
-    <script>
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        const forms = document.querySelectorAll('.needs-validation')
-        var desmarcados = false
-        // Loop over them and prevent submission
-        Array.from(forms).forEach(form => {
-            form.addEventListener('submit', event => {
-            deportes = document.getElementsByName("deportes[]")
-            for (i = 0; i<deportes.length; i++) {
-                if(deportes[i].checked){
-                    for(j=0; j<deportes.length; j++){
-                        deportes[j].removeAttribute("required")
-                        i = deportes.length
-                        desmarcados = true
-                    }
-                }else if(desmarcados){
-                    for(k=0; k<deportes.length; k++){
-                        deportes[k].setAttribute("required", "")
-                        desmarcados = false
-                    }
-                }
-            }
-            if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
-            }
-            form.classList.add('was-validated')
-            }, false)
-        })
-    </script>
+
 <?php
-include_once '../estructura/footer.php';
+include_once '../../estructura/footer.php';
 ?>

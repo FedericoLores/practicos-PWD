@@ -1,7 +1,7 @@
 <?php
 class Control_ej1{
 
-    public $directorio = "../../modelo/subidas/";
+    public $directorio = "../../../modelo/tp3/";
     public $directorioFile = "";
     public $valido = false; //es una mouse herramienta para despues
     public $tipoFile = "";
@@ -13,7 +13,7 @@ class Control_ej1{
             if($_FILES["archivo"] != null){
                 $this->directorioFile = $this->directorio . basename($_FILES["archivo"]["name"]);
                 $this->tipoFile = strtolower(pathinfo($this->directorioFile,PATHINFO_EXTENSION));
-                $this->enlaceFile = "localhost/dinamica/tp3" . substr($this->directorioFile,2);//cambiar a relativo? sacar dinamica
+                $this->enlaceFile = "localhost/practicos-PWD/modelo/tp3" . substr($this->directorioFile,2);//cambiar a relativo? sacar dinamica
                 $this->valido = true;
             }
         }
@@ -121,7 +121,7 @@ class Control_ej1{
             $this->repetidos();
             $this->tamaño();
             $this->formato();
-    
+
             if ($this->getValido()) {
                 if (move_uploaded_file($_FILES["archivo"]["tmp_name"], $this->getDirectorioFile())) {
                     $this->setMensaje($this->getMensaje() . "El archivo " . htmlspecialchars(basename($_FILES["archivo"]["name"])) . " se subió con éxito.");

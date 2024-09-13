@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trabajo Practico 1</title>
+    <script src="../js/validacion.js"></script>
     <style>
 
         body {

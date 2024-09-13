@@ -1,7 +1,7 @@
 <?php
-include_once '../estructura/headerEj2.php';
+include_once '../../estructura/tp2/headerEj2.php';
 ?>
-    <form name="form" method="get" action="./action/actionEjercicio2.php" class="needs-validation" novalidate>
+    <form name="horarios" id="horarios" method="get" action="../../accion/tp2/ej2/actionEjercicio2.php" class="needs-validation" novalidate>
         <h3 style="text-align: center;">Carga horaria por dia de la semana</h3>
         <div class="container text-center">
             <div class="row row-cols-5">
@@ -33,26 +33,10 @@ include_once '../estructura/headerEj2.php';
             </div>
         </div>
         <div class="d-flex justify-content-center">
-            <input type="submit" name="submit" class="btn btn-primary" value="Enviar">
+            <input type="submit" name="submit" onclick="validar('horarios')" class="btn btn-primary" value="Enviar">
         </div>
     </form>
     <script>
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        const forms = document.querySelectorAll('.needs-validation')
-
-        // Loop over them and prevent submission
-        Array.from(forms).forEach(form => {
-            form.addEventListener('submit', event => {
-            if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
-            }
-
-            form.classList.add('was-validated')
-            }, false)
-        })
 
         var cineModal = new bootstrap.Modal("#cine")
         //mostramos el modal apenas carga la pagina
@@ -62,6 +46,6 @@ include_once '../estructura/headerEj2.php';
 
     </script>
 <?php
-include_once '../estructura/footer.php';
+include_once '../../estructura/footer.php';
 ?>
 

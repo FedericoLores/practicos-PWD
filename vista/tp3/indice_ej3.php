@@ -1,4 +1,4 @@
-<?php include_once("./estructura/header.php")?>
+<?php include_once("../estructura/tp3/header.php")?>
 <!-- boton modal -->
 <div class="d-flex justify-content-center p-5">
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cine">abrir formulario</button>
@@ -15,7 +15,7 @@
         </div>
         <div class="modal-body">
             <div class="container-fluid">
-                <form class="needs-validation" novalidate id="cinemaForm" name="cinemaForm" method="post" action="./accion/subir_ej3.php" enctype="multipart/form-data">
+                <form class="needs-validation" novalidate id="cinemaFormConArchivo" name="cinemaFormConArchivo" method="post" action="../accion/tp3/subir_ej3.php" enctype="multipart/form-data">
                     <div class="row">
                         <div class="col-md-6">
                             <label for="titulo" class="form-label fw-bold">T&iacute;tulo</label>
@@ -48,7 +48,7 @@
                         </div>
                         <div class="col-md-2">
                             <label for="anio" class="form-label fw-bold">A&ntilde;o</label>
-                            <input max="9999" type="number" class="form-control" id="anio" name="anio" required/>
+                            <input min="0" max="9999" type="number" class="form-control" id="anio" name="anio" required/>
                             <div class="invalid-feedback">Por favor ingrese un a&ntilde;o</div>
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                     <div class="row">
                         <div class="col-md-3">
                             <label for="duracion" class="form-label fw-bold">Duraci&oacute;n</label>
-                            <input type="number" max="999" class="form-control" id="duracion" name="duracion" required/>
+                            <input type="number" min="0" max="999" class="form-control" id="duracion" name="duracion" required/>
                             <div class="invalid-feedback">Por favor ingrese una duraci&oacute;n</div>
                         </div>
                         <div class="col-md-8">
@@ -113,7 +113,7 @@
                     
                     <div class="d-flex flex-row-reverse p-2">
                         <input type="reset" class="btn btn-light m-1" value="Borrar">
-                        <input type="submit" class="btn btn-primary m-1" value="Enviar">          
+                        <input type="submit" class="btn btn-primary m-1" onclick="validar('cinemaFormConArchivo')" value="Enviar">          
                     </div>
                 </form>                
 
@@ -125,21 +125,7 @@
 </div>
 
     <script>
-
-        //seleccionamos el formulario
-        var formulario = document.getElementById("cinemaForm")
-        //definimos un evento para validar
-        formulario.addEventListener('submit', evento => {
-            if (!formulario.checkValidity()) {//revisamos si algun campo es invalido
-                event.preventDefault()
-                event.stopPropagation()
-                }
-            formulario.classList.add('was-validated')
-        })
-
-        
-
-        document.getElementById("cinemaForm").addEventListener("submit", function(event){
+        document.getElementById("cinemaFormConArchivo").addEventListener("submit", function(event){
             var inputArchivo = document.getElementById("imagen");
             var archivoPath = inputArchivo.value;
             var archivo = inputArchivo.files[0];
@@ -175,4 +161,4 @@
 
     </script>
     
-<?php include_once("./estructura/footer.php")?>
+<?php include_once("../estructura/footer.php")?>

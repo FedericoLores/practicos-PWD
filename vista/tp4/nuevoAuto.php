@@ -21,7 +21,7 @@ include_once('../../configuracion.php');
         <div class="row mt-2">
             <div class="col mx-2">
                 <a class="btn btn-secondary" href="verAutos.php">Volver</a>
-                <input type="submit" name="submit" class="btn btn-primary mx-2" onclick="validar()" value="Enviar">
+                <input type="submit" name="submit" class="btn btn-primary mx-2" onclick="validar('nuevoAuto')" value="Enviar">
             </div>
         </div>
     </div>

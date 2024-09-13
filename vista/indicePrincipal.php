@@ -35,27 +35,27 @@ include_once("./estructura/headerPrincipal.php");
       <div class="modal-body">
         <div class="row">
             <div class="col my-2 d-flex justify-content-center">
-                <a class="btn btn-primary" href="../../tp1/vista/indexEjercicio1.php">Ejercicio 1</a>
+                <a class="btn btn-primary" href="./tp1/indexEjercicio1.php">Ejercicio 1</a>
             </div>
         </div>
         <div class="row">
             <div class="col my-2 d-flex justify-content-center">
-            <a class="btn btn-primary" href="../../tp1/vista/indexEjercicio2.php">Ejercicio 2</a>
+            <a class="btn btn-primary" href="./tp1/indexEjercicio2.php">Ejercicio 2</a>
             </div>
         </div>
         <div class="row">
             <div class="col my-2 d-flex justify-content-center">
-            <a class="btn btn-primary" href="../../tp1/vista/indexEjercicio3-6.php">Ejercicio 3-6</a>
+            <a class="btn btn-primary" href="./tp1/indexEjercicio3-6.php">Ejercicio 3-6</a>
             </div>
         </div>
         <div class="row">
             <div class="col my-2 d-flex justify-content-center">
-            <a class="btn btn-primary" href="../../tp1/vista/indexEjercicio7.php">Ejercicio 7</a>
+            <a class="btn btn-primary" href="./tp1/indexEjercicio7.php">Ejercicio 7</a>
             </div>
         </div>
         <div class="row">
             <div class="col my-2 d-flex justify-content-center">
-            <a class="btn btn-primary" href="../../tp1/vista/indexEjercicio8.php">Ejercicio 8</a>
+            <a class="btn btn-primary" href="./tp1/indexEjercicio8.php">Ejercicio 8</a>
             </div>
         </div>
       </div>
@@ -79,12 +79,12 @@ include_once("./estructura/headerPrincipal.php");
         </div>
         <div class="row">
             <div class="col my-2 d-flex justify-content-center">
-                <a class="btn btn-primary" href="../vista/indice_ej3.php">Ejercicio 3</a>
+                <a class="btn btn-primary" href="./tp2/indice_ej3.php">Ejercicio 3</a>
             </div>
         </div>
         <div class="row">
             <div class="col my-2 d-flex justify-content-center">
-                <a class="btn btn-primary" href="../vista/indice_ej4.php">Ejercicio 4</a>
+                <a class="btn btn-primary" href="./tp2/indice_ej4.php">Ejercicio 4</a>
             </div>
         </div>
       </div>
@@ -102,27 +102,27 @@ include_once("./estructura/headerPrincipal.php");
       <div class="modal-body">
         <div class="row">
             <div class="col my-2 d-flex justify-content-center">
-                <a class="btn btn-primary" href="../vista/ej2/indexEjercicio1.php">Ejercicio 1</a>
+                <a class="btn btn-primary" href="./tp2/ej2/indexEjercicio1.php">Ejercicio 1</a>
             </div>
         </div>
         <div class="row">
             <div class="col my-2 d-flex justify-content-center">
-                <a class="btn btn-primary" href="../vista/ej2/indexEjercicio2.php">Ejercicio 2</a>
+                <a class="btn btn-primary" href="./tp2/ej2/indexEjercicio2.php">Ejercicio 2</a>
             </div>
         </div>
         <div class="row">
             <div class="col my-2 d-flex justify-content-center">
-                <a class="btn btn-primary" href="../vista/ej2/indexEjercicio3-6.php">Ejercicio 3-6</a>
+                <a class="btn btn-primary" href="./tp2/ej2/indexEjercicio3-6.php">Ejercicio 3-6</a>
             </div>
         </div>
         <div class="row">
             <div class="col my-2 d-flex justify-content-center">
-                <a class="btn btn-primary" href="../vista/ej2/indexEjercicio7.php">Ejercicio 7</a>
+                <a class="btn btn-primary" href="./tp2/ej2/indexEjercicio7.php">Ejercicio 7</a>
             </div>
         </div>
         <div class="row">
             <div class="col my-2 d-flex justify-content-center">
-                <a class="btn btn-primary" href="../vista/ej2/indexEjercicio8.php">Ejercicio 8</a>
+                <a class="btn btn-primary" href="./tp2/ej2/indexEjercicio8.php">Ejercicio 8</a>
             </div>
         </div>
       </div>
@@ -140,17 +140,17 @@ include_once("./estructura/headerPrincipal.php");
       <div class="modal-body">
         <div class="row">
             <div class="col my-2 d-flex justify-content-center">
-                <a class="btn btn-primary" href="../../tp3/vista/indice_ej1.php">Ejercicio 1</a>
+                <a class="btn btn-primary" href="./tp3/indice_ej1.php">Ejercicio 1</a>
             </div>
         </div>
         <div class="row">
             <div class="col my-2 d-flex justify-content-center">
-                <a class="btn btn-primary" href="../../tp3/vista/indice_ej2.php">Ejercicio 2</a>
+                <a class="btn btn-primary" href="./tp3/indice_ej2.php">Ejercicio 2</a>
             </div>
         </div>
         <div class="row">
             <div class="col my-2 d-flex justify-content-center">
-                <a class="btn btn-primary" href="../../tp3/vista/indice_ej3.php">Ejercicio 3</a>
+                <a class="btn btn-primary" href="./tp3/indice_ej3.php">Ejercicio 3</a>
             </div>
         </div>
       </div>

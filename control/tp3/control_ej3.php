@@ -1,7 +1,7 @@
 <?php
 class Control_ej3{
 
-    public $directorio = "../../modelo/subidas/";
+    public $directorio = "../../../modelo/tp3/";
     public $directorioFile = "";
     public $valido = false; //es una mouse herramienta para despues
     public $tipoFile = "";
@@ -14,7 +14,7 @@ class Control_ej3{
                 if($_FILES["imagen"]["error"] == 0){
                     $this->directorioFile = $this->directorio . basename($_FILES["imagen"]["name"]);
                     $this->tipoFile = strtolower(pathinfo($this->directorioFile,PATHINFO_EXTENSION));
-                    $this->enlaceFile = "localhost/dinamica/tp3" . substr($this->directorioFile,2);//cambiar a relativo? sacar dinamica
+                    $this->enlaceFile = "localhost/practicos-PWD/modelo/tp3" . substr($this->directorioFile,2);//cambiar a relativo? sacar dinamica
                     $this->valido = true;
                 }
             }

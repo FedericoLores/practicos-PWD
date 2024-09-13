@@ -1,7 +1,8 @@
 <?php
-include_once '../../estructura/header_accionEj2.php';
-include_once '../../../control/ej2/controlEjercicio2.php';
-include_once '../../utils/scripts.php';
+include_once '../../../estructura/tp2/header_accionEj2.php';
+include_once '../../../../control/tp2/ej2/controlEjercicio2.php';
+include_once '../../../../configuracion.php';
+
 $cargaHoraria = new ControlEj2Tp2();
 $datos = datosRecibidos();
 $horas = $cargaHoraria->calcularCargaHoraria($datos);
@@ -16,5 +17,5 @@ if($horas != 0){
     <h4><?php echo $resultado ?></h4>
 </div>
 <?php
-include_once '../../estructura/footer.php';
+include_once '../../../estructura/footer.php';
 ?>

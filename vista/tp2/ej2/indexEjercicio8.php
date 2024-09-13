@@ -1,7 +1,7 @@
 <?php
-include_once '../estructura/headerEj2.php';
+include_once '../../estructura/tp2/headerEj2.php';
 ?>
-    <form name="from" method="get" class="needs-validation" novalidate action="./action/actionEjercicio8.php">
+    <form name="valorEntrada" id="valorEntrada" method="get" class="needs-validation" novalidate action="../../accion/tp2/ej2/actionEjercicio8.php">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col col-md-3 my-2">
@@ -18,29 +18,11 @@ include_once '../estructura/headerEj2.php';
             </div>
             <div class="row justify-content-center">
                 <div class="col text-center">
-                    <input type="submit" value="Enviar" class="btn btn-primary" name="submit"/>
+                    <input type="submit" value="Enviar" onclick="validar('valorEntrada')" class="btn btn-primary" name="submit"/>
                 </div>
             </div>
         </div>
     </form>
-    <script>
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
-
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        const forms = document.querySelectorAll('.needs-validation')
-
-        // Loop over them and prevent submission
-        Array.from(forms).forEach(form => {
-            form.addEventListener('submit', event => {
-            if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
-            }
-
-            form.classList.add('was-validated')
-            }, false)
-        })
-    </script>
 <?php
-include_once '../estructura/footer.php';
+include_once '../../estructura/footer.php';
 ?>

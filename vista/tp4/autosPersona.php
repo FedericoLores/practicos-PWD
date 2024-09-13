@@ -24,7 +24,7 @@ if ($persona->seteadosCamposClaves($datos)){
         <div class="row my-2">
             <div class="col mx-2">
                 <a  class="btn btn-primary" href="listaPersonas.php">Volver</a>
-                <input type="submit" name="submit" class="btn btn-success mx-2" onclick="validar()" value="Enviar">
+                <input type="submit" name="submit" class="btn btn-success mx-2" onclick="validar('autosPersona')" value="Enviar">
             </div>
         </div>
     </div>

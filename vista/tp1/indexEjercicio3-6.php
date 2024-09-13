@@ -1,13 +1,13 @@
 <?php
 $numeroEjercicio = "3 a 6";
-include_once './estructura/header.php';
+include_once '../estructura/tp1/header.php';
 ?>
 <div align="center">
-    <form name="form" method="get" action="./action/actionEjercicio3-6.php">
-        Nombre: <input style="margin: 5px; border-color: lightgray;" type="text" id="name" name="name" placeholder="Nombre"/></br>
-        Apellido: <input style="margin: 5px; border-color: lightgray;" type="text" id="apellido" name="apellido" placeholder="Apellido"/></br>
-        Edad: <input style="margin: 5px; border-color: lightgray;" type="text" id="age" name="age" placeholder="Edad"/></br>
-        Direccion: <input style="margin: 5px; border-color: lightgray;" type="text" id="direccion" name="direccion" placeholder="Direccion"/></br>
+    <form name="form" method="get" action="../accion/tp1/actionEjercicio3-6.php">
+        Nombre: <input style="margin: 5px; border-color: lightgray;" type="text" id="name" name="name" placeholder="Nombre" required/></br>
+        Apellido: <input style="margin: 5px; border-color: lightgray;" type="text" id="apellido" name="apellido" placeholder="Apellido" required/></br>
+        Edad: <input style="margin: 5px; border-color: lightgray;" type="number" min="0" id="age" name="age" placeholder="Edad" required/></br>
+        Direccion: <input style="margin: 5px; border-color: lightgray;" type="text" id="direccion" name="direccion" placeholder="Direccion" required/></br>
         Nivel de estudios</br>
         <input type="radio" id="noTiene" name="estudios" value="no tengo" checked/>
         <label for="noTiene">No tiene</label></br>
@@ -36,5 +36,5 @@ include_once './estructura/header.php';
 </div>
 
 <?php
-include_once './estructura/footer.php';
+include_once '../estructura/tp1/footer.php';
 ?>

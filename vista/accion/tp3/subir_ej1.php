@@ -1,6 +1,7 @@
-<?php include_once("../estructura/header_accion.php");
-  include_once("../../control/control_ej1.php");
-  include_once("../utils/scripts.php");
+<?php 
+  include_once("../../estructura/tp3/header_accion.php");
+  include_once("../../../control/tp3/control_ej1.php");
+  include_once '../../../configuracion.php';
   $control = new Control_ej1();
   $mensaje = $control->revisarTodo();
   $archivo = $control->getDirectorioFile();
@@ -9,4 +10,4 @@
     <h2><a href="<?php echo $archivo;?>"><?php echo "$mensaje";?></a></h2>
     
   </div>
-<?php include_once("../estructura/footer.php");?>
+<?php include_once("../../estructura/footer.php");?>

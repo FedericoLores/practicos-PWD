@@ -1,7 +1,6 @@
  //seleccionamos el formulario
-function validar(){
-    var formulario = document.getElementById("formulario")
-    console.log(formulario)
+function validar(idForm){
+    var formulario = document.getElementById(idForm)
     //definimos un evento para validar
     if(formulario){
         formulario.addEventListener('submit', evento => {

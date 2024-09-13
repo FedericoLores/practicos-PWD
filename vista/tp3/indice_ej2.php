@@ -1,6 +1,6 @@
-<?php include_once("./estructura/header.php");?>
+<?php include_once("../estructura/tp3/header.php");?>
     <div class="container">
-        <form class="needs-validation p-5" novalidate id="formArchivo" name="formArchivo" method="post" action="./accion/subir_ej2.php" enctype="multipart/form-data">
+        <form class="needs-validation p-5" novalidate id="formArchivoTxt" name="formArchivoTxt" method="post" action="../accion/tp3/subir_ej2.php" enctype="multipart/form-data">
             <div class="text-center">
                 <p>ingrese un archivo de texto</p>
             </div>    
@@ -10,7 +10,7 @@
                 <div class="invalid-feedback" id="errorSubida">por favor ingrese un archivo .txt.</div>
             </div>
             <div class="text-center">
-                <input class="btn btn-light border mt-3" type="submit" value="Subir archivo">
+                <input class="btn btn-light border mt-3" onclick="validar('formArchivoTxt')" type="submit" value="Subir archivo">
             </div>
         </form>
     </div>
@@ -19,7 +19,7 @@
     <script>
         
         //seleccionamos el formulario
-        var formulario = document.getElementById("formArchivo")
+        var formulario = document.getElementById("formArchivoTxt")
         //definimos un evento para validar
         formulario.addEventListener('submit', evento => {
             if (!formulario.checkValidity()) {//revisamos si algun campo es invalido
@@ -31,7 +31,7 @@
 
 
 
-        document.getElementById("formArchivo").addEventListener("submit", function(event){
+        document.getElementById("formArchivoTxt").addEventListener("submit", function(event){
             var inputArchivo = document.getElementById("archivo");
             var archivoPath = inputArchivo.value;
             var archivo = inputArchivo.files[0];
@@ -62,4 +62,4 @@
 
 
     </script>
-<?php include_once("./estructura/footer.php");?>
+<?php include_once("../estructura/footer.php");?>

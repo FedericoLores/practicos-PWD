@@ -1,6 +1,7 @@
-<?php include_once("../estructura/header_accion.php");
-    include_once("../utils/scripts.php");
-    include_once("../../control/control_ej3.php");
+<?php 
+    include_once("../../estructura/tp3/header_accion.php");
+    include_once("../../../control/tp3/control_ej3.php");
+    include_once '../../../configuracion.php';
     $datos = datosRecibidos();
     $control = new Control_ej3();
     $mensaje = $control->revisarTodo();
@@ -9,7 +10,7 @@
 
     <div class="d-flex justify-content-center p-5">
         <button type="button" class="btn btn-primary mx-5" data-bs-toggle="modal" data-bs-target="#resultado">Resultados</button>
-        <a href="../indice_ej3.php" class="btn btn-white mx-5 border" >Volver Atras</a>
+        <a href="../../tp3/indice_ej3.php" class="btn btn-white mx-5 border" >Volver Atras</a>
     </div>
 
     <div id="resultado" class="modal bg-white">
@@ -54,4 +55,4 @@
             resultadoModal.show()
         })
     </script>
-<?php include_once("../estructura/footer.php")?>
+<?php include_once("../../estructura/footer.php")?>
