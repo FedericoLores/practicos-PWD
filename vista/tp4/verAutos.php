@@ -35,7 +35,7 @@ if(count($listaAuto)>0){
 	}
 	echo "</tbody>";
 }else{
-	echo '<tr><td class="container text-center">No hay autos cargados</td></tr>';
+	echo '<tbody><tr><td class="container text-center">No hay autos cargados</td></tr></tbody>';
 }
 ?>
 </table></div>

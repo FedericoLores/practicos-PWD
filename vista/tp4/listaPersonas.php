@@ -37,7 +37,6 @@ if(count($listaPersona)>0){
 		echo '<td>'.$objPersona->getDomicilio().'</td>';
 		echo '<td><a class="btn btn-warning" href="autosPersona.php?NroDni='.$objPersona->getDni().'">Autos</a></td>';
         echo '<td><a class="btn btn-success" href="../accion/tp4/accionBuscarPersona.php?NroDni='.$objPersona->getDni().'&accion=buscar">editar</a></td>';
-        //echo '<td><a id="eliminar" class="btn btn-danger" href="../accion/tp4/abmPersona.php?accion=borrar&NroDni='.$objPersona->getDni().'">borrar</a></td></tr>'; 
 		echo '<td><button type="button" class="btn btn-danger" onclick="confirmarBorrar(\''.$objPersona->getDni().'\')">borrar</button></td></tr>';
 	}
 	echo "</tbody>";
@@ -47,7 +46,7 @@ if(count($listaPersona)>0){
 
 ?>
 </table>
-<div class="modal fade" tabindex="-1" id="confirmarEliminar">
+<div class="modal fade" tabindex="-1" id="confirmarEliminarPersona">
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">

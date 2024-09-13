@@ -24,7 +24,6 @@ include_once('../../configuracion.php');
                 <input type="submit" name="submit" class="btn btn-primary mx-2" onclick="validar()" value="Enviar">
             </div>
         </div>
-        
     </div>
 </form>
 </div>

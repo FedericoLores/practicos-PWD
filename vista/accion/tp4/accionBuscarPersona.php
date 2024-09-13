@@ -18,7 +18,7 @@ if(isset($datos['accion'])){
     <div class="col offset-md-1 bg-danger">
     <!-- espacio para mensaje de debug recibido-->
 <?php
-if(isset($datos['accion']) && $datos['NroDni'] != ""){
+if($titulo != "Error" && $datos['NroDni'] != ""){
     $resp = false;
     if($datos['accion']=='buscar'){
         if($busqueda = $persona->buscar($datos)){

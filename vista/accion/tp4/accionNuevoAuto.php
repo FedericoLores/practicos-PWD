@@ -19,7 +19,7 @@ if(isset($datos['accion'])){
     <div class="col offset-md-1 bg-danger">
     <!-- espacio para mensaje de debug recibido-->
 <?php
-if(isset($datos['accion'])){
+if($titulo != "Error"){
     $resp = false;
     $crearPersona = false;
     $mensaje = "";
@@ -52,20 +52,16 @@ if(isset($datos['accion'])){
             ?>
         </div>
     </div>
-    <?php if($crearPersona){ ?>
-        <div class="row">
+    <?php if($titulo != "Error" && $crearPersona){
+        echo'<div class="row">
             <div class="col offset-md-1">
                 <span>No se ha encontrado persona con ese dni en la base de datos</span>
-                <div class="col">
-                    
-                </div>
             </div>
-        </div>
-    <?php } ?>
+        </div>';} ?>
     <div class="row mt-2">
         <div class="col text-center">
             <a class="btn btn-secondary" href="../../tp4/nuevoAuto.php">Volver</a>
-            <?php if($crearPersona){ ?>
+            <?php if($titulo != "Error" && $crearPersona){ ?>
                 <a class="btn btn-success" href="../../tp4/nuevaPersona.php">Ingresar persona en la base de datos</a>    
             <?php }?> 
         </div>

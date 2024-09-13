@@ -4,7 +4,7 @@ include_once('../../configuracion.php');
 ?>
 
 <div class="card m-3">
-<div class="card-title text-center mt-3">
+<div class="card-header text-center mt-3">
     <h4>Buscar Persona</h4>
 </div>
 <div class="card-body">

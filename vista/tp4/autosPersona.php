@@ -4,10 +4,10 @@ include_once('../../configuracion.php');
 $persona = new AbmPersona();
 $datos = datosRecibidos();
 $dni = "";
-if (isset($datos['NroDni'])){
+if ($persona->seteadosCamposClaves($datos)){
     $listaPersonas = $persona->buscar($datos);
     if (count($listaPersonas)==1){
-        $dni = $listaPersonas[0]->getDni();
+        $dni = $datos['NroDni'];
     }
 }
 ?>

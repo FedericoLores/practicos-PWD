@@ -17,36 +17,32 @@ if(isset($datos['accion'])){
     <div class="row">
     <div class="col offset-md-1 bg-danger">
     <!-- espacio para mensaje de debug recibido-->
-<?php
-if(isset($datos['accion'])){
-    $busqueda = $auto->buscarPersona($datos);
-}
-
-?>
- 
     </div>
     </div>
     <?php
-if(count($busqueda)>0){
-    echo '<table class="table table-striped">
-		<thead class="table-primary">
-        <div class="container mb-2 text-center">mostrando resultados para DNI:' . $datos['NroDni'] . '</div>
-		<tr>
-			<th scope="col">Patente</th>
-			<th scope="col" colspan="3">Marca</th>
-			<th scope="col">Modelo</th>
-		</tr>
-		</thead>';
-	echo '<tbody class="table-group-divider">';
-    foreach($busqueda as $auto){ 
-        echo '<tr><td>'.$auto->getPatente().'</td>';
-		echo '<td colspan="3">'.$auto->getMarca().'</td>';
-		echo '<td>'.$auto->getModelo().'</td>';
-	}
-	echo "</tbody></table>";
-}else{
-	echo '<p class="container text-center">No se encontró un auto a nombre del DNI: ' . $datos['NroDni'] .' </p>';
-}
+    if($titulo != "Error"){
+        $busqueda = $auto->buscarPersona($datos);
+        if(count($busqueda)>0){
+            echo '<table class="table table-striped">
+                <thead class="table-primary">
+                <div class="container mb-2 text-center">mostrando resultados para DNI:' . $datos['NroDni'] . '</div>
+                <tr>
+                    <th scope="col">Patente</th>
+                    <th scope="col" colspan="3">Marca</th>
+                    <th scope="col">Modelo</th>
+                </tr>
+                </thead>';
+            echo '<tbody class="table-group-divider">';
+            foreach($busqueda as $auto){ 
+                echo '<tr><td>'.$auto->getPatente().'</td>';
+                echo '<td colspan="3">'.$auto->getMarca().'</td>';
+                echo '<td>'.$auto->getModelo().'</td>';
+            }
+            echo "</tbody></table>";
+        }else{
+            echo '<p class="container text-center">No se encontró un auto a nombre del DNI: ' . $datos['NroDni'] .' </p>';
+        }
+    }
     ?>
     <div class="row">
         <div class="col text-center">

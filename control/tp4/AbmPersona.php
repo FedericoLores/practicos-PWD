@@ -33,7 +33,7 @@ class AbmPersona{
      * @param array $datos
      * @return boolean
      */
-    private function seteadosCamposClaves($datos){
+    public function seteadosCamposClaves($datos){
         $resp = false;
         if (isset($datos['NroDni']))
             $resp = true;
