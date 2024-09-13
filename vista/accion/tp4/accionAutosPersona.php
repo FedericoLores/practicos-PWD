@@ -3,11 +3,15 @@ include_once ('../../estructura/tp4/header_accion.php');
 include_once('../../../configuracion.php');
 $datos = datosRecibidos();
 $auto = new AbmAuto();
-
+if(isset($datos['accion'])){
+    $titulo = $datos['accion'];
+}else{
+    $titulo = "Error";
+}
 ?>
 <div class="card m-3">
     <div class="card-header text-center">
-        <h3><?php echo $datos['accion'];?></h3>
+        <h3><?php echo $titulo;?></h3>
     </div>
     <div class="card-body">
     <div class="row">
@@ -15,7 +19,6 @@ $auto = new AbmAuto();
     <!-- espacio para mensaje de debug recibido-->
 <?php
 if(isset($datos['accion'])){
-    $resp = false;
     $busqueda = $auto->buscarPersona($datos);
 }
 

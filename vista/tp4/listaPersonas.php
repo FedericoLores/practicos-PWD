@@ -66,6 +66,7 @@ if(count($listaPersona)>0){
 </div>
 <div class="container text-center mb-3">
 	<a class="btn btn-primary p-2" href="personaNuevo.php">Ingresar una persona</a>
+	<a class="btn btn-primary p-2 mx-2" href="BuscarPersona.php">Buscar una persona</a>
 </div>
 </div>
 </div>

@@ -4,10 +4,15 @@ include_once('../../../configuracion.php');
 $datos = datosRecibidos();
 $obj = new AbmAuto();
 $persona = new AbmPersona();
+if(isset($datos['accion'])){
+    $titulo = $datos['accion'];
+}else{
+    $titulo = "Error";
+}
 ?>
 <div class="card m-3">
     <div class="card-header text-center">
-        <h3><?php echo $datos['accion']." auto";?></h3>
+        <h3><?php echo $titulo." auto";?></h3>
     </div>
     <div class="card-body">
     <div class="row">
@@ -35,7 +40,7 @@ if(isset($datos['accion'])){
         $mensaje .= " La accion ".$datos['accion']." no pudo concretarse.";
     }
 }else{
-    $mensaje = "Accion indefinida";
+    $mensaje = "Accion invalida";
 }
 ?>  
     </div>
