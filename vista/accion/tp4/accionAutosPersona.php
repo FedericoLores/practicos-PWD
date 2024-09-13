@@ -3,6 +3,7 @@ include_once ('../../estructura/tp4/header_accion.php');
 include_once('../../../configuracion.php');
 $datos = datosRecibidos();
 $auto = new AbmAuto();
+$persona = new AbmPersona();
 if(isset($datos['accion'])){
     $titulo = $datos['accion'];
 }else{
@@ -20,7 +21,7 @@ if(isset($datos['accion'])){
     </div>
     </div>
     <?php
-    if($titulo != "Error"){
+    if($titulo != "Error" && $persona->seteadosCamposClaves($datos)){
         $busqueda = $auto->buscarPersona($datos);
         if(count($busqueda)>0){
             echo '<table class="table table-striped">
@@ -42,6 +43,8 @@ if(isset($datos['accion'])){
         }else{
             echo '<p class="container text-center">No se encontró un auto a nombre del DNI: ' . $datos['NroDni'] .' </p>';
         }
+    }else{
+        $mensaje = "Accion Invalida.";
     }
     ?>
     <div class="row">

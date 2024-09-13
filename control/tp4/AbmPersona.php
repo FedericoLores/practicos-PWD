@@ -49,21 +49,19 @@ class AbmPersona{
         return $resp;
     }
 
-    /** permite eliminar un objeto 
-     * @param array $datos
-     * @return boolean
-     */
     public function baja($datos){
-        $resp = false;
+        $resp = -1;
         if ($this->seteadosCamposClaves($datos)){
             $autos = new Auto();
             $listaAutos = $autos->listar("DniDuenio=".$datos['NroDni']);
             $elObjtTabla = $this->cargarObjetoConClave($datos);
             if(count($listaAutos)<=0){
                 if ($elObjtTabla != null && $elObjtTabla->eliminar()){
-                    $resp = true;
+                    $resp = 1;
                 }
-            }            
+            }else{
+                $resp = 0;
+            }         
         }
         return $resp;
     }

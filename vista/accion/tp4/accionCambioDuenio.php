@@ -2,7 +2,7 @@
 include_once ('../../estructura/tp4/header_accion.php');
 include_once('../../../configuracion.php');
 $datos = datosRecibidos();
-$obj = new AbmAuto();
+$auto = new AbmAuto();
 $persona = new AbmPersona();
 if(isset($datos['accion'])){
     $titulo = $datos['accion'];
@@ -19,18 +19,17 @@ if(isset($datos['accion'])){
     <div class="col offset-md-1 bg-danger">
     <!-- espacio para mensaje de debug recibido-->
 <?php
-if($titulo != "Error"){
+if($titulo != "Error" && $auto->seteadosCamposClaves($datos) && $persona->seteadosCamposClaves($datos)){
     $crearPersona = false;
-    $mensaje = "";
-    if($resultados = $obj->buscar($datos)){
+    if($resultados = $auto->buscar($datos)){
         if($persona->buscar($datos)){
             $mensaje = "se encontro la persona";
             $datos['Marca'] = $resultados[0]->getMarca();
             $datos['Modelo'] = $resultados[0]->getModelo();
-            if($obj->modificacion($datos)){
-                $mensaje = "se actualizo correctamente";
+            if($auto->modificacion($datos)){
+                $mensaje .= "</br>se actualizo correctamente";
             } else{
-                $mensaje = "fallo la actualización de datos";
+                $mensaje .= "</ br>fallo la actualización de datos";
             }
         }else{
             $mensaje = "no se encontro la persona";

@@ -10,17 +10,17 @@ include_once('../../configuracion.php');
 <form method="post" action="../accion/tp4/accionNuevaPersona.php" id="nuevaPersona" class="needs-validation" novalidate>
 	<div class="container">
         <label for="NroDni" class="form-label">Numero de DNI</label>
-        <input id="NroDni" name ="NroDni" type="number" class="form-control" required/>
+        <input id="NroDni" name ="NroDni" type="number" class="form-control" min="10000000" max="99999999" required/>
         <label for="Apellido" class="form-label">Apellido</label>
-        <input id="Apellido" name ="Apellido" type="text" class="form-control" required/>
+        <input id="Apellido" name ="Apellido" type="text" class="form-control" maxlength="50" pattern="^[A-Za-zÁÉÍÓÚÑáéíóúñü]+(?: [A-Za-zÁÉÍÓÚÑáéíóúñü]+)*$" required/>
         <label for="Nombre" class="form-label">Nombre</label>
-        <input id="Nombre" name ="Nombre" type="text" min="0" class="form-control" required/>
+        <input id="Nombre" name ="Nombre" type="text" min="0" class="form-control" maxlength="50" pattern="^[A-Za-zÁÉÍÓÚÑáéíóúñü]+(?: [A-Za-zÁÉÍÓÚÑáéíóúñü]+)*$" required/>
         <label for="fechaNac" class="form-label">Fecha de nacimiento</label>
-        <input id="fechaNac" name ="fechaNac" type="date" class="form-control" required/>
+        <input id="fechaNac" name ="fechaNac" type="date" class="form-control" min="1900-01-01" max="3000-12-31" required/>
         <label for="Telefono" class="form-label">Telefono</label>
-        <input id="Telefono" name ="Telefono" type="tel" class="form-control" required/>
+        <input id="Telefono" name ="Telefono" type="number" class="form-control" min="1000000" max="9999999999" required/>
         <label for="Domicilio" class="form-label">Domicilio</label>
-        <input id="Domicilio" name ="Domicilio" type="text" class="form-control" required/>
+        <input id="Domicilio" name ="Domicilio" type="text" class="form-control" maxlength="50" required/>
         <input id="accion" name ="accion" value="nuevo" type="hidden">
         <div class="row my-2">
             <div class="col mx-2">

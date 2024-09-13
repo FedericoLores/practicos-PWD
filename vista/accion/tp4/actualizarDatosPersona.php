@@ -2,7 +2,7 @@
 include_once ('../../estructura/tp4/header_accion.php');
 include_once('../../../configuracion.php');
 $datos = datosRecibidos();
-$obj = new AbmPersona();
+$persona = new AbmPersona();
 if(isset($datos['accion'])){
     $titulo = $datos['accion'];
 }else{
@@ -18,17 +18,15 @@ if(isset($datos['accion'])){
         <div class="col offset-md-1 bg-danger">
         <!-- espacio para mensaje de debug recibido-->
 <?php
-if($titulo != "Error"){
-    $resp = false;
-    if($datos['accion']=='editar'){
-        if($obj->modificacion($datos)){
-            $resp = true;
+if($titulo != "Error" && $persona->seteadosCamposClaves($datos)){
+    if(count($persona->buscar($datos)) > 0){
+        if($persona->modificacion($datos)){
+            $mensaje = "La edición se realizo correctamente.";
+        }else{
+            $mensaje = "La edición no pudo concretarse.";
         }
-    }
-    if($resp){
-        $mensaje = "La edición se realizo correctamente.";
-    }else {
-        $mensaje = "La edición no pudo concretarse.";
+    }else{
+        $mensaje = "No existe la persona.";
     }
 }else{
     $mensaje = "Accion Invalida.";

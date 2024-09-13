@@ -2,7 +2,7 @@
 include_once ('../../estructura/tp4/header_accion.php');
 include_once('../../../configuracion.php');
 $datos = datosRecibidos();
-$obj = new AbmPersona();
+$persona = new AbmPersona();
 if(isset($datos['accion'])){
     $titulo = $datos['accion'];
 }else{
@@ -21,14 +21,15 @@ if(isset($datos['accion'])){
 if($titulo != "Error"){
     $resp = false;
     if($datos['accion']=='nuevo'){
-        if($obj->alta($datos)){
-            $resp =true;
+        if(count($persona->buscar($datos)) < 0){
+            if($persona->alta($datos)){
+                $mensaje = "La creacion de ".$datos['Nombre']." se realizo correctamente.";
+            }else{
+                $mensaje = "La creacion no pudo concretarse.";
+            }
+        }else{
+            $mensaje = "Ya existe una persona con el dni: " . $datos['NroDni'];
         }
-    }
-    if($resp){
-        $mensaje = "La creacion de ".$datos['Nombre']." se realizo correctamente.";
-    }else {
-        $mensaje = "La creacion no pudo concretarse.";
     }
 }else{
     $mensaje = "Accion Invalida.";

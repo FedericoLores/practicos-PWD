@@ -2,7 +2,7 @@
 include_once ('../../estructura/tp4/header_accion.php');
 include_once('../../../configuracion.php');
 $datos = datosRecibidos();
-$obj = new AbmPersona();
+$persona = new AbmPersona();
 if(isset($datos['accion'])){
     $titulo = $datos['accion'];
 }else{
@@ -18,18 +18,20 @@ if(isset($datos['accion'])){
         <div class="col offset-md-1 bg-danger">
         <!-- espacio para mensaje de debug recibido-->
 <?php
-if($titulo != "Error"){
-    $resp = false;
-    if($datos['accion']=='borrar'){
-        if($obj->baja($datos)){
-            $resp =true;
+if($titulo != "Error" && $persona->seteadosCamposClaves($datos)){
+        if($datos['accion']=='borrar'){
+            if($resp = $persona->baja($datos) == 1){
+                $mensaje = "La eliminación de ".$datos['NroDni']. " se realizo correctamente.";
+            }elseif($resp == 0){
+                if(count($persona->buscar($datos)) > 0){
+                    $mensaje = "No se puede eliminar a ". $datos['NroDni'].". Tiene uno o mas autos a su nombre.";
+                }else{
+                    $mensaje = "Persona no encontrada.";
+                }
+            }else{
+                $mensaje = "La eliminación falló.";
+            }
         }
-    }
-    if($resp){
-        $mensaje = "La eliminación se realizo correctamente.";
-    }else {
-        $mensaje = "La eliminación no pudo concretarse.";
-    }
 }else{
     $mensaje ="Accion Invalida.";
 }

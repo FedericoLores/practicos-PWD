@@ -19,19 +19,18 @@ if(isset($datos['accion'])){
     <!-- espacio para mensaje de debug recibido-->
 <?php
 $crearPersona = false;
-if($titulo != "Error"){
-    $resp = false;
+if($titulo != "Error" && $auto->seteadosCamposClaves($datos)){
     $mensaje = "";
     if($datos['accion']=='borrar'){
         if($auto->baja($datos)){
-            $resp =true;
+                $mensaje .= " La eliminación se realizo correctamente.";
+        }elseif(count($auto->buscar($datos)) > 0){
+            $mensaje .= " Auto no encontrado.";
+        }else{
+            $mensaje .= " La eliminación no pudo concretarse.";
         }
     }
-    if($resp){
-        $mensaje .= " La eliminación se realizo correctamente.";
-    }else {
-        $mensaje .= " La eliminación no pudo concretarse.";
-    }
+        
 }else{
     $mensaje = "Accion Invalida.";
 }

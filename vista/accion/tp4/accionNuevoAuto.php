@@ -2,7 +2,7 @@
 include_once ('../../estructura/tp4/header_accion.php');
 include_once('../../../configuracion.php');
 $datos = datosRecibidos();
-$obj = new AbmAuto();
+$auto = new AbmAuto();
 $persona = new AbmPersona();
 if(isset($datos['accion'])){
     $titulo = $datos['accion'];
@@ -19,24 +19,22 @@ if(isset($datos['accion'])){
     <div class="col offset-md-1 bg-danger">
     <!-- espacio para mensaje de debug recibido-->
 <?php
-if($titulo != "Error"){
+if($titulo != "Error" && $auto->seteadosCamposClaves($datos)){
     $resp = false;
     $crearPersona = false;
     $mensaje = "";
     if($datos['accion']=='nuevo'){
         if(count($persona->buscar($datos)) != null){
-            if($obj->alta($datos)){
+            if($auto->alta($datos)){
                 $resp =true;
             }
         }else {
             $crearPersona = true;
         }
-        
     }
     if($resp){
         $mensaje .= " La accion ".$datos['accion']." se realizo correctamente.";
     }else {
-        //print_r($datos);
         $mensaje .= " La accion ".$datos['accion']." no pudo concretarse.";
     }
 }else{

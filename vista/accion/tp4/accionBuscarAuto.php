@@ -18,7 +18,7 @@ if(isset($datos['accion'])){
     <div class="col offset-md-1 bg-danger">
     <!-- espacio para mensaje de debug recibido-->
 <?php
-if($titulo != "Error"){
+if($titulo != "Error" && $auto->seteadosCamposClaves($datos)){
     $resp = false;
     if($datos['accion']=='buscar'){
         if($busqueda = $auto->buscar($datos)){

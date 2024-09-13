@@ -19,7 +19,7 @@ if ($persona->seteadosCamposClaves($datos)){
 <form method="post" action="../accion/tp4/accionAutosPersona.php" id="autosPersona" class="needs-validation" novalidate>
 	<div class="container">
         <label for="NroDni" class="form-label">Numero de DNI</label>
-        <input id="NroDni" name ="NroDni" type="number" class="form-control" value="<?php echo $dni;?>" required/>
+        <input id="NroDni" name ="NroDni" type="number" class="form-control" value="<?php echo $dni;?>" min="10000000" max="99999999" required/>
         <input id="accion" name ="accion" value="listar autos persona" type="hidden">
         <div class="row my-2">
             <div class="col mx-2">
