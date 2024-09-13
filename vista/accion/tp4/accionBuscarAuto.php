@@ -1,7 +1,6 @@
 <?php
-include_once (__DIR__.'/../estructura/header_accion.php');
-include_once (__DIR__.'/../../control/AbmAuto.php');
-include_once (__DIR__.'/../../utils/scripts.php');
+include_once ('../../estructura/tp4/header_accion.php');
+include_once('../../../configuracion.php');
 $datos = datosRecibidos();
 $auto = new AbmAuto();
 
@@ -42,9 +41,9 @@ if(isset($datos['accion'])){
     </div>
     <div class="row">
         <div class="col text-center">
-            <a class="btn btn-secondary" href="../buscarAuto.php">Volver</a>
+            <a class="btn btn-secondary" href="../../tp4/buscarAuto.php">Volver</a>
         </div>
     </div>
 </div>
 </div>
-<?php include_once '../../vista/estructura/footer.php';?>
+<?php include_once ('../../estructura/footer.php');?>

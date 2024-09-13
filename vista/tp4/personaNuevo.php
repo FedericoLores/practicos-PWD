@@ -1,6 +1,6 @@
 <?php
-include_once (__DIR__.'/estructura/header.php');
-include_once (__DIR__.'/../control/AbmPersona.php');
+include_once ('../estructura/tp4/header.php');
+include_once('../../configuracion.php');
 ?>
 <div class="card m-3">
 <div class="card-title text-center mt-3">
@@ -24,7 +24,7 @@ include_once (__DIR__.'/../control/AbmPersona.php');
         <input id="accion" name ="accion" value="nuevo" type="hidden">
         <div class="row my-2">
             <div class="col mx-2">
-                <a  class="btn btn-primary" href="indexPersona.php">Volver</a>
+                <a  class="btn btn-primary" href="listaPersonas.php">Volver</a>
                 <input type="submit" name="submit" class="btn btn-success mx-2" onclick="validar()" value="Enviar">
             </div>
         </div>
@@ -34,4 +34,4 @@ include_once (__DIR__.'/../control/AbmPersona.php');
 
 </div>
 <!--<input id="accion" name ="accion" value="nuevo" type="hidden">-->
-<?php include_once '../vista/estructura/footer.php';?>
+<?php include_once '../estructura/footer.php';?>

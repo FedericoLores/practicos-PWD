@@ -1,8 +1,6 @@
 <?php
-include_once (__DIR__.'/estructura/header.php');
-include_once (__DIR__.'/../control/AbmAuto.php');
-include_once (__DIR__.'/../utils/scripts.php');
-
+include_once ('../estructura/tp4/header.php');
+include_once('../../configuracion.php');
 $objAbmAuto = new AbmAuto();
 $datos = datosRecibidos();
 $obj =NULL;
@@ -20,7 +18,7 @@ if (isset($datos['Patente'])){
 </div>
 <div class="card-body">
 <?php if ($obj!=null){?>
-<form method="post" action="accion/accionCambioDuenio.php" id="formulario" class="needs-validation" novalidate>
+<form method="post" action="../accion/tp4/accionCambioDuenio.php" id="formulario" class="needs-validation" novalidate>
 	<div class="container">
         <label for="Patente" class="form-label">Patente</label>
         <input id="Patente" class="form-control" name ="Patente" type="text" value="<?php echo $obj->getPatente()?>"/>
@@ -29,7 +27,7 @@ if (isset($datos['Patente'])){
         <input id="accion" name ="accion" value="editar" type="hidden">
         <div class="row mt-2">
             <div class="col mx-2">
-                <a href="indexAuto.php"><input type="button" class="btn btn-secondary mx-2" value="Volver"/></a>
+                <a href="../tp4/verAutos.php"><input type="button" class="btn btn-secondary mx-2" value="Volver"/></a>
                 <input type="submit" onclick="validar()" class="btn btn-primary">
             </div>
         </div>
@@ -38,8 +36,8 @@ if (isset($datos['Patente'])){
 <?php 
 }else{
     echo '<p class="container">No se encontro la clave que desea modificar<p>';
-    echo '<div class="container text-center"><a href="indexAuto.php" class="btn btn-secondary mx-2">Volver</a></div>';
+    echo '<div class="container text-center"><a href=""../tp4/verAutos.php"" class="btn btn-secondary mx-2">Volver</a></div>';
 }?>
 </div>
 </div>
-<?php include_once '../vista/estructura/footer.php';?>
+<?php include_once '../estructura/footer.php';?>

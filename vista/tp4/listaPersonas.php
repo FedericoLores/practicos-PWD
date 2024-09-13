@@ -1,6 +1,6 @@
 <?php
-include_once (__DIR__.'/estructura/header.php');
-include_once (__DIR__.'/../control/AbmPersona.php');
+include_once ('../estructura/tp4/header.php');
+include_once('../../configuracion.php');
 $objAbmPersona = new AbmPersona();
 
 $listaPersona = $objAbmPersona->buscar(null);
@@ -35,7 +35,7 @@ if(count($listaPersona)>0){
         echo '<td>'.$objPersona->getTelefono().'</td>';
 		echo '<td>'.$objPersona->getDomicilio().'</td>';
         echo '<td><a class="btn btn-success" href="personaEditar.php?NroDni='.$objPersona->getDni().'">editar</a></td>';
-        //echo '<td><a id="eliminar" class="btn btn-danger" href="accion/abmPersona.php?accion=borrar&NroDni='.$objPersona->getDni().'">borrar</a></td></tr>'; 
+        //echo '<td><a id="eliminar" class="btn btn-danger" href="../accion/tp4/abmPersona.php?accion=borrar&NroDni='.$objPersona->getDni().'">borrar</a></td></tr>'; 
 		echo '<td><button type="button" class="btn btn-danger" onclick="confirmarBorrar(\''.$objPersona->getDni().'\')">borrar</button></td></tr>';
 	}
 	echo "</tbody>";
@@ -67,4 +67,4 @@ if(count($listaPersona)>0){
 </div>
 </div>
 </div>
-<?php include_once './estructura/footer.php';?>
+<?php include_once '../estructura/footer.php';?>

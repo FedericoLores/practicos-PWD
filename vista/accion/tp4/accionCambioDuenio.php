@@ -1,12 +1,10 @@
 <?php
-include_once (__DIR__.'/../estructura/header_accion.php');
-include_once (__DIR__.'/../../control/AbmAuto.php');
-include_once (__DIR__.'/../../control/AbmPersona.php');
-include_once (__DIR__.'/../../utils/scripts.php');
-include_once (__DIR__.'/../../modelo/conector/BaseDatos.php');
+include_once ('../../estructura/tp4/header_accion.php');
+include_once('../../../configuracion.php');
 $datos = datosRecibidos();
 $obj = new AbmAuto();
 $persona = new AbmPersona();
+
 ?>
 <div class="card m-3">
     <div class="card-header text-center">
@@ -18,27 +16,24 @@ $persona = new AbmPersona();
     <!-- espacio para mensaje de debug recibido-->
 <?php
 if(isset($datos['accion'])){
-    $resp = false;
     $crearPersona = false;
     $mensaje = "";
-    if($datos['accion']=='nuevo'){
-        if(count($persona->buscar($datos)) != null){
-            if($obj->alta($datos)){
-                $resp =true;
+    if($resultados = $obj->buscar($datos)){
+        if($persona->buscar($datos)){
+            $mensaje = "se encontro la persona";
+            $datos['Marca'] = $resultados[0]->getMarca();
+            $datos['Modelo'] = $resultados[0]->getModelo();
+            if($obj->modificacion($datos)){
+                $mensaje = "se actualizo correctamente";
+            } else{
+                $mensaje = "fallo la actualización de datos";
             }
-        }else {
-            $crearPersona = true;
-        }
-        
+        }else{
+            $mensaje = "no se encontro la persona";
+        } 
+    }else{
+        $mensaje = "no se encontro la patente";
     }
-    if($resp){
-        $mensaje .= " La accion ".$datos['accion']." se realizo correctamente.";
-    }else {
-        //print_r($datos);
-        $mensaje .= " La accion ".$datos['accion']." no pudo concretarse.";
-    }
-}else{
-    $mensaje = "Accion indefinida";
 }
 ?>  
     </div>
@@ -58,16 +53,17 @@ if(isset($datos['accion'])){
                     
                 </div>
             </div>
+            
         </div>
     <?php } ?>
     <div class="row mt-2">
         <div class="col text-center">
-            <a class="btn btn-secondary" href="../autoNuevo.php">Volver</a>
+            <a class="btn btn-secondary" href="../../tp4/verAutos.php">Volver</a>
             <?php if($crearPersona){ ?>
-                <a class="btn btn-success" href="../personaNuevo.php">Ingresar persona en la base de datos</a>    
+                <a class="btn btn-success" href="../../tp4/personaNuevo.php">Ingresar persona en la base de datos</a>    
             <?php }?> 
         </div>
     </div>
 </div>
 </div>
-<?php include_once '../../vista/estructura/footer.php';?>
+<?php include_once '../../estructura/footer.php';?>

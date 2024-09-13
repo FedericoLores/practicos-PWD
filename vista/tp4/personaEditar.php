@@ -1,7 +1,6 @@
 <?php
-include_once (__DIR__.'/estructura/header.php');
-include_once (__DIR__.'/../control/AbmPersona.php');
-include_once (__DIR__.'/../utils/scripts.php');
+include_once ('../estructura/tp4/header.php');
+include_once('../../configuracion.php');
 
 $objAbmPersona = new AbmPersona();
 $datos = datosRecibidos();
@@ -39,7 +38,7 @@ Numero de DNI: <a class="text-body bg-warning text-decoration-none px-1"><?php e
         <input id="accion" name ="accion" value="editar" type="hidden">
         <div class="row my-2">
             <div class="col mx-2">
-                <a href="indexPersona.php"><input type="button" class="btn btn-secondary mx-2" value="Volver"/></a>
+                <a href="listaPersonas.php"><input type="button" class="btn btn-secondary mx-2" value="Volver"/></a>
                 <input type="submit" class="btn btn-primary" onclick="validar()">
             </div>
         </div>
@@ -49,8 +48,8 @@ Numero de DNI: <a class="text-body bg-warning text-decoration-none px-1"><?php e
 <?php 
 }else{
     echo '<p class="container">No se encontro la clave que desea modificar<p>';
-    echo '<div class="container text-center mb-2"><a href="indexPersona.php" class="btn btn-secondary mx-2">Volver</a></div>';
+    echo '<div class="container text-center mb-2"><a href="listaPersonas.php" class="btn btn-secondary mx-2">Volver</a></div>';
 }?>
 </div>
 
-<?php include_once '../vista/estructura/footer.php';?>
+<?php include_once '../estructura/footer.php';?>

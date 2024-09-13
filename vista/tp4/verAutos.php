@@ -1,6 +1,6 @@
 <?php
-include_once (__DIR__.'/estructura/header.php');
-include_once (__DIR__.'/../control/AbmAuto.php');
+include_once ('../estructura/tp4/header.php');
+include_once('../../configuracion.php');
 $objAbmAuto = new AbmAuto();
 
 $listaAuto = $objAbmAuto->buscar(null);
@@ -31,7 +31,7 @@ if(count($listaAuto)>0){
 		echo '<td>'.$objAuto->getModelo().'</td>';
 		echo '<td colspan="2">'.$objAuto->getDniDuenio().'</td>';
         echo '<td><a id="editar" class="btn btn-success" href="autoEditar.php?Patente='.$objAuto->getPatente().'">cambiar dueño</a></td>';
-        echo '<td><a id="eliminar" class="btn btn-danger" href="accion/abmAuto.php?accion=borrar&Patente='.$objAuto->getPatente().'">borrar</a></td></tr>'; 
+        echo '<td><a id="eliminar" class="btn btn-danger" href="../accion/tp4/abmAuto.php?accion=borrar&Patente='.$objAuto->getPatente().'">borrar</a></td></tr>'; 
 	}
 	echo "</tbody>";
 }else{
@@ -44,4 +44,4 @@ if(count($listaAuto)>0){
 <a class="btn btn-primary p-2" href="buscarAuto.php">Buscar un auto</a>
 </div>
 </div>
-<?php include_once './estructura/footer.php';?>
+<?php include_once '../estructura/footer.php';?>

@@ -1,4 +1,4 @@
 <?php
-header("Location: ./tp2/vista/indicePrincipal.php");
+header("Location: ./vista/indicePrincipal.php");
 exit();
 ?>
