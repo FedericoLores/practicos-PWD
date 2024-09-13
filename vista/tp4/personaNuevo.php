@@ -7,7 +7,7 @@ include_once('../../configuracion.php');
     <h4>Nueva Persona</h4>
 </div>
 
-<form method="post" action="accion/abmPersona.php" id="formulario" class="needs-validation" novalidate>
+<form method="post" action="../accion/tp4/abmPersona.php" id="formulario" class="needs-validation" novalidate>
 	<div class="container">
         <label for="NroDni" class="form-label">Numero de DNI</label>
         <input id="NroDni" name ="NroDni" type="number" class="form-control" required/>

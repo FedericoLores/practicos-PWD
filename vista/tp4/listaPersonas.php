@@ -19,6 +19,7 @@ $listaPersona = $objAbmPersona->buscar(null);
 		<th scope="col">Fecha de nacimiento</th>
         <th scope="col">Telefono</th>
         <th scope="col">Domicilio</th>
+		<th scope="col">Autos</th>
 		<th scope="col">Editar</th>
 		<th scope="col">Eliminar</th>
 	</tr>
@@ -34,6 +35,7 @@ if(count($listaPersona)>0){
 		echo '<td>'.$objPersona->getFechaNac().'</td>';
         echo '<td>'.$objPersona->getTelefono().'</td>';
 		echo '<td>'.$objPersona->getDomicilio().'</td>';
+		echo '<td><a class="btn btn-warning" href="autosPersona.php?NroDni='.$objPersona->getDni().'">Autos</a></td>';
         echo '<td><a class="btn btn-success" href="personaEditar.php?NroDni='.$objPersona->getDni().'">editar</a></td>';
         //echo '<td><a id="eliminar" class="btn btn-danger" href="../accion/tp4/abmPersona.php?accion=borrar&NroDni='.$objPersona->getDni().'">borrar</a></td></tr>'; 
 		echo '<td><button type="button" class="btn btn-danger" onclick="confirmarBorrar(\''.$objPersona->getDni().'\')">borrar</button></td></tr>';

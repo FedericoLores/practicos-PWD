@@ -112,6 +112,18 @@ class AbmAuto{
         $arreglo = $auto->listar($where);  
         return $arreglo;
     }
+
+    public function buscarPersona($param){
+        $where = "";
+        if ($param != NULL){
+            if(isset($param['NroDni'])){
+                $where .= "DniDuenio ='".$param['NroDni']."'";
+            }
+        }
+        $auto = new Auto();
+        $arreglo = $auto->listar($where);  
+        return $arreglo;
+    }
     
 }
 ?>
