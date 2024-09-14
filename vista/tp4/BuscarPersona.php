@@ -11,7 +11,8 @@ include_once('../../configuracion.php');
 <form id="buscarPersona" method="post" action="../accion/tp4/accionBuscarPersona.php" class="needs-validation" novalidate>
 	<div class="container">
         <label for="NroDni" class="form-label">DNI</label>
-        <input id="NroDni" class="form-control" name ="NroDni" required type="text"/>
+        <input id="NroDni" class="form-control" name ="NroDni" min="10000000" max="99999999" required type="number"/>
+        <div class="invalid-feedback">El DNI debe tener 8 digitos</div>
         <input id="accion" name ="accion" value="buscar" type="hidden">
         <div class="row mt-2">
             <div class="col mx-2">

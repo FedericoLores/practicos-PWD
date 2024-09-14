@@ -21,7 +21,7 @@ if(isset($datos['accion'])){
 if($titulo != "Error"){
     $resp = false;
     if($datos['accion']=='nuevo'){
-        if(count($persona->buscar($datos)) < 0){
+        if(count($persona->buscar($datos)) <= 0){
             if($persona->alta($datos)){
                 $mensaje = "La creacion de ".$datos['Nombre']." se realizo correctamente.";
             }else{

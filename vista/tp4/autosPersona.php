@@ -20,6 +20,7 @@ if ($persona->seteadosCamposClaves($datos)){
 	<div class="container">
         <label for="NroDni" class="form-label">Numero de DNI</label>
         <input id="NroDni" name ="NroDni" type="number" class="form-control" value="<?php echo $dni;?>" min="10000000" max="99999999" required/>
+        <div class="invalid-feedback">El DNI debe tener 8 digitos</div>
         <input id="accion" name ="accion" value="listar autos persona" type="hidden">
         <div class="row my-2">
             <div class="col mx-2">
