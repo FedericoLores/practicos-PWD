@@ -101,9 +101,10 @@ class AbmPersona{
      * 
      */
     public function comparar($datos,$persona){
-        $nuevaPersona = $this->buscar($datos);
+        $nuevaPersona = new Persona();
+        $nuevaPersona->setear($datos['NroDni'],$datos['Apellido'],$datos['Nombre'],$datos['fechaNac'],$datos['Telefono'],$datos['Domicilio']);
         $resp = false;
-        if($persona == $nuevaPersona){
+        if($persona[0] == $nuevaPersona){
             $resp = true;
         }
         return $resp;
