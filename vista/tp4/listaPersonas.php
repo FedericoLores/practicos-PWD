@@ -37,7 +37,8 @@ if(count($listaPersona)>0){
 		echo '<td>'.$objPersona->getDomicilio().'</td>';
 		echo '<td><a class="btn btn-warning" href="autosPersona.php?NroDni='.$objPersona->getDni().'">Autos</a></td>';
         echo '<td><a class="btn btn-success" href="../accion/tp4/accionBuscarPersona.php?NroDni='.$objPersona->getDni().'&accion=buscar">editar</a></td>';
-		echo '<td><button type="button" class="btn btn-danger" onclick="confirmarBorrar(\''.$objPersona->getDni().'\')">borrar</button></td></tr>';
+		echo '<td><button type="button" class="btn btn-danger" onclick="confirmarBorrar(\''.$objPersona->getDni().'\', \'#confirmarEliminarPersona\',
+			\'eliminarPersona\', \'insertarDni\', \'../accion/tp4/accionPersona.php?accion=borrar&NroDni=\')">borrar</button></td></tr>';
 	}
 	echo "</tbody>";
 }else{
@@ -50,11 +51,11 @@ if(count($listaPersona)>0){
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar de la base de datos</h1>
+				<h1 class="modal-title fs-5">Eliminar de la base de datos</h1>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 			<div class="modal-body">
-				<span>Esta seguro que desea eliminar de la base de datos a la persona con DNI: <span class="text-body bg-warning text-decoration-none px-1" id="insertDni"></span></span>
+				<span>Esta seguro que desea eliminar de la base de datos a la persona con DNI: <span class="text-body bg-warning text-decoration-none px-1" id="insertarDni"></span></span>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
