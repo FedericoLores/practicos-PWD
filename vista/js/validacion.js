@@ -14,12 +14,11 @@ function validar(idForm){
     }
 }
 
-function confirmarBorrar(hrefBorrar){
-    console.log(hrefBorrar)
-    var modal = new bootstrap.Modal("#confirmarEliminarPersona")
+function confirmarBorrar(clave,idModal,idBoton,idSpan,hrefPath){
+    var modal = new bootstrap.Modal(idModal)
     modal.show()
-    var botonBorrar = document.getElementById("eliminarPersona")
-    botonBorrar.setAttribute("href","../accion/tp4/accionPersona.php?accion=borrar&NroDni="+hrefBorrar)
-    var mostrarDni = document.getElementById("insertDni")
-    mostrarDni.innerHTML = hrefBorrar
+    var botonBorrar = document.getElementById(idBoton)
+    botonBorrar.setAttribute("href",hrefPath+"'"+clave+"'")
+    var mostrarDni = document.getElementById(idSpan)
+    mostrarDni.innerHTML = clave
 }
