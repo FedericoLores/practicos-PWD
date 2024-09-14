@@ -47,6 +47,12 @@ if(count($listaAuto)>0){
 	echo '<div class="container text-center">No hay autos cargados</div>';
 }
 ?>
+</div>
+<div class="container text-center mb-3">
+		<a class="btn btn-primary p-2" href="nuevoAuto.php">Ingresar un auto</a>
+		<a class="btn btn-primary p-2" href="buscarAuto.php">Buscar un auto</a>
+	</div>
+</div>
 <div class="modal fade" tabindex="-1" id="confirmarEliminarAuto">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -58,16 +64,12 @@ if(count($listaAuto)>0){
 				<span>Esta seguro que desea eliminar de la base de datos a la persona con DNI: <span class="text-body bg-warning text-decoration-none px-1" id="insertarPatente"></span></span>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
 				<a id="eliminarAuto" class="btn btn-success">Confirmar eliminacion</a>
 			</div>
 		</div>
   </div>
 </div>
-	<div class="container text-center mb-3">
-		<a class="btn btn-primary p-2" href="nuevoAuto.php">Ingresar un auto</a>
-		<a class="btn btn-primary p-2" href="buscarAuto.php">Buscar un auto</a>
-	</div>
+	
 </div>
 
 <?php include_once '../estructura/footer.php';?>

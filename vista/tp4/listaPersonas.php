@@ -58,7 +58,6 @@ if(count($listaPersona)>0){
 				<span>Esta seguro que desea eliminar de la base de datos a la persona con DNI: <span class="text-body bg-warning text-decoration-none px-1" id="insertarDni"></span></span>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
 				<a id="eliminarPersona" class="btn btn-success">Confirmar eliminacion</a>
 			</div>
 		</div>
