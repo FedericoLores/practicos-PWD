@@ -8,7 +8,7 @@ $listaAuto = $auto->buscar(null);
 ?>
 <div class="card m-3">
 	<div class="card-header text-center">
-		<h3>ABM - Auto</h3>
+		<h3>Ver Autos</h3>
 	</div>
 	<div class="card-body">
 		

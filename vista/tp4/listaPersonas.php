@@ -7,7 +7,7 @@ $listaPersona = $objAbmPersona->buscar(null);
 ?>
 <div class="card m-3">
 	<div class="card-header text-center">
-		<h3>ABM - Persona</h3>
+		<h3>Lista de Persona</h3>
 	</div>
 <div class="card-body">
 	<table class="table table-striped">
