@@ -20,10 +20,15 @@ if(isset($datos['accion'])){
 <?php
 if($titulo != "Error" && $persona->seteadosCamposClaves($datos)){
     if(count($persona->buscar($datos)) > 0){
-        if($persona->modificacion($datos)){
-            $mensaje = "La edición se realizo correctamente.";
+        $datosAnteriores = $persona->buscar($datos);
+        if($persona->comparar($datos,$datosAnteriores)){
+            $mensaje = "No se ha modificado ningun dato.";
         }else{
-            $mensaje = "La edición no pudo concretarse.";
+            if($persona->modificacion($datos)){
+                $mensaje = "La edición se realizo correctamente.";
+            }else{
+                $mensaje = "La edición no pudo concretarse.";
+            }
         }
     }else{
         $mensaje = "No existe la persona.";

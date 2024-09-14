@@ -47,7 +47,7 @@ if($titulo != "Error" && $datos['NroDni'] != ""){
                 <div class="row my-2">
                     <div class="col mx-2">
                         <a href="../../tp4/listaPersonas.php"><input type="button" class="btn btn-secondary mx-2" value="Volver"/></a>
-                        <input type="submit" class="btn btn-primary" onclick="validar("actualizarDatosPersona")" value="remplazar datos">
+                        <input type="submit" class="btn btn-primary" onclick="validar(\'actualizarDatosPersona\')" value="Remplazar datos">
                     </div>
                 </div>
             </div>

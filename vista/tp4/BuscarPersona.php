@@ -11,12 +11,12 @@ include_once('../../configuracion.php');
 <form id="buscarPersona" method="post" action="../accion/tp4/accionBuscarPersona.php" class="needs-validation" novalidate>
 	<div class="container">
         <label for="NroDni" class="form-label">DNI</label>
-        <input id="NroDni" class="form-control" name ="NroDni" type="text"/>
+        <input id="NroDni" class="form-control" name ="NroDni" required type="text"/>
         <input id="accion" name ="accion" value="buscar" type="hidden">
         <div class="row mt-2">
             <div class="col mx-2">
                 <a href="../tp4/listaPersonas.php"><input type="button" class="btn btn-secondary mx-2" value="Volver"/></a>
-                <input type="submit" class="btn btn-primary">
+                <input type="submit" onclick="validar('buscarPersona')" class="btn btn-primary">
             </div>
         </div>
     </div>

@@ -16,7 +16,7 @@ include_once('../../configuracion.php');
         <div class="row mt-2">
             <div class="col mx-2">
                 <a href="../tp4/verAutos.php"><input type="button" class="btn btn-secondary mx-2" value="Volver"/></a>
-                <input type="submit" class="btn btn-primary">
+                <input type="submit" onclick="validar('buscarAuto')" class="btn btn-primary">
             </div>
         </div>
     </div>

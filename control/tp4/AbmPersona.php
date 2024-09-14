@@ -98,6 +98,18 @@ class AbmPersona{
         $arreglo = $persona->listar($where);  
         return $arreglo;
     }
+    /** compara datos nuevos con una persona ya existente en la base de datos
+     * retorna verdadero si los datos son iguales, falso en caso contrario
+     * 
+     */
+    public function comparar($datos,$persona){
+        $nuevaPersona = $this->buscar($datos);
+        $resp = false;
+        if($persona == $nuevaPersona){
+            $resp = true;
+        }
+        return $resp;
+    }
     
 }
 ?>
