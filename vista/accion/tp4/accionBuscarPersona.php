@@ -34,21 +34,31 @@ if($titulo != "Error" && $datos['NroDni'] != ""){
                 <label for="NroDni" class="form-label d-none">Numero de DNI</label>
                 <input id="NroDni" class="form-control d-none" readonly name ="NroDni" required type="number" value="'. $busqueda[0]->getDni().'" min="10000000" max="99999999"/>
                 <div class="invalid-feedback">El DNI debe tener 8 digitos</div>
-                <label for="Apellido" class="form-label mt-2">Apellido</label>
-                <input type="text" class="form-control" id="Apellido" name="Apellido" required value="' . $busqueda[0]->getApellido() .'" minlength="2" maxlength="50" pattern="^[A-Za-zÁÉÍÓÚÑáéíóúñü]+(?: [A-Za-zÁÉÍÓÚÑáéíóúñü]+)*$" />
+                <div class="col">
+                <label for="Apellido" class="form-label">Apellido</label>
+                <input type="text" class="form-control mb-2" id="Apellido" name="Apellido" required value="' . $busqueda[0]->getApellido() .'" minlength="2" maxlength="50" pattern="^[A-Za-zÁÉÍÓÚÑáéíóúñü]+(?: [A-Za-zÁÉÍÓÚÑáéíóúñü]+)*$" />
                 <div class="invalid-feedback">Ingrese un apellido sin numeros o simbolos</div>
+                </div>
+                <div class="col">
                 <label for="Nombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control mt-2" id="Nombre" name="Nombre" required value="' . $busqueda[0]->getNombre() .'" minlength="2" maxlength="50" pattern="^[A-Za-zÁÉÍÓÚÑáéíóúñü]+(?: [A-Za-zÁÉÍÓÚÑáéíóúñü]+)*$" />
+                <input type="text" class="form-control mb-2" id="Nombre" name="Nombre" required value="' . $busqueda[0]->getNombre() .'" minlength="2" maxlength="50" pattern="^[A-Za-zÁÉÍÓÚÑáéíóúñü]+(?: [A-Za-zÁÉÍÓÚÑáéíóúñü]+)*$" />
                 <div class="invalid-feedback">Ingrese un nombre sin numeros o simbolos</div>
+                </div>
+                <div class="col">
                 <label for="fechaNac" class="form-label">Fecha de nacimiento</label>
-                <input type="date" class="form-control mt-2" id="fechaNac" name="fechaNac" required value="'. $busqueda[0]->getFechaNac() .'" min="1900-01-01" max="3000-12-31" />
+                <input type="date" class="form-control mb-2" id="fechaNac" name="fechaNac" required value="'. $busqueda[0]->getFechaNac() .'" min="1900-01-01" max="'.date("Y-m-d").'" />
                 <div class="invalid-feedback">Ingrese una fecha válida</div>
+                </div>
+                <div class="col">
                 <label for="Telefono" class="form-label">Telefono</label>
-                <input type="number" class="form-control mt-2" id="Telefono" name="Telefono" required value="'. $busqueda[0]->getTelefono() .'" min="100000" max="9999999999" />
+                <input type="tel" class="form-control mb-2" id="Telefono" name="Telefono" required value="'. $busqueda[0]->getTelefono() .'" min="100000" max="9999999999" pattern="^[0-9]+([- ]?[0-9]+)*$" />
                 <div class="invalid-feedback">El telefono debe contener entre 6 y 10 digitos</div>
+                </div>
+                <div class="col">
                 <label for="Domicilio" class="form-label">Domicilio</label>
-                <input type="text" class="form-control mt-2" id="Domicilio" name="Domicilio" required value="'. $busqueda[0]->getDomicilio() .'" pattern="^(?=.*[A-Za-zñÑäëïöüáéíóúÁÉÍÓÚ])[A-Za-zñÑäëïöüáéíóúÁÉÍÓÚ\d\s]+$" minlength="3" maxlength="50" />
+                <input type="text" class="form-control mb-2" id="Domicilio" name="Domicilio" required value="'. $busqueda[0]->getDomicilio() .'" pattern="^(?=.*[A-Za-zñÑäëïöüáéíóúÁÉÍÓÚ])[A-Za-zñÑäëïöüáéíóúÁÉÍÓÚ\d\s]+$" minlength="3" maxlength="50" />
                 <div class="invalid-feedback">Ingrese un domicilio valido</div>
+                </div>
                 <input id="accion" name ="accion" value="editar" type="hidden">
                 <div class="row my-2">
                     <div class="col mx-2">
@@ -80,4 +90,5 @@ if($titulo != "Error" && $datos['NroDni'] != ""){
     </div>
 </div>
 </div>
+
 <?php include_once ('../../estructura/footer.php');?>
