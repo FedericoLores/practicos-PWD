@@ -88,10 +88,8 @@ class AbmPersona{
     public function buscar($datos){
         $where = "";
         if ($datos != NULL){
-            if(isset($datos['NroDni'])){
+            if($this->seteadosCamposClaves($datos)){
                 $where .= "NroDni=".$datos['NroDni'];
-            }else if(isset($datos['DniDuenio'])){
-                $where .= "NroDni=".$datos['DniDuenio'];
             }
         }
         $persona = new Persona();
