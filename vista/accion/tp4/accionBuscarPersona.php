@@ -51,8 +51,8 @@ if($titulo != "Error" && $datos['NroDni'] != ""){
                 </div>
                 <div class="col">
                 <label for="Telefono" class="form-label">Telefono</label>
-                <input type="tel" class="form-control mb-2" id="Telefono" name="Telefono" required value="'. $busqueda[0]->getTelefono() .'" min="100000" max="9999999999" pattern="^[0-9]+([- ]?[0-9]+)*$" />
-                <div class="invalid-feedback">El telefono debe contener entre 6 y 10 digitos</div>
+                <input type="text" class="form-control mb-2" id="Telefono" name="Telefono" value="'. $busqueda[0]->getTelefono() .'" minlength="6" maxlength="10" pattern="^[0-9]+([\- ]?[0-9]+)?$" required />
+                <div class="invalid-feedback">El telefono debe contener entre 6 y 10 digitos y no puede contener letras</div>
                 </div>
                 <div class="col">
                 <label for="Domicilio" class="form-label">Domicilio</label>
