@@ -64,6 +64,7 @@ if(count($listaAuto)>0){
 				<span>Esta seguro que desea eliminar de la base de datos a la persona con DNI: <span class="text-body bg-warning text-decoration-none px-1" id="insertarPatente"></span></span>
 			</div>
 			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
 				<a id="eliminarAuto" class="btn btn-success">Confirmar eliminacion</a>
 			</div>
 		</div>
