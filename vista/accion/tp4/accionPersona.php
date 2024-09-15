@@ -47,7 +47,7 @@ if($titulo != "Error" && $persona->seteadosCamposClaves($datos)){
     </div>
     <div class="row">
         <div class="col text-center">
-            <a class="btn btn-secondary" href="../../tp4/listaPersonas.php">Volver</a>
+            <a class="btn btn-secondary mt-2" href="../../tp4/listaPersonas.php">Volver</a>
         </div>
     </div>
 </div>

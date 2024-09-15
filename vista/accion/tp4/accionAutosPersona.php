@@ -26,7 +26,7 @@ if(isset($datos['accion'])){
         if(count($busqueda)>0){
             echo '<table class="table table-striped">
                 <thead class="table-primary">
-                <div class="container mb-2 text-center">mostrando resultados para DNI:' . $datos['NroDni'] . '</div>
+                <div class="container mb-2 text-center">mostrando resultados para DNI: ' . $datos['NroDni'] . '</div>
                 <tr>
                     <th scope="col">Patente</th>
                     <th scope="col" colspan="3">Marca</th>

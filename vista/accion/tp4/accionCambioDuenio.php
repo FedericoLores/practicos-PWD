@@ -23,22 +23,22 @@ if($titulo != "Error" && $auto->seteadosCamposClaves($datos) && $persona->setead
     $crearPersona = false;
     if($resultados = $auto->buscar($datos)){
         if($persona->buscar($datos)){
-            $mensaje = "se encontro la persona";
+            $mensaje = "Se encontro la persona.</br>";
             $datos['Marca'] = $resultados[0]->getMarca();
             $datos['Modelo'] = $resultados[0]->getModelo();
             if($auto->modificacion($datos)){
-                $mensaje .= "</br>se actualizo correctamente";
+                $mensaje .= "Se actualizo correctamente.</br>";
             } else{
-                $mensaje .= "</ br>fallo la actualización de datos";
+                $mensaje .= "Fallo la actualización de datos.</br>";
             }
         }else{
-            $mensaje = "no se encontro la persona";
+            $mensaje = "No se encontro la persona.</br>";
         } 
     }else{
-        $mensaje = "no se encontro la patente";
+        $mensaje = "No se encontro la patente.</br>";
     }
 }else{
-    $mensaje = "Accion Invalida.";
+    $mensaje = "Accion Invalida.</br>";
 }
 ?>  
     </div>
