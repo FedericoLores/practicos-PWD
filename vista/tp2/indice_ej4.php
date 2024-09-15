@@ -21,43 +21,43 @@
                     <div class="row">
                         <div class="col-md-6">
                             <label for="titulo" class="form-label"><b>T&iacute;tulo</b></label>
-                            <input type="text" class="form-control" name="titulo" id="titulo" placeholder="T&iacute;tulo" required/>
+                            <input type="text" class="form-control" name="titulo" id="titulo" placeholder="T&iacute;tulo" minlength="2" maxlength="50" required/>
                             <div class="invalid-feedback">Por favor ingrese un t&iacute;tulo</div>
                         </div>
                         <div class="col-md-6">
                             <label for="actores" class="form-label"><b>Actores</b></label>
-                            <input type="text" class="form-control" id="actores" name="actores" placeholder="Actores" required/>
+                            <input type="text" class="form-control" id="actores" name="actores" placeholder="Actores" pattern="^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ,.\s]+$" minlength="5" maxlength="300"  required/>
                             <div class="invalid-feedback">Por favor ingrese actores</div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <label for="director" class="form-label"><b>Director</b></label>
-                            <input type="text" class="form-control" id="director" name="director" placeholder="Director" required/>
+                            <input type="text" class="form-control" id="director" name="director" placeholder="Director" pattern="^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ]*( [a-zA-ZáéíóúüñÁÉÍÓÚÜÑ]*)?( [a-zA-ZáéíóúüñÁÉÍÓÚÜÑ]*)?[-]?[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ]*$" minlength="3" maxlenght="50" required/>
                             <div class="invalid-feedback">Por favor ingrese un director</div>
                         </div>
                         <div class="col-md-6">
                             <label for="guion" class="form-label"><b>Gui&oacute;n</b></label>
-                            <input type="text" class="form-control" id="guion" name="guion" placeholder="Gui&oacute;n" required/>
+                            <input type="text" class="form-control" id="guion" name="guion" placeholder="Gui&oacute;n" minlength="10" maxlength="100000" required/>
                             <div class="invalid-feedback">Por favor ingrese un gui&oacute;n</div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <label for="produccion" class="form-label"><b>Producci&oacute;n</b></label>
-                            <input type="text" class="form-control" id="produccion" name="produccion" required/>
+                            <input type="text" class="form-control" id="produccion" name="produccion" pattern="^(?=.*[A-Za-zñÑäëïöüáéíóúÁÉÍÓÚ])[A-Za-zñÑäëïöüáéíóúÁÉÍÓÚ\d\s]+$" minlength="3" maxlength="50" required/>
                             <div class="invalid-feedback">Por favor ingrese una producci&oacute;n</div>
                         </div>
                         <div class="col-md-2">
                             <label for="anio" class="form-label"><b>A&ntilde;o</b></label>
-                            <input min="0" max="9999" type="number" class="form-control" id="anio" name="anio" required/>
+                            <input min="1800" max="<?php echo date("Y");?>" type="number" class="form-control" id="anio" name="anio" required/>
                             <div class="invalid-feedback">Por favor ingrese un a&ntilde;o</div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <label for="nacionalidad" class="form-label"><b>Nacionalidad</b></label>
-                            <input type="text" class="form-control" id="nacionalidad" name="nacionalidad" required/>
+                            <input type="text" class="form-control" id="nacionalidad" name="nacionalidad" minlength="2" maxlength="50" pattern="^[A-Za-zÁÉÍÓÚÑáéíóúñü]+(?: [A-Za-zÁÉÍÓÚÑáéíóúñü]+)*$" required/>
                             <div class="invalid-feedback">Por favor ingrese una nacionalidad</div>
                         </div>
                         <div class="col-md-4">

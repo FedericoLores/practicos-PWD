@@ -9,7 +9,6 @@ function validar(idForm){
                 evento.stopPropagation()
             }
             formulario.classList.add('was-validated')
-            
         })
     }
 }

@@ -4,10 +4,10 @@ include_once '../estructura/tp1/header.php';
 ?>
 <div align="center">
     <form name="form" method="get" action="../accion/tp1/actionEjercicio3-6.php">
-        Nombre: <input style="margin: 5px; border-color: lightgray;" type="text" id="name" name="name" placeholder="Nombre" required/></br>
-        Apellido: <input style="margin: 5px; border-color: lightgray;" type="text" id="apellido" name="apellido" placeholder="Apellido" required/></br>
-        Edad: <input style="margin: 5px; border-color: lightgray;" type="number" min="0" id="age" name="age" placeholder="Edad" required/></br>
-        Direccion: <input style="margin: 5px; border-color: lightgray;" type="text" id="direccion" name="direccion" placeholder="Direccion" required/></br>
+        Nombre: <input style="margin: 5px; border-color: lightgray;" type="text" id="name" name="name" placeholder="Nombre" minlength="2" maxlength="50" pattern="^[A-Za-zÁÉÍÓÚÑáéíóúñü]+(?: [A-Za-zÁÉÍÓÚÑáéíóúñü]+)*$" required/></br>
+        Apellido: <input style="margin: 5px; border-color: lightgray;" type="text" id="apellido" name="apellido" placeholder="Apellido" minlength="2" maxlength="50" pattern="^[A-Za-zÁÉÍÓÚÑáéíóúñü]+(?: [A-Za-zÁÉÍÓÚÑáéíóúñü]+)*$" required/></br>
+        Edad: <input style="margin: 5px; border-color: lightgray;" type="number" min="0" id="age" name="age" placeholder="Edad" min="3" max="150" required/></br>
+        Direccion: <input style="margin: 5px; border-color: lightgray;" type="text" id="direccion" name="direccion" placeholder="Direccion" pattern="^(?=.*[A-Za-zñÑäëïöüáéíóúÁÉÍÓÚ])[A-Za-zñÑäëïöüáéíóúÁÉÍÓÚ\d\s]+$" minlength="3" maxlength="50" required/></br>
         Nivel de estudios</br>
         <input type="radio" id="noTiene" name="estudios" value="no tengo" checked/>
         <label for="noTiene">No tiene</label></br>

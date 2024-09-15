@@ -33,9 +33,9 @@
                     <span class="input-group-text" id="basic-addon1">
                         <i class="bi bi-lock-fill"></i>
                     </span>
-                    <input type="password" class="form-control" id="contrasenia" name="contrasenia" placeholder="contraseña" required>
+                    <input type="password" class="form-control" id="contrasenia" name="contrasenia" placeholder="contraseña" minlength="8" pattern="^(?=.*[a-zA-Z])(?=.*\d).+$" required>
                     <div class="valid-feedback">Se ve bien!</div>
-                    <div class="invalid-feedback">Por favor ingrese una contrase&ntilde;a</div>
+                    <div class="invalid-feedback">Ingrese una contrase&ntilde;a de 8 caracteres o mas, con letras y numeros, que sea diferente al usuario</div>
                 </div>
             </div>
 

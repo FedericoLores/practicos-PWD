@@ -19,7 +19,7 @@ include_once('../../configuracion.php');
         <input id="Nombre" name ="Nombre" type="text" min="0" class="form-control" minlength="2" maxlength="50" pattern="^[A-Za-zÁÉÍÓÚÑáéíóúñü]+(?: [A-Za-zÁÉÍÓÚÑáéíóúñü]+)*$" required/>
         <div class="invalid-feedback">Ingrese un nombre sin numeros o simbolos</div>
         <label for="fechaNac" class="form-label">Fecha de nacimiento</label>
-        <input id="fechaNac" name ="fechaNac" type="date" class="form-control" min="1900-01-01" max="3000-12-31" required/>
+        <input id="fechaNac" name ="fechaNac" type="date" class="form-control" min="1900-01-01" max="<?php echo date("Y-m-d");?>" required/>
         <div class="invalid-feedback">Ingrese una fecha válida</div>
         <label for="Telefono" class="form-label">Telefono</label>
         <input id="Telefono" name ="Telefono" type="number" class="form-control" min="100000" max="9999999999" required/>

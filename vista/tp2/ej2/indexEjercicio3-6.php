@@ -7,22 +7,22 @@ include_once '../../estructura/tp2/headerEj2.php';
             <div class="col-md-6">
                 <div class="mb-3">
                     <label for="name" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="name" name="name" required />
+                    <input type="text" class="form-control" id="name" name="name" minlength="2" maxlength="50" pattern="^[A-Za-zÁÉÍÓÚÑáéíóúñü]+(?: [A-Za-zÁÉÍÓÚÑáéíóúñü]+)*$" required />
                     <div class="invalid-feedback">Ingrese su nombre</div>
                 </div>
                 <div class="mb-3">
                     <label for="apellido" class="form-label">Apellido</label>
-                    <input type="text" class="form-control" id="apellido" name="apellido" required />
+                    <input type="text" class="form-control" id="apellido" name="apellido" minlength="2" maxlength="50" pattern="^[A-Za-zÁÉÍÓÚÑáéíóúñü]+(?: [A-Za-zÁÉÍÓÚÑáéíóúñü]+)*$" required />
                     <div class="invalid-feedback">Ingrese su apellido</div>
                 </div>
                 <div class="mb-3">
                     <label for="age" class="form-label">Edad</label>
-                    <input type="number" min="0" class="form-control" id="age" name="age" required />
+                    <input type="number" min="0" class="form-control" id="age" name="age" min="3" max="150" required />
                     <div class="invalid-feedback">Ingrese su edad</div>
                 </div>
                 <div class="mb-3">
                     <label for="direccion" class="form-label">Direccion</label>
-                    <input type="text" class="form-control" id="direccion" name="direccion" required />
+                    <input type="text" class="form-control" id="direccion" name="direccion" pattern="^(?=.*[A-Za-zñÑäëïöüáéíóúÁÉÍÓÚ])[A-Za-zñÑäëïöüáéíóúÁÉÍÓÚ\d\s]+$" minlength="3" maxlength="50" required />
                     <div class="invalid-feedback">Ingrese su direccion</div>
                 </div>
                 <fieldset class="mb-3">
