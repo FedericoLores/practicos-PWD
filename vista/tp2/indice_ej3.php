@@ -22,7 +22,6 @@
                         <i class="bi bi-person-fill"></i>
                     </span>
                     <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario" required>
-                    <div class="valid-feedback">Se ve bien!</div>
                     <div class="invalid-feedback">Por favor ingrese un usuario</div>
                 </div>
                 
@@ -34,13 +33,12 @@
                         <i class="bi bi-lock-fill"></i>
                     </span>
                     <input type="password" class="form-control" id="contrasenia" name="contrasenia" placeholder="contrase&ntilde;a" minlength="8" pattern="^(?=.*[a-zA-Z])(?=.*\d).+$" required>
-                    <div class="valid-feedback">Se ve bien!</div>
                     <div class="invalid-feedback">Ingrese una contrase&ntilde;a de 8 caracteres o mas, con letras y numeros, que sea diferente al usuario</div>
                 </div>
             </div>
 
             <div class="d-grid px-4 pb-5 mb-5">
-                <button type="submit" onclick="validar('formularioLogin')" class="btn btn-success">Entrar</button>
+                <button type="submit" onclick="validarLogin('formularioLogin')" class="btn btn-success">Entrar</button>
             </div>
         </form>
     </div>
