@@ -33,18 +33,18 @@ if($titulo != "Error" && $auto->seteadosCamposClaves($datos)){
     $crearPersona = false;
     $mensaje = "";
     if($datos['accion']=='nuevo'){
-        if(count($persona->buscar($datos)) != null){
-            if($auto->alta($datos)){
-                $resp =true;
+        if(count($auto->buscar($datos)) <= 0){
+            if(count($persona->buscar($datos)) != null){
+                if($auto->alta($datos)){
+                    $mensaje .= "Auto agregado correctamente.";
+                }
+            }else {
+                $crearPersona = true;
+                $mensaje .= "No se pudo agregar el auto.";
             }
-        }else {
-            $crearPersona = true;
+        }else{
+            $mensaje = "Ya existe un auto con la patente: " . $datos['Patente'];
         }
-    }
-    if($resp){
-        $mensaje .= " La accion ".$datos['accion']." se realizo correctamente.";
-    }else {
-        $mensaje .= " La accion ".$datos['accion']." no pudo concretarse.";
     }
 }else{
     $mensaje = "Accion invalida";
