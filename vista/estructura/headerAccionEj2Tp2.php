@@ -27,7 +27,7 @@
         </div>
     </nav>
 
-    <?php if ($descripcion != ""){?>
+    <?php if (isset($descripcion)){?>
     <div class="card mt-3">
         <div class="card-body text-center fs-5">
             <span class="bg-secondary bg-opacity-25">

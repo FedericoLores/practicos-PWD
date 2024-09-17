@@ -19,7 +19,7 @@
                         <p><?php echo $titulo; ?></p>
                     </a>
                 </span>
-                <span class="navbar-text display-6 pt-0">
+                <span class="navbar-text fs-3 py-0">
                     <a href="../indicePrincipal.php" class="text-decoration-none">
                         <p><?php echo $ejercicio; ?></p>
                     </a>

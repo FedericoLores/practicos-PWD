@@ -12,8 +12,10 @@
     <nav class="navbar bg-body-secondary">
         <div class="container">
             <div class="d-flex justify-content-center w-100">
-                <span class="navbar-text display-4">
-                    Trabajos Pr&aacute;cticos
+                <span class="navbar-text display-3 pt-0 fw-semibold">
+                    <a href="./indicePrincipal.php" class="text-decoration-none">
+                        Trabajos Pr&aacute;cticos
+                    </a>
                 </span> 
             </div>
         </div>
