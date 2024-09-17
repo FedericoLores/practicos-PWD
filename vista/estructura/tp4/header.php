@@ -14,7 +14,7 @@
         <div class="container">
             <div class="d-flex justify-content-center w-100">
                 <span class="navbar-text mx-5 display-6">
-                    <a href="../indicePrincipal.php" class="text-decoration-none">
+                    <a href="../../indicePrincipal.php" class="text-decoration-none">
                         <p>Trabajo Pr&aacute;ctico 4</p>
                     </a>
                 </span>
