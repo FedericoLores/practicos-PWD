@@ -21,7 +21,7 @@
                     <span class="input-group-text" id="basic-addon1">
                         <i class="bi bi-person-fill"></i>
                     </span>
-                    <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario" required>
+                    <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario" minlength="3" maxlength="50" required>
                     <div class="invalid-feedback">Por favor ingrese un usuario</div>
                 </div>
                 
