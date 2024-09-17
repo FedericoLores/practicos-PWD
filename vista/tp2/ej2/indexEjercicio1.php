@@ -1,5 +1,12 @@
 <?php
-include_once '../../estructura/tp2/headerEj2.php';
+$titulo = "Trabajo práctico 2";
+$ejercicio = "Ejercicio 2-1";
+$descripcion = "Confeccionar un formulario que solicite un número. Al pulsar el botón de enviar debe
+llamar a un script -vernumero.php- y visualizar un mensaje que indique si el número
+enviado fue: positivo, cero o negativo. Añadir un link, a la página que visualiza la
+respuesta, que permita volver a la página anterior.";
+include_once ('../../estructura/headerEj2Tp2.php');
+
 ?>
     <div class="container">
         <form name="enviarNumero" id="enviarNumero" class="needs-validation" novalidate method="post" action="../../accion/tp2/ej2/actionEjercicio1.php">

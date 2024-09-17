@@ -1,5 +1,13 @@
 <?php
-include_once '../../estructura/tp2/headerEj2.php';
+$titulo = "Trabajo práctico 2";
+$ejercicio = "Ejercicio 2-8";
+$descripcion = "Permitir calcular el valor de entradas a través de una página web. Si
+es estudiante o menor de 12 años el precio es de $160, si es estudiante y mayor o igual
+de 12 años el precio es de $180, en cualquier otro caso el precio es de $300. Diseñar un
+formulario que solicite la edad y permita ingresar si se trata de un estudiante o no. Con
+un botón enviar los datos a un script encargado de realizar el cálculo y visualizarlo.
+Agregar un botón para limpiar el formulario y volver a consultar.";
+include_once '../../estructura/headerEj2Tp2.php';
 ?>
     <form name="valorEntrada" id="valorEntrada" method="get" class="needs-validation" novalidate action="../../accion/tp2/ej2/actionEjercicio8.php">
         <div class="container">

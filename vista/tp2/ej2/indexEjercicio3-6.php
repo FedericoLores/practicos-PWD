@@ -1,5 +1,16 @@
 <?php
-include_once '../../estructura/tp2/headerEj2.php';
+$titulo = "Trabajo práctico 2";
+$ejercicio = "Ejercicio 2-3 a 6";
+$descripcion = "Crear una página php que contenga un formulario HTML, enviar estos datos por el método Post a otra página php
+que los reciba y muestre por pantalla un mensaje como el siguiente: “Hola, yo soy
+nombre , apellido y vivo en dirección”, usando la información recibida. Se muestran mensajes distintos dependiendo si la
+persona es mayor de edad o no. Se ingresa el nivel de estudio de la persona: 1-no tiene estudios, 2-
+estudios primarios, 3-estudios secundarios. Agregar el componente que crea más
+apropiado para solicitar el sexo. En la página que procesa el formulario mostrar además
+un mensaje que indique el tipo de estudios que posee y su sexo. Permite seleccionar los diferentes
+deportes que practica (futbol, basket, tennis, voley) un alumno. Mostrar en la página
+que procesa el formulario la CANTIDAD de deportes que practica";
+include_once '../../estructura/headerEj2Tp2.php';
 ?>
 <div class="container mt-3">
     <form name="saludo" id="saludo" method="get" class="needs-validation" novalidate action="../../accion/tp2/ej2/actionEjercicio3-6.php">

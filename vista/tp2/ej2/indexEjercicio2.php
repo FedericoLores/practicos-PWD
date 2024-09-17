@@ -1,5 +1,12 @@
 <?php
-include_once '../../estructura/tp2/headerEj2.php';
+$titulo = "Trabajo práctico 2";
+$ejercicio = "Ejercicio 2-2";
+$descripcion = "Crear una página php que contenga un formulario HTML que permita ingresar las horas
+de cursada, de la materia Programación Web Dinámica, por cada día de la semana.
+Enviar los datos del formulario por el método Get a otra página php que los reciba y
+complete un array unidimensional. Visualizar por pantalla la cantidad total de horas que
+se cursan por semana.";
+include_once '../../estructura/headerEj2Tp2.php';
 ?>
     <form name="horarios" id="horarios" method="get" action="../../accion/tp2/ej2/actionEjercicio2.php" class="needs-validation" novalidate>
         <h3 style="text-align: center;">Carga horaria por dia de la semana</h3>

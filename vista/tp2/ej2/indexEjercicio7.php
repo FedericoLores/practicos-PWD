@@ -1,5 +1,12 @@
 <?php
-include_once '../../estructura/tp2/headerEj2.php';
+$titulo = "Trabajo práctico 2";
+$ejercicio = "Ejercicio 2-7";
+$descripcion = "Crear una página con un formulario que contenga dos input de tipo text y un select. En
+los inputs se ingresarán números y el select debe dar la opción de una operación
+matemática que podrá resolverse usando los números ingresados. En la página que
+procesa la información se debe mostrar por pantalla la operación seleccionada, cada
+uno de los operandos y el resultado obtenido de resolver la operación.";
+include_once '../../estructura/headerEj2Tp2.php';
 ?>
     <form name="calcular" id="calcular" method="get" class="needs-validation" novalidate action="../../accion/tp2/ej2/actionEjercicio7.php">
         <div class="container text-center">

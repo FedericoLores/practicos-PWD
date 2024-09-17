@@ -1,4 +1,16 @@
-<?php include_once("../estructura/tp2/header.php")?>
+<?php 
+$titulo = "Trabajo práctico 2";
+$ejercicio = "Ejercicio 4";
+$descripcion = "Diseñar un formulario que permita cargar las películas de la empresa Cinem@s. La lista géneros
+    tiene los siguientes datos: Comedia, Drama, Terror, Románticas, Suspenso, Otras.</br>
+    - El año debe ser un campo que debe permitir ingresar como máximo 4 caracteres y solo
+    aceptar números.</br>
+    - El campo duración debe permitir un máximo de 3 números.</br>
+    - Todos los datos son obligatorios.</br>
+    - Al hacer click en el botón “Enviar”, se deberán mostrar todos los datos ingresados en el
+    formulario.</br>
+    - El botón “Borrar” debe limpiar el formulario.";
+include_once ('../estructura/header.php');?>
 <!-- boton modal -->
 <div class="d-flex justify-content-center p-5">
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cine">abrir formulario</button>

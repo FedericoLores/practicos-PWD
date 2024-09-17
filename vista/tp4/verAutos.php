@@ -1,6 +1,6 @@
 <?php
 $titulo = "Trabajo práctico 4";
-$ejercicio = "ejercicio 3 (ver autos)";
+$ejercicio = "Ejercicio 3 (ver autos)";
 $descripcion = "Crear una pagina php “VerAutos.php”, en ella usando la capa de control correspondiente
 mostrar todos los datos de los autos que se encuentran cargados, de los dueños mostrar nombre y apellido.
 En caso de que no se encuentre ningún auto cargado en la base mostrar un mensaje indicando que no hay

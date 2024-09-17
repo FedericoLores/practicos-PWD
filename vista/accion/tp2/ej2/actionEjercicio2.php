@@ -1,5 +1,12 @@
 <?php
-include_once '../../../estructura/tp2/header_accionEj2.php';
+$titulo = "Trabajo práctico 2";
+$ejercicio = "Ejercicio 2-2";
+$descripcion = "Crear una página php que contenga un formulario HTML que permita ingresar las horas
+de cursada, de la materia Programación Web Dinámica, por cada día de la semana.
+Enviar los datos del formulario por el método Get a otra página php que los reciba y
+complete un array unidimensional. Visualizar por pantalla la cantidad total de horas que
+se cursan por semana.";
+include_once '../../../estructura/headerAccionEj2Tp2.php';
 include_once '../../../../control/tp2/ej2/controlEjercicio2.php';
 include_once '../../../../configuracion.php';
 

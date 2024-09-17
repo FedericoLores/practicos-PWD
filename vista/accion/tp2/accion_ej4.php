@@ -1,5 +1,9 @@
 <?php
-    include_once("../../estructura/tp2/header_accion.php");
+    $titulo = "Trabajo práctico 2";
+    $ejercicio = "Ejercicio 4";
+    $descripcion = "Diseñar un formulario que permita cargar las películas de la empresa Cinem@s. La lista géneros
+        tiene los siguientes datos: Comedia, Drama, Terror, Románticas, Suspenso, Otras.";
+    include_once ('../../estructura/headerAccion.php');
     include_once("../../../control/tp2/control_ej4.php");
     include_once '../../../configuracion.php';
     $control = new Control_ej4();
@@ -8,7 +12,7 @@
 
     <div class="d-flex justify-content-center p-5">
         <button type="button" class="btn btn-success mx-5" data-bs-toggle="modal" data-bs-target="#resultado">Resultados</button>
-        <a href="../indice_ej4.php" class="btn btn-warning mx-5" >Volver Atras</a>
+        <a href="../../tp2/indice_ej4.php" class="btn btn-warning mx-5" >Volver Atras</a>
     </div>
 
     <div id="resultado" class="modal bg-white">
@@ -47,4 +51,4 @@
             resultadoModal.show()
         })
     </script>
-<?php include_once("../estructura/footer.php")?>
+<?php include_once("../../estructura/footer.php")?>
