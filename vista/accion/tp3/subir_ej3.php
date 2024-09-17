@@ -1,5 +1,10 @@
 <?php 
-    include_once("../../estructura/tp3/header_accion.php");
+    $titulo = "Trabajo práctico 3";
+    $ejercicio = "Ejercicio 3";
+    $descripcion = "Agregue al formulario creado en el ejercicio 10 del práctico 2 un input file que les
+    permita adjuntar la imagen de película que se está cargando. Cuando se envía el formulario se
+    deberá guardar la imagen y luego mostrarla junto con la información cargada en el formulario";
+    include_once ('../../estructura/headerAccion.php');
     include_once("../../../control/tp3/control_ej3.php");
     include_once '../../../configuracion.php';
     $datos = datosRecibidos();

@@ -1,4 +1,11 @@
-<?php include_once("../estructura/tp3/header.php");?>
+<?php 
+  $titulo = "Trabajo práctico 3";
+  $ejercicio = "Ejercicio 2";
+  $descripcion = "Crear un formulario que permita subir un archivo. En el servidor se deberá controlar
+  que el tipo esperado sea txt (texto plano), si es correcto deberá abrir el archivo y mostrar su
+  contenido en un textarea.";
+  include_once ('../estructura/header.php');
+?>
     <div class="container">
         <form class="needs-validation p-5" novalidate id="formArchivoTxt" name="formArchivoTxt" method="post" action="../accion/tp3/subir_ej2.php" enctype="multipart/form-data">
             <div class="text-center">
