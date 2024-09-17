@@ -1,5 +1,8 @@
 <?php
-include_once ('../../estructura/tp4/header_accion.php');
+$titulo = "Trabajo práctico 4";
+$ejercicio = "ejercicio";
+$descripcion = "";
+include_once ('../../estructura/headerAccion.php');
 include_once('../../../configuracion.php');
 $datos = datosRecibidos();
 $auto = new AbmAuto();

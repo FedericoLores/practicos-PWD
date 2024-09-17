@@ -1,5 +1,8 @@
 <?php
-include_once ('../estructura/tp4/header.php');
+$titulo = "Trabajo práctico 4";
+$ejercicio = "ejercicio";
+$descripcion = "";
+include_once ('../estructura/header.php');
 include_once('../../configuracion.php');
 ?>
 <div class="card m-3">

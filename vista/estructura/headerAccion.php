@@ -9,7 +9,6 @@
     <script src="../../js/bootstrap.bundle.min.js"></script>
     <script src="../../js/validacion.js"></script>
 </head>
-<?php $titulo = ""; $ejercicio = ""; $descripcion=""; ?>
 <body class="d-flex flex-column min-vh-100">
     <nav class="navbar bg-body-secondary">
         <div class="container">
