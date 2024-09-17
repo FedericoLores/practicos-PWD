@@ -1,7 +1,6 @@
 <?php
 $titulo = "Trabajo práctico 4";
-$ejercicio = "ejercicio";
-$descripcion = "";
+$ejercicio = "eliminar auto";
 include_once ('../../estructura/headerAccion.php');
 include_once('../../../configuracion.php');
 $datos = datosRecibidos();

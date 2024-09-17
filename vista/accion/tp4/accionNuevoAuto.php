@@ -1,7 +1,13 @@
 <?php
 $titulo = "Trabajo práctico 4";
-$ejercicio = "ejercicio";
-$descripcion = "";
+$ejercicio = "ejercicio 7 (nuevo auto)";
+$descripcion = "Crear una página “NuevoAuto.php” que contenga un formulario en el que se permita cargar
+todos los datos de un auto (incluso su dueño). Estos datos serán enviados a una página
+“accionNuevoAuto.php” que cargue un nuevo registro en la tabla auto de la base de datos. Se debe chequear
+antes que la persona dueña del auto ya se encuentre cargada en la base de datos, de no ser así mostrar un
+link a la página que permite carga una nueva persona. Se debe mostrar un mensaje que indique si se pudo o
+no cargar los datos Utilizar css y validaciones javaScript cuando crea conveniente. Recordar usar la capa de
+control antes generada, no se puede acceder directamente a las clases del ORM.";
 include_once ('../../estructura/headerAccion.php');
 include_once('../../../configuracion.php');
 $datos = datosRecibidos();

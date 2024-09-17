@@ -14,12 +14,12 @@
         <div class="container">
             <div class="d-flex flex-column align-items-center w-100">
                 <span class="navbar-text display-5 fw-semibold pb-0">
-                    <a href="../indicePrincipal.php" class="text-decoration-none">
+                    <a href="../../indicePrincipal.php" class="text-decoration-none">
                         <p><?php echo $titulo; ?></p>
                     </a>
                 </span>
                 <span class="navbar-text display-6 pt-0">
-                    <a href="../indicePrincipal.php" class="text-decoration-none">
+                    <a href="../../indicePrincipal.php" class="text-decoration-none">
                         <p><?php echo $ejercicio; ?></p>
                     </a>
                 </span>
@@ -27,7 +27,7 @@
         </div>
     </nav>
 
-    <?php if ($descripcion != ""){?>
+    <?php if (isset($descripcion)){?>
     <div class="card mt-3">
         <div class="card-body text-center fs-5">
             <span class="bg-secondary bg-opacity-25">

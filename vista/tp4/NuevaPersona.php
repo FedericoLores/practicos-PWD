@@ -1,7 +1,11 @@
 <?php
 $titulo = "Trabajo práctico 4";
-$ejercicio = "ejercicio";
-$descripcion = "";
+$ejercicio = "ejercicio 6 (nueva persona)";
+$descripcion = "Crear una página “NuevaPersona.php” que contenga un formulario que permita solicitar todos
+los datos de una persona. Estos datos serán enviados a una página “accionNuevaPersona.php” que cargue
+un nuevo registro en la tabla persona de la base de datos. Se debe mostrar un mensaje que indique si se
+pudo o no cargar los datos de la persona. Utilizar css y validaciones javaScript cuando crea conveniente.
+Recordar usar la capa de control antes generada, no se puede acceder directamente a las clases del ORM.";
 include_once ('../estructura/header.php');
 include_once('../../configuracion.php');
 ?>
