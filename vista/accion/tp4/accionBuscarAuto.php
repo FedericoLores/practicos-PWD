@@ -28,6 +28,7 @@ if(isset($datos['accion'])){
     <!-- espacio para mensaje de debug recibido-->
 <?php
 if($titulo != "Error" && $auto->seteadosCamposClaves($datos)){
+    $datos['Patente'] = strtoupper($datos['Patente']); 
     $resp = false;
     if($datos['accion']=='buscar'){
         if($busqueda = $auto->buscar($datos)){

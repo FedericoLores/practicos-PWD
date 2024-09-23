@@ -16,20 +16,28 @@ include_once('../../configuracion.php');
 <h4>Nuevo Auto</h4>
 </div>
 <div class="card-body">
-<form method="post" action="../accion/tp4/accionNuevoAuto.php" id="nuevoAuto" class="needs-validation" novalidate>
+<form method="post" action="../accion/tp4/accionNuevoAuto.php" id="nuevoAuto" name="nuevoAuto" class="needs-validation" novalidate>
 	<div class="container">
-        <label for="Patente" class="form-label">Patente</label>
-        <input id="Patente" name ="Patente" type="text" class="form-control" pattern="^[A-Za-zñÑäëïöüáéíóúÁÉÍÓÚ\d\s-]+$" minlength="4" maxlength="10" required/>
-        <div class="invalid-feedback">Ingrese una patente de valida de 4-8 caracteres</div>
-        <label for="Marca" class="form-label mt-2">Marca</label>
-        <input id="Marca" name ="Marca" type="text" class="form-control" minlength="3" maxlength="50" pattern="^(?=.*[A-Za-zñÑäëïöüáéíóúÁÉÍÓÚ])[A-Za-zñÑäëïöüáéíóúÁÉÍÓÚ\d\s-]+$" required/>
-        <div class="invalid-feedback">Ingrese una marca valida</div>
-        <label for="Modelo" class="form-label mt-2">Modelo</label>
-        <input id="Modelo" name ="Modelo" type="number" min="0" class="form-control" min="0" max="99999999" required/>
-        <div class="invalid-feedback">Ingrese un modelo valido</div>
-        <label for="NroDni" class="form-label mt-2">Dni del propietario</label>
-        <input id="NroDni" name ="NroDni" type="number" class="form-control" min="10000000" max="99999999" required/>
-        <div class="invalid-feedback">El DNI debe tener 8 digitos</div>
+        <div class="col">
+            <label for="Patente" class="form-label">Patente</label>
+            <input id="Patente" name ="Patente" type="text" class="form-control" pattern="^[A-Za-zÁÉÍÓÚáéíóúÑñ0-9]+([ \-]?[A-Za-zÁÉÍÓÚáéíóúÑñ0-9]+)*$" minlength="4" maxlength="9" placeholder="AA 123 ZZ" required/>
+            <div class="invalid-feedback">Ingrese una patente de valida de 4-9 caracteres</div>
+        </div>
+        <div class="col">
+            <label for="Marca" class="form-label mt-2">Marca</label>
+            <input id="Marca" name ="Marca" type="text" class="form-control" minlength="3" maxlength="50" pattern="^(?=.*[A-Za-zñÑäëïöüáéíóúÁÉÍÓÚ])[A-Za-zñÑäëïöüáéíóúÁÉÍÓÚ\d\s\-]+$" placeholder="Marca" required/>
+            <div class="invalid-feedback">Ingrese una marca valida</div>
+        </div>
+        <div class="col">
+            <label for="Modelo" class="form-label mt-2">Modelo</label>
+            <input id="Modelo" name ="Modelo" type="number" class="form-control" min="0" max="99999" placeholder="0" required/>
+            <div class="invalid-feedback">Ingrese un modelo valido</div>
+        </div>
+        <div class="col">
+            <label for="NroDni" class="form-label mt-2">Dni del propietario</label>
+            <input id="NroDni" name ="NroDni" type="number" class="form-control" min="10000000" max="99999999" placeholder="00000000" required/>
+            <div class="invalid-feedback">El DNI debe tener 8 digitos</div>
+        </div>
         <input id="accion" name ="accion" value="nuevo" type="hidden">
         <div class="row mt-2">
             <div class="col mx-2">
