@@ -1,5 +1,6 @@
 <?php 
 
+
 function autocargado($clase){
     $directorios = array(
         $_SESSION['ROOT'].'modelo/tp4/',

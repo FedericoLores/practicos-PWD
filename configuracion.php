@@ -10,5 +10,6 @@ include_once ($ROOT.'utils/scripts.php');
 $PRINCIPAL = "Location:http://".$_SERVER['HTTP_HOST']."/$PROYECTO/index.php";
 
 $_SESSION['ROOT'] = $ROOT; 
+require($ROOT . 'vendor/autoload.php');
 
 ?>
