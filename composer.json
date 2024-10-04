@@ -2,6 +2,6 @@
     "name": "devi/practicos-pwd",
     "license": "none",
     "require": {
-        "symfony/translation": "^7.1"
+        "stichoza/google-translate-php": "^5.2"
     }
 }
