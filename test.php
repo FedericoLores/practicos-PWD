@@ -7,10 +7,21 @@ $datos = datosRecibidos();
 if(isset($datos['idioma'])){
     $idioma = $datos['idioma'];
 }else{
+    $datos['idioma'] = 'es';//definimos idioma por defecto si no se encuentra uno
     $idioma = 'es';
 }
-$traduccion = new GoogleTranslate($idioma); 
-echo $traduccion->translate('До свидания');
+$traduccion = new GoogleTranslate($idioma,'es');
+$lista = [
+    "ab" => "Abjasio", "ace" => "Achenés","ach" => "Acholi","aa" => "Afar", "af" => "Afrikáans","ay" => "Aimara","sq" => "Albanés","de" => "Alemán","alz" => "Alur","am" => "Amhárico","ar" => "Árabe","hy" => "Armenio","as" => "Asamés","awa" => "Avadhi","av" => "Avar","az" => "Azerí","ban" => "Balinés","bal" => "Baluchi","bm" => "Bambara","bci" => "Baoulé","ba" => "Baskir","btx" => "Batak Karo","bts" => "Batak Simalungun","bbc" => "Batak Toba","bem" => "Bemba","bn" => "Bengalí","bew" => "Betawi","bho" => "Bhoyapurí","be" => "Bielorruso","bik" => "Bikol","my" => "Birmano","bs" => "Bosnio","br" => "Bretón","bg" => "Búlgaro","bua" => "Buriato","km" => "Camboyano","kn" => "Canarés","yue" => "Cantonés","ca" => "Catalán","ceb" => "Cebuano","ch" => "Chamorro","ce" => "Checheno","cs" => "Checo","ny" => "Chichewa","zh-CN" => "Chino (simplificado)","zh-TW" => "Chino (tradicional)","cnh" => "Chino Hakka","cv" => "Chuvasio","si" => "Cingalés","ko" => "Coreano","co" => "Corso","ht" => "Criollo Haitiano","mfe" => "Criollo Mauriciano","crs" => "Criollo Seychellense","hr" => "Croata","da" => "Danés","fa-AF" => "Darí","din" => "Dinka","dyu" => "Diula","dv" => "Divehi","doi" => "Dogri","dz" => "Dzongkha","sk" => "Eslovaco","sl" => "Esloveno","es" => "Español","eo" => "Esperanto","et" => "Estonio","eu" => "Euskera","ee" => "Ewé","fo" => "Feroés","tl" => "Filipino","fi" => "Finlandés","fj" => "Fiyiano","fon" => "Fon","fr" => "Francés","fy" => "Frisio","fur" => "Friulano","ff" => "Fulani","gaa" => "Ga","gd" => "Gaélico Escocés","cy" => "Galés","gl" => "Gallego","ka" => "Georgiano","el" => "Griego","gn" => "Guaraní","gu" => "Gujarati","ha" => "Hausa","haw" => "Hawaiano","iw" => "Hebreo","hil" => "Hiligaynon","hi" => "Hindi","hmn" => "Hmong","hu" => "Húngaro","hrx" => "Hunsrik","iba" => "Iban","ig" => "Igbo","ilo" => "Ilocano","id" => "Indonesio","en" => "Inglés","ga" => "Irlandés","is" => "Islandés","it" => "Italiano","ja" => "Japonés","jw" => "Javanés","kac" => "Jingpo","kl" => "Kalaallisut","kr" => "Kanuri","kk" => "Kazajo","kha" => "Khasi","cgg" => "Kiga","kg" => "Kikongo","rw" => "Kinyarwanda","ky" => "Kirguís","rn" => "Kirundi","ktu" => "Kituba","trp" => "Kokborok","kv" => "Komi","gom" => "Konkaní","kri" => "Krio","ku" => "Kurdo (Kurmanyi)","ckb" => "Kurdo (Sorani)","lo" => "Lao","ltg" => "Latgaliano","la" => "Latín","lv" => "Letón","lij" => "Ligur","li" => "Limburgués","ln" => "Lingala","lt" => "Lituano","lmo" => "Lombardo","lg" => "Luganda","luo" => "Luo","lb" => "Luxemburgués","mk" => "Macedonio","mad" => "Madurés","mai" => "Maithili","mak" => "Makassar","ml" => "Malayalam","ms" => "Malayo","ms-Arab" => "Malayo (Jawi)","mg" => "Malgache","mt" => "Maltés","mam" => "Mam","gv" => "Manés","mi" => "Maorí","mr" => "Maratí","chm" => "Marí de las Praderas","mh" => "Marshalés","mwr" => "Marwari","yua" => "Maya Yucateco","mni-Mtei" => "Meiteilon (Manipuri)","min" => "Minangkabau","lus" => "Mizo","mn" => "Mongol","bm-Nkoo" => "N'Ko","nhe" => "Náhuatl (Huasteca Oriental)","ndc-ZW" => "Ndau","nr" => "Ndebele Meridional","dov" => "Ndombe","nl" => "Neerlandés","new" => "Nepalbhasa (Newarí)","ne" => "Nepalí","no" => "Noruego","nus" => "Nuer","oc" => "Occitano","or" => "Oriya","om" => "Oromo","os" => "Osético","pam" => "Pampango","pag" => "Pangasinán","pa" => "Panyabí (Gurmukhi)","pa-Arab" => "Panyabí (Shahmukhi)","pap" => "Papiamento","ps" => "Pastún","jam" => "Patois Jamaiquino","fa" => "Persa","pl" => "Polaco","pt" => "Portugués (Brasil)","pt-PT" => "Portugués (Portugal)","qu" => "Quechua","kek" => "Quekchí","rom" => "Romaní","ro" => "Rumano","ru" => "Ruso","war" => "Samareño","se" => "Sami Septentrional","sm" => "Samoano","sg" => "Sango","sa" => "Sánscrito","sat-Latn" => "Santali","nso" => "Sepedi","sr" => "Serbio","st" => "Sesoto","tn" => "Setsuana","shn" => "Shan","sn" => "Shona","scn" => "Siciliano","szl" => "Silesio","sd" => "Sindhi","so" => "Somalí","sw" => "Suajili","ss" => "Suazi","sv" => "Sueco","su" => "Sundanés","sus" => "Susu","ty" => "Tahitiano","th" => "Tailandés","ber" => "Tamashek (Tifinag)","ber-Latn" => "Tamazight","ta" => "Tamil","tt" => "Tártaro","crh" => "Tártaro de Crimea","tg" => "Tayiko","te" => "Telugu","tet" => "Tetun","bo" => "Tibetano","ti" => "Tigrinya","tiv" => "Tiv","tpi" => "Tok Pisin","to" => "Tongano","chk" => "Trukés","ts" => "Tsonga","tcy" => "Tulu","tum" => "Tumbuka","tr" => "Turco","tk" => "Turkmeno","tyv" => "Tuviniano","ak" => "Twi","uk" => "Ucraniano","udm" => "Udmurto","ug" => "Uigur","ur" => "Urdu","uz" => "Uzbeco","ve" => "Venda","vec" => "Véneto","vi" => "Vietnamita","wo" => "Wólof","xh" => "Xhosa","sah" => "Yakuto","yi" => "Yidis","yo" => "Yoruba","zap" => "Zapoteco","zu" => "Zulú"
+];
+function encontrarIdioma($sigla, $lista){
+    $idioma = "es";//defecto
+    if(isset($lista[$sigla])){
+        $idioma = $lista[$sigla];
+    }
+    return $idioma;
+}
+echo $traduccion->translate('mensaje de prueba en ' . encontrarIdioma($datos['idioma'], $lista));
 ?>
 <!DOCTYPE html>
 <head>
@@ -19,253 +30,16 @@ echo $traduccion->translate('До свидания');
     <title>Document</title>
 </head>
 <body>
-    <form action="<?php $_SERVER['PHP_SELF']?>" method="$_GET"><!-- buscar funcion para sacar nombre de archivo actual -->
+    <form action="<?php $_SERVER['PHP_SELF']?>" method="$_GET">
         <button type="submit"><?php echo$traduccion->translate('Cambiar Idioma') ?>
         </button>
         <select id="idioma" name="idioma">
-            <option value="ab"><?php echo $traduccion->translate('Abjasio') ?></option>
-            <option value="ace"><?php echo $traduccion->translate('Achenés') ?></option>
-            <option value="ach"><?php echo $traduccion->translate('Acholi') ?></option>
-            <option value="aa"><?php echo $traduccion->translate('Afar') ?></option>
-            <option value="af"><?php echo $traduccion->translate('Afrikáans') ?></option>
-            <option value="ay"><?php echo $traduccion->translate('Aimara') ?></option>
-            <option value="sq"><?php echo $traduccion->translate('Albanés') ?></option>
-            <option value="de"><?php echo $traduccion->translate('Alemán') ?></option>
-            <option value="alz"><?php echo $traduccion->translate('Alur') ?></option>
-            <option value="am"><?php echo $traduccion->translate('Amhárico') ?></option>
-            <option value="ar"><?php echo $traduccion->translate('Árabe') ?></option>
-            <option value="hy"><?php echo $traduccion->translate('Armenio') ?></option>
-            <option value="as"><?php echo $traduccion->translate('Asamés') ?></option>
-            <option value="awa"><?php echo $traduccion->translate('Avadhi') ?></option>
-            <option value="av"><?php echo $traduccion->translate('Avar') ?></option>
-            <option value="az"><?php echo $traduccion->translate('Azerí') ?></option>
-            <option value="ban"><?php echo $traduccion->translate('Balinés') ?></option>
-            <option value="bal"><?php echo $traduccion->translate('Baluchi') ?></option>
-            <option value="bm"><?php echo $traduccion->translate('Bambara') ?></option>
-            <option value="bci"><?php echo $traduccion->translate('Baoulé') ?></option>
-            <option value="ba"><?php echo $traduccion->translate('Baskir') ?></option>
-            <option value="btx"><?php echo $traduccion->translate('Batak karo') ?></option>
-            <option value="bts"><?php echo $traduccion->translate('Batak Simalungun') ?></option>
-            <option value="bbc"><?php echo $traduccion->translate('Batak toba') ?></option>
-            <option value="bem"><?php echo $traduccion->translate('Bemba') ?></option>
-            <option value="bn"><?php echo $traduccion->translate('Bengalí') ?></option>
-            <option value="bew"><?php echo $traduccion->translate('Betawi') ?></option>
-            <option value="bho"><?php echo $traduccion->translate('Bhoyapurí') ?></option>
-            <option value="be"><?php echo $traduccion->translate('Bielorruso') ?></option>
-            <option value="bik"><?php echo $traduccion->translate('Bikol') ?></option>
-            <option value="my"><?php echo $traduccion->translate('Birmano') ?></option>
-            <option value="bs"><?php echo $traduccion->translate('Bosnio') ?></option>
-            <option value="br"><?php echo $traduccion->translate('Bretón') ?></option>
-            <option value="bg"><?php echo $traduccion->translate('Búlgaro') ?></option>
-            <option value="bua"><?php echo $traduccion->translate('Buriato') ?></option>
-            <option value="km"><?php echo $traduccion->translate('Camboyano') ?></option>
-            <option value="kn"><?php echo $traduccion->translate('Canarés') ?></option>
-            <option value="yue"><?php echo $traduccion->translate('Cantonés') ?></option>
-            <option value="ca"><?php echo $traduccion->translate('Catalán') ?></option>
-            <option value="ceb"><?php echo $traduccion->translate('Cebuano') ?></option>
-            <option value="ch"><?php echo $traduccion->translate('Chamorro') ?></option>
-            <option value="ce"><?php echo $traduccion->translate('Checheno') ?></option>
-            <option value="cs"><?php echo $traduccion->translate('Checo') ?></option>
-            <option value="ny"><?php echo $traduccion->translate('Chichewa') ?></option>
-            <option value="zh-CN"><?php echo $traduccion->translate('Chino (simplificado)') ?></option>
-            <option value="zh-TW"><?php echo $traduccion->translate('Chino (tradicional)') ?></option>
-            <option value="cnh"><?php echo $traduccion->translate('Chino hakka') ?></option>
-            <option value="cv"><?php echo $traduccion->translate('Chuvasio') ?></option>
-            <option value="si"><?php echo $traduccion->translate('Cingalés') ?></option>
-            <option value="ko"><?php echo $traduccion->translate('Coreano') ?></option>
-            <option value="co"><?php echo $traduccion->translate('Corso') ?></option>
-            <option value="ht"><?php echo $traduccion->translate('Criollo haitiano') ?></option>
-            <option value="mfe"><?php echo $traduccion->translate('Criollo mauriciano') ?></option>
-            <option value="crs"><?php echo $traduccion->translate('Criollo seychellense') ?></option>
-            <option value="hr"><?php echo $traduccion->translate('Croata') ?></option>
-            <option value="da"><?php echo $traduccion->translate('Danés') ?></option>
-            <option value="fa-AF"><?php echo $traduccion->translate('Darí') ?></option>
-            <option value="din"><?php echo $traduccion->translate('Dinka') ?></option>
-            <option value="dyu"><?php echo $traduccion->translate('Diula') ?></option>
-            <option value="dv"><?php echo $traduccion->translate('Divehi') ?></option>
-            <option value="doi"><?php echo $traduccion->translate('Dogri') ?></option>
-            <option value="dz"><?php echo $traduccion->translate('Dzongkha') ?></option>
-            <option value="sk"><?php echo $traduccion->translate('Eslovaco') ?></option>
-            <option value="sl"><?php echo $traduccion->translate('Esloveno') ?></option>
-            <option value="es"><?php echo $traduccion->translate('Español') ?></option>
-            <option value="eo"><?php echo $traduccion->translate('Esperanto') ?></option>
-            <option value="et"><?php echo $traduccion->translate('Estonio') ?></option>
-            <option value="eu"><?php echo $traduccion->translate('Euskera') ?></option>
-            <option value="ee"><?php echo $traduccion->translate('Ewé') ?></option>
-            <option value="fo"><?php echo $traduccion->translate('Feroés') ?></option>
-            <option value="tl"><?php echo $traduccion->translate('Filipino') ?></option>
-            <option value="fi"><?php echo $traduccion->translate('Finlandés') ?></option>
-            <option value="fj"><?php echo $traduccion->translate('Fiyiano') ?></option>
-            <option value="fon"><?php echo $traduccion->translate('Fon') ?></option>
-            <option value="fr"><?php echo $traduccion->translate('Francés') ?></option>
-            <option value="fy"><?php echo $traduccion->translate('Frisio') ?></option>
-            <option value="fur"><?php echo $traduccion->translate('Friulano') ?></option>
-            <option value="ff"><?php echo $traduccion->translate('Fulani') ?></option>
-            <option value="gaa"><?php echo $traduccion->translate('Ga') ?></option>
-            <option value="gd"><?php echo $traduccion->translate('Gaélico escocés') ?></option>
-            <option value="cy"><?php echo $traduccion->translate('Galés') ?></option>
-            <option value="gl"><?php echo $traduccion->translate('Gallego') ?></option>
-            <option value="ka"><?php echo $traduccion->translate('Georgiano') ?></option>
-            <option value="el"><?php echo $traduccion->translate('Griego') ?></option>
-            <option value="gn"><?php echo $traduccion->translate('Guaraní') ?></option>
-            <option value="gu"><?php echo $traduccion->translate('Gujarati') ?></option>
-            <option value="ha"><?php echo $traduccion->translate('Hausa') ?></option>
-            <option value="haw"><?php echo $traduccion->translate('Hawaiano') ?></option>
-            <option value="iw"><?php echo $traduccion->translate('Hebreo') ?></option>
-            <option value="hil"><?php echo $traduccion->translate('Hiligaynon') ?></option>
-            <option value="hi"><?php echo $traduccion->translate('Hindi') ?></option>
-            <option value="hmn"><?php echo $traduccion->translate('Hmong') ?></option>
-            <option value="hu"><?php echo $traduccion->translate('Húngaro') ?></option>
-            <option value="hrx"><?php echo $traduccion->translate('Hunsrik') ?></option>
-            <option value="iba"><?php echo $traduccion->translate('Iban') ?></option>
-            <option value="ig"><?php echo $traduccion->translate('Igbo') ?></option>
-            <option value="ilo"><?php echo $traduccion->translate('Ilocano') ?></option>
-            <option value="id"><?php echo $traduccion->translate('Indonesio') ?></option>
-            <option value="en"><?php echo $traduccion->translate('Inglés') ?></option>
-            <option value="ga"><?php echo $traduccion->translate('Irlandés') ?></option>
-            <option value="is"><?php echo $traduccion->translate('Islandés') ?></option>
-            <option value="it"><?php echo $traduccion->translate('Italiano') ?></option>
-            <option value="ja"><?php echo $traduccion->translate('Japonés') ?></option>
-            <option value="jw"><?php echo $traduccion->translate('Javanés') ?></option>
-            <option value="kac"><?php echo $traduccion->translate('Jingpo') ?></option>
-            <option value="kl"><?php echo $traduccion->translate('Kalaallisut') ?></option>
-            <option value="kr"><?php echo $traduccion->translate('Kanuri') ?></option>
-            <option value="kk"><?php echo $traduccion->translate('Kazajo') ?></option>
-            <option value="kha"><?php echo $traduccion->translate('Khasi') ?></option>
-            <option value="cgg"><?php echo $traduccion->translate('Kiga') ?></option>
-            <option value="kg"><?php echo $traduccion->translate('Kikongo') ?></option>
-            <option value="rw"><?php echo $traduccion->translate('Kinyarwanda') ?></option>
-            <option value="ky"><?php echo $traduccion->translate('Kirguís') ?></option>
-            <option value="rn"><?php echo $traduccion->translate('Kirundi') ?></option>
-            <option value="ktu"><?php echo $traduccion->translate('Kituba') ?></option>
-            <option value="trp"><?php echo $traduccion->translate('Kokborok') ?></option>
-            <option value="kv"><?php echo $traduccion->translate('Komi') ?></option>
-            <option value="gom"><?php echo $traduccion->translate('Konkaní') ?></option>
-            <option value="kri"><?php echo $traduccion->translate('Krio') ?></option>
-            <option value="ku"><?php echo $traduccion->translate('Kurdo (kurmanyi)') ?></option>
-            <option value="ckb"><?php echo $traduccion->translate('Kurdo (sorani)') ?></option>
-            <option value="lo"><?php echo $traduccion->translate('Lao') ?></option>
-            <option value="ltg"><?php echo $traduccion->translate('Latgaliano') ?></option>
-            <option value="la"><?php echo $traduccion->translate('Latín') ?></option>
-            <option value="lv"><?php echo $traduccion->translate('Letón') ?></option>
-            <option value="lij"><?php echo $traduccion->translate('Ligur') ?></option>
-            <option value="li"><?php echo $traduccion->translate('Limburgués') ?></option>
-            <option value="ln"><?php echo $traduccion->translate('Lingala') ?></option>
-            <option value="lt"><?php echo $traduccion->translate('Lituano') ?></option>
-            <option value="lmo"><?php echo $traduccion->translate('Lombardo') ?></option>
-            <option value="lg"><?php echo $traduccion->translate('Luganda') ?></option>
-            <option value="luo"><?php echo $traduccion->translate('Luo') ?></option>
-            <option value="lb"><?php echo $traduccion->translate('Luxemburgués') ?></option>
-            <option value="mk"><?php echo $traduccion->translate('Macedonio') ?></option>
-            <option value="mad"><?php echo $traduccion->translate('Madurés') ?></option>
-            <option value="mai"><?php echo $traduccion->translate('Maithili') ?></option>
-            <option value="mak"><?php echo $traduccion->translate('Makassar') ?></option>
-            <option value="ml"><?php echo $traduccion->translate('Malayalam') ?></option>
-            <option value="ms"><?php echo $traduccion->translate('Malayo') ?></option>
-            <option value="ms-Arab"><?php echo $traduccion->translate('Malayo (jawi)') ?></option>
-            <option value="mg"><?php echo $traduccion->translate('Malgache') ?></option>
-            <option value="mt"><?php echo $traduccion->translate('Maltés') ?></option>
-            <option value="mam"><?php echo $traduccion->translate('Mam') ?></option>
-            <option value="gv"><?php echo $traduccion->translate('Manés') ?></option>
-            <option value="mi"><?php echo $traduccion->translate('Maorí') ?></option>
-            <option value="mr"><?php echo $traduccion->translate('Maratí') ?></option>
-            <option value="chm"><?php echo $traduccion->translate('Marí de las praderas') ?></option>
-            <option value="mh"><?php echo $traduccion->translate('Marshalés') ?></option>
-            <option value="mwr"><?php echo $traduccion->translate('Marwari') ?></option>
-            <option value="yua"><?php echo $traduccion->translate('Maya yucateco') ?></option>
-            <option value="mni-Mtei"><?php echo $traduccion->translate('Meiteilon (manipuri)') ?></option>
-            <option value="min"><?php echo $traduccion->translate('Minangkabau') ?></option>
-            <option value="lus"><?php echo $traduccion->translate('Mizo') ?></option>
-            <option value="mn"><?php echo $traduccion->translate('Mongol') ?></option>
-            <option value="bm-Nkoo"><?php echo $traduccion->translate('N\'Ko') ?></option>
-            <option value="nhe"><?php echo $traduccion->translate('Náhuatl (Huasteca oriental)') ?></option>
-            <option value="ndc-ZW"><?php echo $traduccion->translate('Ndau') ?></option>
-            <option value="nr"><?php echo $traduccion->translate('Ndebele meridional') ?></option>
-            <option value="dov"><?php echo $traduccion->translate('Ndombe') ?></option>
-            <option value="nl"><?php echo $traduccion->translate('Neerlandés') ?></option>
-            <option value="new"><?php echo $traduccion->translate('Nepalbhasa (newarí)') ?></option>
-            <option value="ne"><?php echo $traduccion->translate('Nepalí') ?></option>
-            <option value="no"><?php echo $traduccion->translate('Noruego') ?></option>
-            <option value="nus"><?php echo $traduccion->translate('Nuer') ?></option>
-            <option value="oc"><?php echo $traduccion->translate('Occitano') ?></option>
-            <option value="or"><?php echo $traduccion->translate('Oriya') ?></option>
-            <option value="om"><?php echo $traduccion->translate('Oromo') ?></option>
-            <option value="os"><?php echo $traduccion->translate('Osético') ?></option>
-            <option value="pam"><?php echo $traduccion->translate('Pampango') ?></option>
-            <option value="pag"><?php echo $traduccion->translate('Pangasinán') ?></option>
-            <option value="pa"><?php echo $traduccion->translate('Panyabí (gurmukhi)') ?></option>
-            <option value="pa-Arab"><?php echo $traduccion->translate('Panyabí (shahmukhi)') ?></option>
-            <option value="pap"><?php echo $traduccion->translate('Papiamento') ?></option>
-            <option value="ps"><?php echo $traduccion->translate('Pastún') ?></option>
-            <option value="jam"><?php echo $traduccion->translate('Patois jamaiquino') ?></option>
-            <option value="fa"><?php echo $traduccion->translate('Persa') ?></option>
-            <option value="pl"><?php echo $traduccion->translate('Polaco') ?></option>
-            <option value="pt"><?php echo $traduccion->translate('Portugués (Brasil)') ?></option>
-            <option value="pt-PT"><?php echo $traduccion->translate('Portugués (Portugal)') ?></option>
-            <option value="qu"><?php echo $traduccion->translate('Quechua') ?></option>
-            <option value="kek"><?php echo $traduccion->translate('Quekchí') ?></option>
-            <option value="rom"><?php echo $traduccion->translate('Romaní') ?></option>
-            <option value="ro"><?php echo $traduccion->translate('Rumano') ?></option>
-            <option value="ru"><?php echo $traduccion->translate('Ruso') ?></option>
-            <option value="war"><?php echo $traduccion->translate('Samareño') ?></option>
-            <option value="se"><?php echo $traduccion->translate('Sami septentrional') ?></option>
-            <option value="sm"><?php echo $traduccion->translate('Samoano') ?></option>
-            <option value="sg"><?php echo $traduccion->translate('Sango') ?></option>
-            <option value="sa"><?php echo $traduccion->translate('Sánscrito') ?></option>
-            <option value="sat-Latn"><?php echo $traduccion->translate('Santali') ?></option>
-            <option value="nso"><?php echo $traduccion->translate('Sepedi') ?></option>
-            <option value="sr"><?php echo $traduccion->translate('Serbio') ?></option>
-            <option value="st"><?php echo $traduccion->translate('Sesoto') ?></option>
-            <option value="tn"><?php echo $traduccion->translate('Setsuana') ?></option>
-            <option value="shn"><?php echo $traduccion->translate('Shan') ?></option>
-            <option value="sn"><?php echo $traduccion->translate('Shona') ?></option>
-            <option value="scn"><?php echo $traduccion->translate('Siciliano') ?></option>
-            <option value="szl"><?php echo $traduccion->translate('Silesio') ?></option>
-            <option value="sd"><?php echo $traduccion->translate('Sindhi') ?></option>
-            <option value="so"><?php echo $traduccion->translate('Somalí') ?></option>
-            <option value="sw"><?php echo $traduccion->translate('Suajili') ?></option>
-            <option value="ss"><?php echo $traduccion->translate('Suazi') ?></option>
-            <option value="sv"><?php echo $traduccion->translate('Sueco') ?></option>
-            <option value="su"><?php echo $traduccion->translate('Sundanés') ?></option>
-            <option value="sus"><?php echo $traduccion->translate('Susu') ?></option>
-            <option value="ty"><?php echo $traduccion->translate('Tahitiano') ?></option>
-            <option value="th"><?php echo $traduccion->translate('Tailandés') ?></option>
-            <option value="ber"><?php echo $traduccion->translate('Tamashek (tifinag)') ?></option>
-            <option value="ber-Latn"><?php echo $traduccion->translate('Tamazight') ?></option>
-            <option value="ta"><?php echo $traduccion->translate('Tamil') ?></option>
-            <option value="tt"><?php echo $traduccion->translate('Tártaro') ?></option>
-            <option value="crh"><?php echo $traduccion->translate('Tártaro de Crimea') ?></option>
-            <option value="tg"><?php echo $traduccion->translate('Tayiko') ?></option>
-            <option value="te"><?php echo $traduccion->translate('Telugu') ?></option>
-            <option value="tet"><?php echo $traduccion->translate('Tetun') ?></option>
-            <option value="bo"><?php echo $traduccion->translate('Tibetano') ?></option>
-            <option value="ti"><?php echo $traduccion->translate('Tigrinya') ?></option>
-            <option value="tiv"><?php echo $traduccion->translate('Tiv') ?></option>
-            <option value="tpi"><?php echo $traduccion->translate('Tok pisin') ?></option>
-            <option value="to"><?php echo $traduccion->translate('Tongano') ?></option>
-            <option value="chk"><?php echo $traduccion->translate('Trukés') ?></option>
-            <option value="ts"><?php echo $traduccion->translate('Tsonga') ?></option>
-            <option value="tcy"><?php echo $traduccion->translate('Tulu') ?></option>
-            <option value="tum"><?php echo $traduccion->translate('Tumbuka') ?></option>
-            <option value="tr"><?php echo $traduccion->translate('Turco') ?></option>
-            <option value="tk"><?php echo $traduccion->translate('Turkmeno') ?></option>
-            <option value="tyv"><?php echo $traduccion->translate('Tuviniano') ?></option>
-            <option value="ak"><?php echo $traduccion->translate('Twi') ?></option>
-            <option value="uk"><?php echo $traduccion->translate('Ucraniano') ?></option>
-            <option value="udm"><?php echo $traduccion->translate('Udmurto') ?></option>
-            <option value="ug"><?php echo $traduccion->translate('Uigur') ?></option>
-            <option value="ur"><?php echo $traduccion->translate('Urdu') ?></option>
-            <option value="uz"><?php echo $traduccion->translate('Uzbeco') ?></option>
-            <option value="ve"><?php echo $traduccion->translate('Venda') ?></option>
-            <option value="vec"><?php echo $traduccion->translate('Véneto') ?></option>
-            <option value="vi"><?php echo $traduccion->translate('Vietnamita') ?></option>
-            <option value="wo"><?php echo $traduccion->translate('Wólof') ?></option>
-            <option value="xh"><?php echo $traduccion->translate('Xhosa') ?></option>
-            <option value="sah"><?php echo $traduccion->translate('Yakuto') ?></option>
-            <option value="yi"><?php echo $traduccion->translate('Yidis') ?></option>
-            <option value="yo"><?php echo $traduccion->translate('Yoruba') ?></option>
-            <option value="zap"><?php echo $traduccion->translate('Zapoteco') ?></option>
-            <option value="zu"><?php echo $traduccion->translate('Zulú') ?></option>
+            <?php $select = ""; 
+            foreach($lista as $clave => $valor){
+                $select .= '<option value="' . $clave . '">' .$valor.'</option>';
+            }
+            echo $select;
+            ?>
         </select>
     </form>
 </body>

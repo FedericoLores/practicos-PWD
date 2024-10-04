@@ -3,7 +3,7 @@
         'name' => 'devi/practicos-pwd',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '40d9f7cd9ae605d4024f9ea067085af322d6dc5d',
+        'reference' => '872dbf769d528d447008948ad0ee1152179559b1',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'devi/practicos-pwd' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '40d9f7cd9ae605d4024f9ea067085af322d6dc5d',
+            'reference' => '872dbf769d528d447008948ad0ee1152179559b1',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
