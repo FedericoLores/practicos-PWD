@@ -50,7 +50,7 @@ $texto = '</br>
     <div class="container text-center">
         <div class="row">
             <div class="col my-3">
-            <a class="btn btn-info px-4" href="./traducciones.php">Ver Traductor</a>
+            <a class="btn btn-info px-4" href="./traducciones.php"><?php echo $traduccion->translate('Ver Traductor') ?></a>
             </div>
         </div>
 
