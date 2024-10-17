@@ -99,6 +99,18 @@ if(isset($datos['inputTraduccion'])){
         </form>
     </div>
 </div>
+
+<div class="container">
+    <div class="card my-5">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col my-3">
+                <a class="btn btn-info px-4" href="./indexTrabajoLibrerias.php">Volver a la pagina principal</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <?php
 include_once('../estructura/footer.php');
 ?>
