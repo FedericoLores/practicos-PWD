@@ -9,7 +9,7 @@ $datos = datosRecibidos();
 $idioma = idiomaRecibido($datos);
 $idiomaOut = idiomaRecibido($datos, true);
 $traduccion = new GoogleTranslate($idiomaOut, $idioma);
-if($datos['idioma'] == ''){
+if(isset($datos['idioma']) &&$datos['idioma'] == ''){
     $traduccion->setSource();
 }
 if(isset($datos['inputTraduccion'])){
@@ -82,7 +82,7 @@ if(isset($datos['inputTraduccion'])){
                     </div>
                 </div>
                 <div class="container d-flex justify-content-center mt-2 pb-2">
-                    <button class="btn btn-primary" type="submit">Traducir</button>
+                    <input type="submit" class="btn btn-primary" value="traducir"></input>
                 </div>
 
             </div>
