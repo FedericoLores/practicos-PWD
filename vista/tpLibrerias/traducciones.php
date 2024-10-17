@@ -28,19 +28,27 @@ if(isset($datos['inputTraduccion'])){
                         <select class="form-select m-2" id="idioma" name="idioma">
                             <?php 
                                 $select = "";
+                                //creamos un array con la lista de idiomas disponibles
                                 $lista = GoogleTranslate::langs('es');
+                                //lo ordenamos por el orden alfabetico de las claves
                                 ksort($lista);
+                                //agregamos una clave null al inicio del array para poder usar la opcion de detectar idioma
                                 $lista = array_merge(array(null=>'Detectar Idioma'),$lista);
                                 if(isset($datos['inputTraduccion']) && $datos['inputTraduccion'] != ''){
+                                    //verifica que fue enviado un texto a traducir
                                     $idiomaUsado = $traduccion->getLastDetectedSource();
+                                    //obtiene el idioma usado desde el que se traduce
                                     foreach($lista as $clave => $valor){
                                         if(isset($datos['idioma']) && $clave == $idiomaUsado){
+                                            //hacemos que el idioma usado sea el que se muestra seleccionado
                                             $select .= '<option selected value="' . $clave . '"> '.$valor.' </option>';
                                         }else{
+                                            //caso contrario sigue agregando normalmente los elementos de option
                                             $select .= '<option value="' . $clave . '"> '.$valor.' </option>';
                                         }
                                     }
                                 }else{
+                                    //si no se envia texto a traducir se forma el select normalmente
                                     foreach($lista as $clave => $valor){
                                         if(isset($datos['idioma']) && $clave == $datos['idioma']){
                                             $select .= '<option selected value="' . $clave . '"> '.$valor.' </option>';
@@ -57,13 +65,15 @@ if(isset($datos['inputTraduccion'])){
                         <select class="form-select m-2" id="idiomaOutput" name="idiomaOutput">
                             <?php $select = "";
                             unset($lista[null]);
+                            //quitamos del array la opcion de detectar idioma 
                             foreach($lista as $clave => $valor){
+                                //formamos la lista del select normalmente 
                                 if(isset($datos['idiomaOutput']) && $clave == $datos['idiomaOutput']){
+                                    //mostramos como opcion seleccionada el idioma que fue elegido anteriormente
                                     $select .= '<option selected value="' . $clave . '"> '.$valor.' </option>';
                                 }else{
                                     $select .= '<option value="' . $clave . '"> '.$valor.' </option>';
                                 }
-                                
                             }
                             echo $select;
                             ?>
