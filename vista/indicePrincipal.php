@@ -22,6 +22,11 @@ include_once("./estructura/headerPrincipal.php");
         <button class="btn btn-info px-5" data-bs-target="#tp4" data-bs-toggle="modal">TP4</button>
         </div>
     </div>
+    <div class="row">
+        <div class="col my-2">
+        <button class="btn btn-warning px-4" data-bs-target="#tpLibrerias" data-bs-toggle="modal">TP Librerias</button>
+        </div>
+    </div>
 </div>
 
 
@@ -200,6 +205,29 @@ include_once("./estructura/headerPrincipal.php");
         <div class="row">
             <div class="col my-2 d-flex justify-content-center">
                 <a class="btn btn-primary" href="./tp4/buscarPersona.php">(ej 9) Buscar Persona</a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="tpLibrerias">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">TP Librerias</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+            <div class="col my-2 d-flex justify-content-center">
+                <a class="btn btn-primary" href="./tpLibrerias/indexTrabajoLibrerias.php">Indice Traducciones</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col my-2 d-flex justify-content-center">
+                <a class="btn btn-primary" href="./tpLibrerias/traducciones.php">Traductor</a>
             </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 <?php
-$titulo = "tp librerias";
-$ejercicio = "traduccion";
+$titulo = "TP Librerias";
+$ejercicio = "Traductor de Contenidos";
 include_once('../../configuracion.php');
 include_once('../estructura/header.php');
 use Stichoza\GoogleTranslate\GoogleTranslate;

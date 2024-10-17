@@ -1,6 +1,6 @@
 <?php
-$titulo = "tp libreias";
-$ejercicio = "traduccion";
+$titulo = "TP Librerias";
+$ejercicio = "Traduccion Estática";
 include_once('../../configuracion.php');
 include_once('../estructura/header.php');
 use Stichoza\GoogleTranslate\GoogleTranslate;
@@ -45,7 +45,18 @@ $texto = '</br>
         </div>
     </div>
 
+    <div class="container">
+<div class="card my-5">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col my-3">
+            <a class="btn btn-info px-4" href="./traducciones.php">Ver Traductor</a>
+            </div>
+        </div>
 
+    </div>
+</div>
+</div>
 
 <?php
 include_once('../estructura/footer.php');

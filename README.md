@@ -22,6 +22,11 @@ para ingresar al menu principal pueden simplemente ingresar "localhost/practicos
 
 Si desean volver a la pagina principal, basta con clickear el titulo del header en cualquier ubicación.
 
+Para la Libreria utilizada (google-translate-php, de stichoza), deben utilizar el siguiente comando:
+```
+composer require stichoza/google-translate-php
+```
+
 <div align="center">
 
 ## Integrantes
